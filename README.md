@@ -8,7 +8,7 @@ Cisco and SOC and Linux expert and Python programmer 💻
 
 A Linux fanatic who loves Debian and Arch ❤️‍🔥🥊
 
-#💻 MY Skills courses ?
+# MY Skills courses ? 💻
 
 CCNA
 CCNA SEC
@@ -17,3 +17,10 @@ CEH and PwK
 LPIC-2 💻
 SANS 503
 PYTHON ❤️‍🔥
+
+
+# Where did I work before? 💼
+
+Network administrator of the central data center of National Post of Iran
+
+Soc and Linux admin of Iran Ports and Maritime Organization
