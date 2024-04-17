@@ -11,11 +11,17 @@ A Linux fanatic who loves Debian and Arch ❤️‍🔥🥊
 # MY Skills courses ? 💻
 
 CCNA
+
 CCNA SEC
+
 BAsh Scripting
+
 CEH and PwK
+
 LPIC-2 💻
+
 SANS 503
+
 PYTHON ❤️‍🔥
 
 
