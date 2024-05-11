@@ -2,15 +2,15 @@
 
 Hello everyone, I'm Erfan 👋👋👋
 
-A 22-year-old student who loves programming security services and artificial intelligence, especially machine learning and deep learning 💻💻🧠🧠
+A 22-year-old student who loves encryption method, math , Machine learning 💻💻🧠🧠
 
-Cisco and SOC and Linux expert and Python programmer 💻
+who was a Cisco and SOC and Linux expert 💻 
 
 A Linux fanatic who loves Debian and Arch ❤️‍🔥🥊
 
 # MY Skills courses ? 💻
 
-CCNA
+CCNA R ans S
 
 CCNA SEC
 
