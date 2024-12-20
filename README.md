@@ -14,7 +14,7 @@ With a strong foundation in networking, Linux, and cybersecurity, I have a histo
 - Web Scraping  
 
 🖥️ **System & Network Administration**  
-- Linux (Debian, Arch)  
+- Linux (Debian, Arch ، Fedora)  
 - Networking (CCNA, SCCNA, LPI, LPIC-2)  
 - Security (CEH, PwK)  
 
