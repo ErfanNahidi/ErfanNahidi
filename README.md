@@ -1,32 +1,30 @@
-# who I am?
+# Who I am?  
+Hello, I'm Erfan 👋  
+A passionate Data Engineer and Big Data enthusiast with a deep interest in AI, Machine Learning, and uncovering hidden patterns in complex data. Currently diving into Spark and Big Data technologies while constantly sharpening my skills in Python, SQL, and data-driven solutions.  
 
-Hello everyone, I'm Erfan 👋👋👋
+With a strong foundation in networking, Linux, and cybersecurity, I have a history of working with cutting-edge technologies. Previously, I worked as a network administrator for Iran's National Post Data Center and as a SOC and Linux administrator for the Ports and Maritime Organization of Iran.
 
-A 22-year-old student who loves encryption method, math , Machine learning 💻💻🧠🧠
+---
 
-who was a Cisco and SOC and Linux expert 💻 
+# My Skills  
+💻 **Programming & Data Engineering**  
+- Python, SQL, Spark  
+- Data Preprocessing & Data Visualization  
+- Machine Learning (scikit-learn, Pandas, NumPy)  
+- Web Scraping  
 
-A Linux fanatic who loves Debian and Arch ❤️‍🔥🥊
+🖥️ **System & Network Administration**  
+- Linux (Debian, Arch)  
+- Networking (CCNA, SCCNA, LPI, LPIC-2)  
+- Security (CEH, PwK)  
 
-# MY Skills courses ? 💻
+---
 
-CCNA R ans S
+# Where Have I Worked?  
+💼 **Network Administrator**  
+Central Data Center, National Post of Iran  
 
-CCNA SEC
+💼 **SOC & Linux Administrator**  
+Ports and Maritime Organization of Iran  
 
-BAsh Scripting
-
-CEH and PwK
-
-LPIC-2 💻
-
-SANS 503
-
-PYTHON ❤️‍🔥
-
-
-# Where did I work before? 💼
-
-Network administrator of the central data center of National Post of Iran
-
-Soc and Linux admin of Iran Ports and Maritime Organization
+---
