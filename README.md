@@ -1,4 +1,14 @@
-Hello! I'm Erfan, a Data Engineer with an unquenchable thirst for uncovering hidden patterns in complex data. Currently, I'm diving deep into the world of Spark and Big Data technologies, all while sharpening my skills in Python, SQL, and data-driven solutions.
+Data Scientist | Researcher | Software Engineer
+
+Passionate about data science, behavioral economics, and AI research
+
+Strong skills in machine learning, recommender systems, data mining, and system design
+
+Experienced in Python, PostgreSQL, ETL, and large-scale data processing
+
+Interested in R&D roles focused on human behavior modeling and economic forecasting
+
+Aspiring Ph.D. candidate in Behavioral Data Science
 
 With a solid background in networking, Linux, and cybersecurity, I've had the pleasure of working with cutting-edge technologies. In the past, I've served as a Network Administrator at Iran's National Post Data Center and as a SOC and Linux Administrator at the Ports and Maritime Organization of Iran.
 
