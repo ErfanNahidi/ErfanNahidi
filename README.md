@@ -1,42 +1,40 @@
-Data Scientist | Researcher | Software Engineer
+# **Erfan Nahidi**  
+### **Data Scientist | Researcher | Software Engineer**  
 
-Passionate about data science, behavioral economics, and AI research
+🚀 Passionate about **data science, behavioral economics, and AI research**, with a strong focus on **human behavior modeling and economic forecasting**.  
+🔍 Skilled in **machine learning, recommender systems, data mining, and system design**, leveraging **Python, PostgreSQL, ETL, and large-scale data processing**.  
+🎯 Currently preparing for a **Ph.D. in Behavioral Data Science**, aiming to bridge AI with human decision-making and macroeconomic insights.  
 
-Strong skills in machine learning, recommender systems, data mining, and system design
+---
 
-Experienced in Python, PostgreSQL, ETL, and large-scale data processing
+## **🔹 Technical Expertise**  
 
-Interested in R&D roles focused on human behavior modeling and economic forecasting
+### **💻 Data Science & Engineering:**  
+- Python | SQL | Spark  
+- Data Preprocessing & Visualization  
+- Machine Learning (scikit-learn, Pandas, NumPy)  
+- Recommender Systems & Web Scraping  
 
-Aspiring Ph.D. candidate in Behavioral Data Science
+### **🖥️ System & Network Administration:**  
+- Linux (Debian, Arch, Fedora)  
+- Networking (CCNP, CCNA, LPIC-1, LPIC-2)  
+- Security (CEH, PwK)  
 
-With a solid background in networking, Linux, and cybersecurity, I've had the pleasure of working with cutting-edge technologies. In the past, I've served as a Network Administrator at Iran's National Post Data Center and as a SOC and Linux Administrator at the Ports and Maritime Organization of Iran.
+---
 
-**My Skills:**
+## **🔹 Professional Experience**  
 
-💻 **Programming & Data Engineering:**
+### **💼 Network Administrator**  
+📍 *National Post of Iran – Central Data Center*  
+- Managed and optimized network infrastructure, ensuring high availability and security.  
 
-- Python, SQL, Spark
-- Data Preprocessing & Visualization
-- Machine Learning (scikit-learn, Pandas, NumPy)
-- Web Scraping
+### **💼 SOC & Linux Administrator**  
+📍 *Ports and Maritime Organization of Iran*  
+- Led security operations and Linux administration, enhancing system resilience.  
 
-🖥️ **System & Network Administration:**
+---
 
-- Linux (Debian, Arch, Fedora)
-- Networking (CCNP, CCNA, LPIC-1, LPIC-2)
-- Security (CEH, PwK)
+📚 **Lifelong learner**, always exploring the intersection of **AI, data science, and behavioral economics**.  
+💡 Open to **collaborations on data-driven projects** and cutting-edge research in **Big Data & AI**.  
 
-**Where I've Worked:**
-
-💼 **Network Administrator:**
-
-Central Data Center, National Post of Iran
-
-💼 **SOC & Linux Administrator:**
-
-Ports and Maritime Organization of Iran
-
-Beyond work, I'm passionate about continuous learning and enhancing my skills across various domains.
-
-If you're interested in collaborating on data-driven projects or want to delve deeper into Big Data technologies, I'd be thrilled to connect! 
+💬 Let’s connect and innovate together! 🚀
