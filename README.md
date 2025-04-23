@@ -10,10 +10,10 @@
 ## **🔹 Technical Expertise**  
 
 ### **💻 Data Science & Engineering:**  
-- Python | SQL | Spark  
+- Python | SQL
 - Data Preprocessing & Visualization  
 - Machine Learning (scikit-learn, Pandas, NumPy)  
-- Recommender Systems & Web Scraping  
+- Web Scraping  
 
 ### **🖥️ System & Network Administration:**  
 - Linux (Debian, Arch, Fedora)  
