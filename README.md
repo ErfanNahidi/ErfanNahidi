@@ -57,7 +57,7 @@ Currently focused on transitioning into data science with an emphasis on applied
 ---
 
 ## 🔹 Contact  
-📧 erfannahidi20@gmail.com 
+📧 Email:  erfannahidi20@gmail.com 
 
 🧑‍💻 GitHub: [github.com/ErfanNahidi](https://github.com/ErfanNahidi)  
 
