@@ -1,40 +1,70 @@
 # **Erfan Nahidi**  
-### **Data Scientist | Researcher | Software Engineer**  
+### Junior Data Scientist · Aspiring Researcher in Energy & Economics · System Engineer  
 
-🚀 Passionate about **data science, behavioral economics, and AI research**, with a strong focus on **human behavior modeling and economic forecasting**.  
-🔍 Skilled in **machine learning, recommender systems, data mining, and system design**, leveraging **Python, PostgreSQL, ETL, and large-scale data processing**.  
-🎯 Currently preparing for a **Ph.D. in Behavioral Data Science**, aiming to bridge AI with human decision-making and macroeconomic insights.  
-
----
-
-## **🔹 Technical Expertise**  
-
-### **💻 Data Science & Engineering:**  
-- Python | SQL
-- Data Preprocessing & Visualization  
-- Machine Learning (scikit-learn, Pandas, NumPy)  
-- Web Scraping  
-
-### **🖥️ System & Network Administration:**  
-- Linux (Debian, Arch, Fedora)  
-- Networking (CCNP, CCNA, LPIC-1, LPIC-2)  
-- Security (CEH, PwK)  
+📌 **Exploring** the intersection of data science, energy systems, and economics—currently learning how to model energy markets and analyze behavioral data.  
+🎯 Planning to pursue a **Ph.D. in Data Science or Artificial Intelligence**, with a research focus on **energy economics and macro-level forecasting**.  
 
 ---
 
-## **🔹 Professional Experience**  
+## 🔹 Technical Skills
 
-### **💼 Network Administrator**  
+### 💻 **Data Science & Engineering**  
+- Python, SQL  
+- Data preprocessing, visualization (Pandas, Matplotlib)  
+- Machine learning (scikit-learn, NumPy)  
+- Streamlit, FastAPI (small demo projects)  
+- Web scraping (Selenium, BeautifulSoup)  
+- Basic ETL and data pipeline design  
+
+### 📈 **Current Learning Goals**  
+- Time-series analysis (ARIMA, Prophet)  
+- Electricity market modeling (Nord Pool, DAM structure)  
+- Behavioral economics modeling  
+- AI applications in macroeconomic systems  
+
+### 🖥️ **Systems & Security**  
+- Linux administration (Fedora, Debian, Arch)  
+- Networking (CCNA, CCNP, LPIC-1/2)  
+- SOC operations, basic penetration testing (CEH, PwK studies)
+
+---
+
+## 🔹 Projects
+
+- **FastAPI Auth Demo** — Simple authentication API with JWT/OAuth2  
+- **Energy Market Forecasting (WIP)** — Early-stage model for electricity price trend analysis  
+- **Behavioral Data Explorer (WIP)** — Dataset exploration on consumer behavior in energy usage  
+
+---
+
+## 🔹 Work Experience
+
+### **Network Administrator**  
 📍 *National Post of Iran – Central Data Center*  
-- Managed and optimized network infrastructure, ensuring high availability and security.  
+- Maintained secure network systems and ensured uptime.
 
-### **💼 SOC & Linux Administrator**  
+### **SOC & Linux Administrator**  
 📍 *Ports and Maritime Organization of Iran*  
-- Led security operations and Linux administration, enhancing system resilience.  
+- Worked on system security monitoring and Linux server management.
 
 ---
 
-📚 **Lifelong learner**, always exploring the intersection of **AI, data science, and behavioral economics**.  
-💡 Open to **collaborations on data-driven projects** and cutting-edge research in **Big Data & AI**.  
+## 🔹 Education  
+**B.Sc. in Computer Engineering**  
+*Islamic Azad University of Karaj* — *GPA: 3.6/4.0*  
+Currently focused on transitioning into data science with an emphasis on applied economics and AI research.
+
+---
+
+## 🔹 Contact  
+📧 erfannahidi20@gmail.com 
+🧑‍💻 GitHub: [github.com/ErfanNahidi](https://github.com/ErfanNahidi)  
+🔗 LinkedIn: [linkedin.com/in/Erfan_Nahidi](https://linkedin.com/in/Erfan_Nahidi)  
+📨 Telegram: [@ErfanNahidi](https://t.me/cro0w)
+
+---
+
+> Trying to solve real economic puzzles using real data—not buzzwords.
+
 
 💬 Let’s connect and innovate together! 🚀
