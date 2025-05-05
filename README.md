@@ -51,7 +51,7 @@
 
 ## 🔹 Education  
 **B.Sc. in Computer Engineering**  
-*Islamic Azad University of Karaj* — *GPA: 3.6/4.0*  
+*Islamic Azad University of Karaj* 
 Currently focused on transitioning into data science with an emphasis on applied economics and AI research.
 
 ---
