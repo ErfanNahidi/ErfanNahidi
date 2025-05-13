@@ -1,78 +1,79 @@
 # **Erfan Nahidi**
 
-### Junior Data Scientist · Applied AI Enthusiast · System & Security Engineer
+### Junior Data Scientist · Energy Economics Researcher · Secure Systems Engineer
 
-🔎 **Focused on solving real economic and energy-related challenges using data and algorithms—not buzzwords.**
-🎓 Preparing for a **Ph.D. in Artificial Intelligence or Data Science**, with a research focus on **energy economics**, **algorithm optimization**, and **macro-level forecasting**.
+🔍 I cut through hype—tackle real-world energy and economic puzzles with data, math, and code. ADHD-driven energy means I’m relentless at optimizing algorithms and systems.
+🧠 Ph.D. in AI/Data Science aspirant: focus on energy economics forecasting, behavioral models, and algorithm efficiency.
 
 ---
 
-## 🔹 Technical Skills
+## 🔹 Core Strengths
 
-### 💻 **Data Science & Engineering**
+* Hyperfocused abstract thinker; excel at complex problem formulation but ADHD makes me brutal on minutiae—I automate and optimize relentlessly.
+* Unfiltered pragmatist: no flashy buzzwords, just actionable models and reproducible results.
+* Energy-fueled work ethic: juggling behavioral science, macroeconomics, and optimization techniques.
 
-* Python (core), SQL (PostgreSQL, SQLite)
-* Data cleaning, feature engineering, visualization (Pandas, Matplotlib)
-* Machine Learning (scikit-learn, NumPy, basic optimization)
-* FastAPI, Streamlit (prototypes and tools)
-* Web scraping (Selenium, BeautifulSoup)
-* ETL pipelines, job scheduling (basic)
+---
 
-### 📈 **Current Learning Goals**
+## 🔹 Technical Arsenal
 
-* Time-series forecasting (ARIMA, Prophet, XGBoost)
-* Energy market modeling (Nord Pool, DAM, capacity pricing)
-* Algorithmic decision-making in economics
-* Behavioral & macroeconomic simulation using agent-based models
+### 💻 Data Science & AI
 
-### 🖥️ **Systems & Security**
+* **Python**, **SQL** (PostgreSQL, SQLite)
+* Data pipelines: cleaning, feature engineering, batching (ETL, scheduling)
+* ML & Forecasting: scikit-learn, NumPy, XGBoost, ARIMA, Prophet
+* Behavioral & economic simulation: agent-based models
 
-* Linux administration (Fedora, Debian, Arch)
-* Network infrastructure (CCNP level, Mikrotik/Cisco)
-* SOC operations, firewall auditing, Linux hardening
-* Penetration testing fundamentals (CEH, OSINT, PwK studies)
+### ⚡ Energy Economics & Systems
+
+* Electricity market modeling (Nord Pool, DAM, capacity auction)
+* Price volatility analytics, macro-level forecasting
+* Optimization: algorithm tuning for speed and resource efficiency
+
+### 🖥️ Systems & Security
+
+* Linux admin (Fedora, Debian, Arch)
+* Network infra (CCNP-level Cisco/Mikrotik)
+* SOC ops, intrusion detection, Linux hardening
+* Security testing fundamentals (OSINT, CEH, PwK studies)
 
 ---
 
 ## 🔹 Projects
 
-* **FastAPI Auth Demo 1 & 2** — Minimal JWT-based authentication system with secure token handling
-* **Energy Market Forecasting (WIP)** — Research tool for electricity price and volatility trend detection
-* **Behavioral Data Explorer (WIP)** — Data science interface to examine consumer decision-making in energy use
+* **FastAPI Auth Demo 1&2**: lean JWT auth, bcrypt, modular for extension.
+* **Energy Market Forecasting** (WIP): prototype for detecting electricity price trends and anomalies.
+* **Behavioral Data Explorer** (WIP): interactive tool analyzing consumer energy use behavior.
 
 ---
 
-## 🔹 Work Experience
+## 🔹 Experience
 
-### **Network Administrator**
+### Network Administrator | National Post of Iran – Central Data Center
 
-📍 *National Post of Iran – Central Data Center*
+* Hardened network configurations, slashed downtime by automating alerts.
 
-* Managed network configurations and implemented secure routing policies.
+### SOC & Linux Administrator | Ports and Maritime Organization of Iran
 
-### **SOC & Linux Administrator**
-
-📍 *Ports and Maritime Organization of Iran*
-
-* Performed real-time log analysis, intrusion detection, and handled critical server maintenance.
+* Real-time log forensics, intrusion detection, secured critical servers.
 
 ---
 
 ## 🔹 Education
 
-**B.Sc. in Computer Engineering**
-*Islamic Azad University of Karaj*
-Currently building a cross-disciplinary path into **AI-driven economic modeling** and **energy systems forecasting**.
+**B.Sc. Computer Engineering**, Islamic Azad University of Karaj
+
+Chasing interdisciplinary edge: AI-driven economic models meet energy system realities.
 
 ---
 
-## 🔹 Contact
+## 🔹 Connect
 
-📧 Email: [erfannahidi20@gmail.com](mailto:erfannahidi20@gmail.com)
-🧑‍💻 GitHub: [github.com/ErfanNahidi](https://github.com/ErfanNahidi)
-🔗 LinkedIn: [linkedin.com/in/Erfan\_Nahidi](https://linkedin.com/in/ErfanNahidi)
-📨 Telegram: [@ErfanNahidi](https://t.me/cro0w)
+📧 [erfannahidi20@gmail.com](mailto:erfannahidi20@gmail.com)
+🧑‍💻 [GitHub](https://github.com/ErfanNahidi)
+🔗 [LinkedIn](https://linkedin.com/in/Erfan_Nahidi)
+📨 [Telegram](https://t.me/cro0w)
 
 ---
 
-> Most people talk AI. I just use it to get closer to the truth hidden in messy energy and economic data.
+> No fluff—just raw data, solid code, and algorithms that actually predict what happens next.
