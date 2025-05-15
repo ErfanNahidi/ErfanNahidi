@@ -71,7 +71,7 @@ Chasing interdisciplinary edge: AI-driven economic models meet energy system rea
 
 📧 [erfannahidi20@gmail.com](mailto:erfannahidi20@gmail.com)
 🧑‍💻 [GitHub](https://github.com/ErfanNahidi)
-🔗 [LinkedIn](https://linkedin.com/in/Erfan_Nahidi)
+🔗 [LinkedIn](https://linkedin.com/in/ErfanNahidi)
 📨 [Telegram](https://t.me/cro0w)
 
 ---
