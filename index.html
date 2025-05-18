@@ -6,47 +6,103 @@
   <title>Erfan Nahidi – Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="font-sans leading-normal tracking-wide flex flex-col min-h-screen">
+<body class="font-sans leading-relaxed tracking-wide flex flex-col min-h-screen">
 
-  <header class="bg-white shadow p-6">
-    <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold">Erfan Nahidi</h1>
-      <nav class="space-x-4">
-        <a href="#projects" class="hover:underline">Projects</a>
-        <a href="#contact" class="hover:underline">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <main class="max-w-3xl mx-auto px-4 py-12">
+    <header class="mb-8 text-center">
+      <h1 class="text-4xl font-extrabold">Erfan Nahidi</h1>
+      <h2 class="text-xl mt-2 text-gray-600">
+        Junior Data Scientist · Energy Economics Researcher · Secure Systems Engineer
+      </h2>
+    </header>
 
-  <main class="flex-grow container mx-auto px-6 py-12">
-    <section class="mb-12">
-      <h2 class="text-3xl font-bold mb-4">About Me</h2>
+    <section class="mb-10">
+      <p class="mb-2">
+        🔍 I cut through hype—tackle real-world energy and economic puzzles with data, math, and code.
+      </p>
       <p>
-        I'm a computer engineering student interested in AI, algorithms, optimization, and NLP. I enjoy solving complex problems and building things that work.
+        🧠 Ph.D. in AI/Data Science aspirant: focus on energy economics forecasting, behavioral models, and algorithm efficiency.
       </p>
     </section>
 
-    <section id="projects" class="mb-12">
-      <h2 class="text-3xl font-bold mb-4">Projects</h2>
-      <ul class="space-y-4">
-        <li class="border p-4 rounded bg-white shadow">
-          <h3 class="text-xl font-semibold">NLP Sentiment Analyzer</h3>
-          <p>Analyzed sentiment in Farsi texts using Python and Scikit-learn.</p>
-          <a href="https://github.com/erfannahidi/sentiment-analyzer" class="text-blue-500 hover:underline">View on GitHub</a>
-        </li>
-        <li class="border p-4 rounded bg-white shadow">
-          <h3 class="text-xl font-semibold">Metaheuristic Optimizer</h3>
-          <p>Implemented various metaheuristics like Genetic Algorithm and PSO for TSP problems.</p>
-          <a href="https://github.com/erfannahidi/metaheuristics" class="text-blue-500 hover:underline">View on GitHub</a>
-        </li>
+    <section class="mb-10">
+      <h3 class="text-2xl font-semibold mb-4">Core Strengths</h3>
+      <ul class="list-disc pl-5 space-y-2">
+        <li>Hyperfocused abstract thinker; excel at complex problem formulation and automation.</li>
+        <li>Unfiltered pragmatist: no flashy buzzwords, just actionable models and reproducible results.</li>
+        <li>Energy-fueled work ethic: juggling behavioral science, macroeconomics, and optimization techniques.</li>
       </ul>
     </section>
 
-    <section id="contact">
-      <h2 class="text-3xl font-bold mb-4">Contact</h2>
-      <p>Email: erfan.nahidi@gmail.com</p>
-      <p>GitHub: <a href="https://github.com/erfannahidi" class="text-blue-500 hover:underline">github.com/erfannahidi</a></p>
+    <section class="mb-10">
+      <h3 class="text-2xl font-semibold mb-4">Technical Arsenal</h3>
+
+      <h4 class="text-xl font-bold mt-4 mb-2">Data Science & AI</h4>
+      <ul class="list-disc pl-5 space-y-1">
+        <li><strong>Python</strong>, <strong>SQL</strong> (PostgreSQL, SQLite)</li>
+        <li>Data pipelines: cleaning, feature engineering, batching (ETL, scheduling)</li>
+        <li>ML & Forecasting: scikit-learn, NumPy, XGBoost, ARIMA, Prophet</li>
+        <li>Behavioral & economic simulation: agent-based models</li>
+      </ul>
+
+      <h4 class="text-xl font-bold mt-4 mb-2">Energy Economics & Systems</h4>
+      <ul class="list-disc pl-5 space-y-1">
+        <li>Electricity market modeling (Nord Pool, DAM, capacity auction)</li>
+        <li>Price volatility analytics, macro-level forecasting</li>
+        <li>Optimization: algorithm tuning for speed and resource efficiency</li>
+      </ul>
+
+      <h4 class="text-xl font-bold mt-4 mb-2">Systems & Security</h4>
+      <ul class="list-disc pl-5 space-y-1">
+        <li>Linux admin (Fedora, Debian, Arch)</li>
+        <li>Network infra (CCNP-level Cisco/Mikrotik)</li>
+        <li>SOC ops, intrusion detection, Linux hardening</li>
+        <li>Security testing fundamentals (OSINT, CEH, PwK studies)</li>
+      </ul>
     </section>
+
+    <section class="mb-10">
+      <h3 class="text-2xl font-semibold mb-4">Projects</h3>
+      <ul class="list-disc pl-5 space-y-2">
+        <li><strong>FastAPI Auth Demo 1&2</strong>: lean JWT auth, bcrypt, modular for extension.</li>
+        <li><strong>Energy Market Forecasting</strong> (WIP): prototype for detecting electricity price trends and anomalies.</li>
+        <li><strong>Behavioral Data Explorer</strong> (WIP): interactive tool analyzing consumer energy use behavior.</li>
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h3 class="text-2xl font-semibold mb-4">Experience</h3>
+
+      <div class="mb-4">
+        <h4 class="text-lg font-bold">Network Administrator | National Post of Iran – Central Data Center</h4>
+        <p>Hardened network configurations, slashed downtime by automating alerts.</p>
+      </div>
+
+      <div>
+        <h4 class="text-lg font-bold">SOC & Linux Administrator | Ports and Maritime Organization of Iran</h4>
+        <p>Real-time log forensics, intrusion detection, secured critical servers.</p>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h3 class="text-2xl font-semibold mb-4">Education</h3>
+      <p><strong>B.Sc. Computer Engineering</strong>, Islamic Azad University of Karaj</p>
+      <p>Chasing interdisciplinary edge: AI-driven economic models meet energy system realities.</p>
+    </section>
+
+    <section class="mb-10">
+      <h3 class="text-2xl font-semibold mb-4">Connect</h3>
+      <ul class="list-none space-y-2">
+        <li>📧 <a href="mailto:erfannahidi20@gmail.com" class="text-blue-600 hover:underline">erfannahidi20@gmail.com</a></li>
+        <li>🧑‍💻 <a href="https://github.com/ErfanNahidi" class="text-blue-600 hover:underline">GitHub</a></li>
+        <li>🔗 <a href="https://linkedin.com/in/ErfanNahidi" class="text-blue-600 hover:underline">LinkedIn</a></li>
+        <li>📨 <a href="https://t.me/cro0w" class="text-blue-600 hover:underline">Telegram</a></li>
+      </ul>
+    </section>
+
+    <blockquote class="italic text-gray-600 border-l-4 border-blue-400 pl-4">
+      “No fluff—just raw data, solid code, and algorithms that actually predict what happens next.”
+    </blockquote>
   </main>
 
   <footer class="bg-gray-200 text-center p-4">
