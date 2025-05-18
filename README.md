@@ -1,79 +1,67 @@
-# **Erfan Nahidi**
+# Erfan Nahidi
 
 ### Junior Data Scientist · Energy Economics Researcher · Secure Systems Engineer
 
-🔍 I cut through hype—tackle real-world energy and economic puzzles with data, math, and code. ADHD-driven energy means I’m relentless at optimizing algorithms and systems.
-🧠 Ph.D. in AI/Data Science aspirant: focus on energy economics forecasting, behavioral models, and algorithm efficiency.
+I tackle real-world energy and economic problems with data, code, and algorithmic modeling. No buzzwords—just efficient solutions, pragmatic models, and reproducible pipelines.
 
 ---
 
-## 🔹 Core Strengths
+## 🔹 Core Focus
 
-* Hyperfocused abstract thinker; excel at complex problem formulation but ADHD makes me brutal on minutiae—I automate and optimize relentlessly.
-* Unfiltered pragmatist: no flashy buzzwords, just actionable models and reproducible results.
-* Energy-fueled work ethic: juggling behavioral science, macroeconomics, and optimization techniques.
+- Data-driven decision models for energy economics and price forecasting
+- Algorithm optimization for speed and efficiency
+- Secure systems engineering with hands-on Linux and network infrastructure experience
 
 ---
 
-## 🔹 Technical Arsenal
+## 🔹 Tech Stack
 
-### 💻 Data Science & AI
+**Data & AI:**  
+Python, SQL (PostgreSQL, SQLite), scikit-learn, XGBoost, Prophet, NumPy, Pandas, ARIMA, ETL pipelines, agent-based modeling  
 
-* **Python**, **SQL** (PostgreSQL, SQLite)
-* Data pipelines: cleaning, feature engineering, batching (ETL, scheduling)
-* ML & Forecasting: scikit-learn, NumPy, XGBoost, ARIMA, Prophet
-* Behavioral & economic simulation: agent-based models
+**Systems & Security:**  
+Fedora/Debian/Arch Linux, CCNP-level networking, SOC tools, IDS, OS hardening, Bash scripting, OSINT tools  
 
-### ⚡ Energy Economics & Systems
-
-* Electricity market modeling (Nord Pool, DAM, capacity auction)
-* Price volatility analytics, macro-level forecasting
-* Optimization: algorithm tuning for speed and resource efficiency
-
-### 🖥️ Systems & Security
-
-* Linux admin (Fedora, Debian, Arch)
-* Network infra (CCNP-level Cisco/Mikrotik)
-* SOC ops, intrusion detection, Linux hardening
-* Security testing fundamentals (OSINT, CEH, PwK studies)
+**Optimization & Economics:**  
+Electricity market modeling (Nord Pool, DAM), price volatility analysis, macroeconomic indicators, resource-efficient algorithm tuning
 
 ---
 
 ## 🔹 Projects
 
-* **FastAPI Auth Demo 1&2**: lean JWT auth, bcrypt, modular for extension.
-* **Energy Market Forecasting** (WIP): prototype for detecting electricity price trends and anomalies.
-* **Behavioral Data Explorer** (WIP): interactive tool analyzing consumer energy use behavior.
+- **FastAPI Auth Demo:** Clean JWT auth system using bcrypt and modularized for reuse.
+- **Energy Market Forecasting (WIP):** Detects electricity pricing anomalies and trends.
+- **Behavioral Data Explorer (WIP):** Interactive app for consumer energy behavior analysis.
 
 ---
 
-## 🔹 Experience
+## 🔹 Professional Background
 
-### Network Administrator | National Post of Iran – Central Data Center
+**Network Administrator**  
+*National Post of Iran – Central Data Center*  
+> Automated alerts and hardened routing configurations to minimize network downtime.
 
-* Hardened network configurations, slashed downtime by automating alerts.
-
-### SOC & Linux Administrator | Ports and Maritime Organization of Iran
-
-* Real-time log forensics, intrusion detection, secured critical servers.
+**SOC & Linux Admin**  
+*Ports and Maritime Organization of Iran*  
+> Real-time intrusion detection and server hardening across Debian and Fedora systems.
 
 ---
 
 ## 🔹 Education
 
-**B.Sc. Computer Engineering**, Islamic Azad University of Karaj
-
-Chasing interdisciplinary edge: AI-driven economic models meet energy system realities.
-
----
-
-## 🔹 Connect
-
-📧 [erfannahidi20@gmail.com](mailto:erfannahidi20@gmail.com)
-🧑‍💻 [GitHub](https://github.com/ErfanNahidi)
-🔗 [LinkedIn](https://linkedin.com/in/ErfanNahidi)
-📨 [Telegram](https://t.me/cro0w)
+**B.Sc. in Computer Engineering**  
+*Islamic Azad University of Karaj*  
+> Focus on AI + optimization + energy economics modeling
 
 ---
 
-> No fluff—just raw data, solid code, and algorithms that actually predict what happens next.
+## 🔹 Contact
+
+- **Email:** erfannahidi20@gmail.com  
+- **GitHub:** [@ErfanNahidi](https://github.com/ErfanNahidi)  
+- **LinkedIn:** [linkedin.com/in/ErfanNahidi](https://linkedin.com/in/ErfanNahidi)  
+- **Telegram:** [@cro0w](https://t.me/cro0w)
+
+---
+
+> No fluff. Just raw data, efficient algorithms, and real-world problem-solving.
