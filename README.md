@@ -16,14 +16,34 @@ I tackle real-world energy and economic problems with data, code, and algorithmi
 
 ## 🔹 Tech Stack
 
-**Data & AI:**  
-Python, SQL (PostgreSQL, SQLite), scikit-learn, XGBoost, Prophet, NumPy, Pandas, ARIMA, ETL pipelines, agent-based modeling  
+### 💻 Programming Languages
 
-**Systems & Security:**  
-Fedora/Debian/Arch Linux, CCNP-level networking, SOC tools, IDS, OS hardening, Bash scripting, OSINT tools  
+* **Python:** Primary for data science, NLP, metaheuristics
+* **SQL (PostgreSQL, SQLite):** Database design, querying, secure schema development
+* **C++:** Under active study—abstract thinking is strength; implementation details are work in progress
+* **Rust:** Planned study in two years (focused on safe, efficient systems)
 
-**Optimization & Economics:**  
-Electricity market modeling (Nord Pool, DAM), price volatility analysis, macroeconomic indicators, resource-efficient algorithm tuning
+### 🧠 Data Science & AI
+
+* **Libraries/Frameworks:** NumPy, Pandas, scikit-learn, XGBoost, Prophet, ARIMA
+* **Techniques:** ETL pipelines (data preprocessing), agent-based modeling, web scraping (Selenium)
+* **Domains:** Economical data science (behavioral economics, predictive modeling), NLP research
+
+### 📊 Optimization & Economics
+
+* **Electricity Market Modeling:** Nord Pool, DAM analysis, price volatility metrics
+* **Algorithm Tuning:** Resource-efficient optimization, metaheuristic approaches
+* **Macroeconomic Indicators:** Integrating economic data into predictive models
+
+### 🛡️ Systems & Security
+
+* **Operating Systems:** Fedora, Debian, Arch Linux (daily use, OS administration)
+* **Networking:** CCNP-level configuration/monitoring, VPN setup, network troubleshooting
+* **Security:** SOC operations, IDS deployment, OS hardening, OSINT tools
+* **Scripting & Automation:** Bash for administration, Streamlit for lightweight dashboards
+
+---
+
 
 ---
 
