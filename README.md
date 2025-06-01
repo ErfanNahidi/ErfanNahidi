@@ -1,6 +1,6 @@
 ## Erfan Nahidi
 
-### 🚀 Junior Data Scientist • 🧠 Algorithm & Optimization Researcher • 🛡️ Secure Systems Engineer
+### 🧠 Algorithm & Optimization Researcher • 🛡️ Secure Systems Engineer • 🚀 Junior AI Engineer 
 
 I solve real-world energy and economics problems with data, code, and ruthless algorithmic pragmatism.
 No buzzwords. Just reproducible models and battle-tested systems.
