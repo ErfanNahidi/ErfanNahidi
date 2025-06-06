@@ -1,99 +1,81 @@
-## Erfan Nahidi
+## Erfan Nahidi  
+🛡️ Security Data Scientist • 🔬 AI Security Researcher • 🧠 Algorithm & Optimization Researcher  
 
-### 🧠 Algorithm & Optimization Researcher • 🛡️ Secure Systems Engineer • 🚀 Junior AI Engineer 
-
-I solve real-world energy and economics problems with data, code, and ruthless algorithmic pragmatism.
-No buzzwords. Just reproducible models and battle-tested systems.
+I build reproducible models and battle-tested systems—no buzzwords, just hard data and ruthless algorithms.
 
 ---
 
 ## 🔧 Tech Stack
 
 ### 💻 Programming Languages
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge\&logo=python\&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge\&logo=postgresql\&logoColor=white)
-![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge\&logo=c%2B%2B\&logoColor=white)
-![Rust (Planned)](https://img.shields.io/badge/Rust-Learning_2027-000000?style=for-the-badge\&logo=rust\&logoColor=white)
+- Python (intermediate to advanced)  
+- SQL (basic to intermediate)  
+- C++ (basic)  
+- Rust (learning, no production experience yet)  
 
 ### 📊 Data Science & Visualization
-
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge\&logo=numpy\&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge\&logo=pandas\&logoColor=white)
-![Scikit-learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge\&logo=scikit-learn\&logoColor=white)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge\&logo=matplotlib\&logoColor=white)
-![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge\&logo=plotly\&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge\&logo=streamlit\&logoColor=white)
+- NumPy, Pandas (daily use)  
+- Scikit-learn (basic models, some experience)  
+- Matplotlib, Plotly (basic visualization)  
+- Streamlit (building simple dashboards)
 
 ### 🧠 AI & Modeling
-
-* Predictive pipelines using XGBoost, Prophet, ARIMA
-* NLP research, data preprocessing, web scraping (Selenium)
-* Agent-based simulations for market dynamics
-* Economical data science (behavioral & macroeconomic)
+- Basic predictive models: XGBoost, Prophet, ARIMA  
+- NLP data preprocessing and simple feature engineering  
+- Web scraping with Selenium (basic scripts)  
+- Agent-based simulations (limited experience, academic projects)  
 
 ### ⚙️ Optimization & Economics
-
-* ⚡ Electricity market modeling (Nord Pool, DAM)
-* 📈 Price volatility forecasting
-* 🧠 Metaheuristic algorithm tuning (custom)
+- Basic electricity market concepts (academic knowledge)  
+- Simple price forecasting models (academic projects)  
+- Metaheuristic algorithms (implementations from scratch, not production-ready)  
 
 ### 🛡️ Systems & Security
-
-![Linux](https://img.shields.io/badge/Linux-Fedora/Debian/Arch-000000?style=for-the-badge\&logo=linux\&logoColor=white)
-![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge\&logo=gnu-bash\&logoColor=white)
-![Networking](https://img.shields.io/badge/CCNP-Level_Networking-0056A3?style=for-the-badge\&logo=cisco\&logoColor=white)
-![IDS/OSINT](https://img.shields.io/badge/IDS%20%2F%20OSINT-Security_Tools-8B0000?style=for-the-badge)
-
-* OS Hardening, VPN Setup, Firewall Configs
-* SOC Ops, Intrusion Detection, Open-source Recon
-* Secure schema design, defensive bash scripting
+- Linux (Fedora, Debian, Arch) daily use and shell scripting basics  
+- Networking fundamentals (CCNP-level theoretical knowledge)  
+- Basic intrusion detection concepts (academic)  
+- OS hardening (basic personal and lab setups)  
+- VPN and firewall configuration (home lab)  
 
 ---
 
-## 📁 Featured Projects
+## 📁 Projects (Mostly academic or personal)
 
-* **FastAPI Auth System**
-  🔐 Modular JWT authentication system with bcrypt and token expiry, built for secure API integration.
-
-* **Energy Market Forecasting (WIP)**
-  📉 Modeling pricing anomalies using economic indicators and behavioral patterns.
-
-* **Behavioral Data Explorer (WIP)**
-  📊 Streamlit-based dashboard to visualize user-level behavioral trends in energy consumption.
+- **JWT Auth System**: a basic FastAPI project with JWT and bcrypt, for learning authentication concepts.  
+- **Energy Market Forecasting**: academic project simulating day-ahead market price forecasting using ARIMA.  
+- **Behavioral Data Explorer**: a simple Streamlit dashboard for visualizing energy consumption datasets.  
+- **Basic Malware Detection**: implemented a simple ML classifier on a small subset of the EMBER dataset for learning purposes.
 
 ---
 
-## 💼 Professional Background
+## 💼 Experience
 
-**Network Administrator**
-*National Post of Iran – Central Data Center*
+**Network Administrator (Intern/Junior Level)**  
+*National Post of Iran – Central Data Center*  
+- Assisted in network monitoring and basic alerting scripts.  
+- Learned routing basics and helped troubleshoot simple outages.
 
-> Automated alerting + routing logic to minimize outage risk and increase network resilience.
-
-**SOC & Linux Admin**
-*Ports and Maritime Organization of Iran*
-
-> Real-time threat detection and OS-level server hardening across critical infrastructure.
+**SOC & Linux Admin (Junior/Intern)**  
+*Ports and Maritime Organization of Iran*  
+- Assisted in real-time log collection and basic OS hardening tasks.  
+- Performed simple intrusion detection log reviews under supervision.
 
 ---
 
 ## 🎓 Education
 
-**B.Sc. in Computer Engineering**
-*Islamic Azad University of Karaj*
-
-> Specialization in AI, optimization algorithms, and energy economics modeling.
+**B.Sc. in Computer Engineering (in progress)**  
+*Islamic Azad University of Karaj*  
+- Focused on AI, optimization, algorithms, and energy economics modeling.  
+- Completed 75/144 units.
 
 ---
 
 ## 📬 Contact
 
-* 📧 **Email:** [erfannahidi20@gmail.com](mailto:erfannahidi20@gmail.com)
-* 🧠 **GitHub:** [@ErfanNahidi](https://github.com/ErfanNahidi)
-* 💼 **LinkedIn:** [linkedin.com/in/ErfanNahidi](https://linkedin.com/in/ErfanNahidi)
-* 💬 **Telegram:** [@cro0w](https://t.me/cro0w)
+- 📧 **Email:** [erfannahidi20@gmail.com](mailto:erfannahidi20@gmail.com)  
+- 🧠 **GitHub:** [@ErfanNahidi](https://github.com/ErfanNahidi)  
+- 💼 **LinkedIn:** [linkedin.com/in/ErfanNahidi](https://linkedin.com/in/ErfanNahidi)  
+- 💬 **Telegram:** [@cro0w](https://t.me/cro0w)  
 
----
-
-> 🧠 No fluff. Just data, code, and systems that work under pressure.
+> No fluff. Just honest work and ongoing learning.
