@@ -70,7 +70,7 @@ No fluff. Just data, code, and systems that work under pressure.
 
 **B.Sc. Computer Engineering**  
 *Islamic Azad University of Karaj*  
-- Specialization in AI, optimization, and energy economics modeling.  
+- Specialization in AI, optimization 
 
 ---
 
