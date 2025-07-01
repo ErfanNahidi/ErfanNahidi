@@ -1,6 +1,6 @@
 ## Erfan Nahidi
 
-### 🧠 Algorithm & Optimization Researcher • 🛡️ Security Data Scientist • 🔬 AI for Security Researcher
+### 🧠 Algorithm & Optimization Researcher • 🛡️ Security Developer
 
 No fluff. Just data, code, and systems that work under pressure.
 
