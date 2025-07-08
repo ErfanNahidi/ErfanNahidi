@@ -1,86 +1,100 @@
-## Erfan Nahidi
+# Erfan Nahidi
 
-### 🧠 Algorithm & Optimization Researcher • 🛡️ Security Developer
-
-No fluff. Just data, code, and systems that work under pressure.
-
----
-
-## 🔧 Tech Stack
-
-### 💻 Programming Languages  
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)  
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)  
-![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)  
-![Rust (Planned)](https://img.shields.io/badge/Rust-Learning_2027-000000?style=for-the-badge&logo=rust&logoColor=white)  
-
-### 📊 Data Science & Visualization  
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)  
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)  
-![Scikit-learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)  
-![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=matplotlib&logoColor=white)  
-![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)  
-![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)  
-
-### 🧠 AI & Modeling  
-- Predictive pipelines: XGBoost, Prophet, ARIMA  
-- NLP data preprocessing, basic feature engineering  
-- Web scraping (Selenium)  
-- Agent-based simulations (academic projects)  
-- Economical data science (behavioral & macroeconomic models)  
-
-### ⚙️ Optimization & Economics  
-- Electricity market modeling (Nord Pool, DAM)  
-- Price volatility forecasting (basic models)  
-- Metaheuristic algorithm tuning (custom implementations)  
-
-### 🛡️ Systems & Security  
-![Linux](https://img.shields.io/badge/Linux-Fedora/Debian/Arch-000000?style=for-the-badge&logo=linux&logoColor=white)  
-![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)  
-![Networking](https://img.shields.io/badge/CCNP-Level_Networking-0056A3?style=for-the-badge&logo=cisco&logoColor=white)  
-![IDS/OSINT](https://img.shields.io/badge/IDS%20%2F%20OSINT-Security_Tools-8B0000?style=for-the-badge)  
-
-- OS hardening, VPN setup, firewall configs  
-- SOC operations, intrusion detection basics  
-- Secure schema design, defensive scripting  
+### 🛡️ Software Security • 🔬 Malware Analysis • 🧩 Reverse Engineering  
+> I break things to understand them—then write code that survives real attacks.
 
 ---
 
-## 📁 Featured Projects  
-
-- **FastAPI Auth System**: Modular JWT authentication with bcrypt and token expiry.  
-- **Energy Market Forecasting (WIP)**: Modeling price anomalies with economic and behavioral data.  
-- **Behavioral Data Explorer (WIP)**: Streamlit dashboard for user energy consumption trends.  
+## 🧠 About Me
+- Ex‑Data Scientist (ML pipelines, time‑series, NLP), now fully pivoted to security  
+- Passionate about algorithms, encryption challenges, CTFs & puzzles—weekends spent solving them with friends  
 
 ---
 
-## 💼 Professional Background  
+## 🔧 Core Skills
+
+### 🛡️ Security & Systems
+- **Linux & Bash**: hardening (systemd, journald, ufw/iptables), automation scripts for SOC triage  
+- **SOC toolchain**: OSSEC, Snort, Suricata; log parsing with Python  
+- **Network forensics**: Wireshark, tcpdump; Network+ & CCNA & CEH certified insights  
+- **VPN & firewall configs**: OpenVPN setups, iptables rulesets, proxy chaining  
+
+### 🔐 Encryption & Cryptography
+- **Symmetric & Asymmetric**: AES, RSA basics, elliptic curves overview  
+- **Hash functions**: SHA‑2/3, HMAC constructions  
+- **Practical challenges**: designed & solved CTF crypto puzzles (weekend labs)  
+- **Secure protocols**: TLS handshake analysis, custom key‑exchange scripting  
+
+### 💣 Malware & Reverse Engineering
+- **Static & dynamic analysis**: Ghidra, radare2, objdump, strace  
+- **IOC & YARA**: rule writing, sandbox tracing of Linux malware samples  
+- **Shellcode unpacking**: simple packer reversal, string de‑obfuscation  
+- **Custom tooling**: Python scripts for callback/C2 detection  
+
+### 🔍 Vulnerability Research (WIP)
+- **Web**: manual SQL injection, XSS, CSRF testing  
+- **Deserialization**: insecure Python/Java patterns  
+- **Memory exploits**: buffer overflow basics, format‑string probes  
+- **Recon & OSINT**: automated metadata harvesting, custom scrapers  
+
+### 🛠️ Engineering & Tool Development
+- **Python**: CLI scanners, fuzzers, FastAPI Auth System (JWT + bcrypt)  
+- **C/C++**: memory interrogation tools, basic exploit POCs  
+- **SQLite**: secure schema design; built “SQLite Login Lab” for injection practice  
+- **Data Science**: Pandas, Scikit‑learn, ARIMA, Prophet—applied to security analytics  
+
+---
+
+## 📁 Featured Projects
+
+- **SQLite Login Lab**  
+  Vulnerable auth demo: practice SQL injection and patch logic flaws.
+
+- **TokenAuth API**  
+  FastAPI + JWT + bcrypt: modular auth with token revocation strategies.
+
+- **SQL Injection Scanner (WIP)**  
+  Python CLI for endpoint fuzzing (GET/POST/JSON payloads).
+
+- **SysWatcher Script (WIP)**  
+  Bash-based FS & process monitor using inotify, log‑pattern matching.
+
+- **CryptoPuzzle CTF**  
+  Weekend CTF challenges: custom encryption puzzles, collaborative solve sessions.
+
+- **Energy Market Forecasting (WIP)**  
+  Time‑series anomaly detection—leveraging ML for malicious‑pattern insights.
+
+---
+
+## 💼 Professional Experience
+
+**SOC & Linux Administrator**  
+*Ports & Maritime Organization of Iran*  
+- Hardened Linux servers; wrote Python/Bash scripts for real‑time log triage.
 
 **Network Administrator**  
 *National Post of Iran – Central Data Center*  
-- Automated alerting and routing to reduce outages.  
-
-**SOC & Linux Admin**  
-*Ports and Maritime Organization of Iran*  
-- Real-time threat detection and OS hardening on critical servers.  
+- Automated alerting and routing checks; supported secure network operations.
 
 ---
 
-## 🎓 Education  
+## 🎓 Education
 
 **B.Sc. Computer Engineering**  
 *Islamic Azad University of Karaj*  
-- Specialization in Algorithm and optimization 
+- Core: Algorithms, OS Internals, Network Protocols, Compiler Design
 
 ---
 
-## 📬 Contact  
+## 📬 Contact
 
-- 📧 [erfannahidi20@gmail.com](mailto:erfannahidi20@gmail.com)  
-- 🧠 [GitHub @ErfanNahidi](https://github.com/ErfanNahidi)  
-- 💼 [LinkedIn](https://linkedin.com/in/ErfanNahidi)  
-- 💬 [Telegram @cro0w](https://t.me/cro0w)  
+- 📧 erfannahidi20@gmail.com  
+- 🔗 github.com/ErfanNahidi  
+- 💼 linkedin.com/in/ErfanNahidi  
+- 💬 t.me/cro0w  
 
 ---
 
-> 🧠 No fluff. Just facts, code, and systems that hold under pressure.
+> No exaggerations. No slogans. Just system‑level logic, cryptography, and hands‑on code that endures real assault.  
+
