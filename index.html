@@ -5,104 +5,167 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Erfan Nahidi – Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* یکدست کردن اندازه و ظاهـر badges */
+    .badge-img {
+      height: 28px;          /* اندازه ثابت */
+      width: auto;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+    .badges-row { gap: 8px; }
+    /* کوچک و جمع‌وجور کردن هدر در موبایل */
+    @media (max-width: 640px) {
+      header h1 { font-size: 1.6rem; }
+      header h2 { font-size: 0.95rem; }
+    }
+    /* لینک آیکون‌ها */
+    .social-icon { height: 20px; width: 20px; display: inline-block; vertical-align: middle; }
+  </style>
 </head>
 <body class="font-sans leading-relaxed tracking-wide flex flex-col min-h-screen">
   <main class="max-w-3xl mx-auto px-6 py-12">
     <header class="mb-8 text-center">
       <h1 class="text-4xl font-extrabold">Erfan Nahidi</h1>
       <h2 class="text-xl mt-2 text-gray-600">
-        Software Security · Malware Analysis · Reverse Engineering
+        Software Security · Malware Analysis · Systems & Network
       </h2>
+      <p class="mt-4 text-sm text-gray-500">Focused on secure systems, threat analysis, and reliable low-level code.</p>
     </header>
 
     <section class="mb-10 space-y-2">
-      <p>🛡️ Security-focused engineer with a background in network administration and data science. Obsessed with algorithms, crypto challenges, and building tools that survive real attacks.</p>
-      <p>🧠 Weekends are for CTFs, reverse engineering puzzles, and encryption labs with friends.</p>
+      <p class="text-sm">🧠 Security-focused engineer with a background in network administration and data science. Obsessed with algorithms, crypto challenges, and building tools that survive real attacks.</p>
     </section>
 
     <section class="mb-10">
-      <h3 class="text-2xl font-semibold mb-4">Core Focus</h3>
-      <ul class="list-disc pl-6 space-y-2">
-        <li>Malware analysis, reverse engineering, system hardening</li>
-        <li>Manual vulnerability discovery (SQLi, XSS, memory bugs)</li>
-        <li>Encryption systems, CTF crypto puzzles, key exchange protocols</li>
-      </ul>
-    </section>
+      <h3 class="text-2xl font-semibold mb-4">Skills (badges)</h3>
 
-    <section class="mb-10">
-      <h3 class="text-2xl font-semibold mb-4">Tech Stack</h3>
+      <div class="space-y-6">
 
-      <h4 class="text-xl font-bold mt-4 mb-2">Programming Languages</h4>
-      <ul class="list-disc pl-6 space-y-1">
-        <li><strong>Python</strong>: Security tooling, CLI scanners, FastAPI auth systems</li>
-        <li><strong>SQL</strong>: Secure schema design, injection testing</li>
-        <li><strong>C/C++</strong>: Memory inspection, basic shellcode handling</li>
-        <li><strong>Rust</strong>: Planned study for safe low-level development</li>
-      </ul>
+        <div>
+          <h4 class="text-xl font-bold mb-3">💻 Programming & Low-Level</h4>
+          <div class="flex flex-wrap items-center badges-row">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-C-555555?logo=c&logoColor=white&style=flat-square" alt="C">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-Assembly-6f42c1?style=flat-square" alt="Assembly">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white&style=flat-square" alt="Python">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-SQL-003B57?logo=mysql&logoColor=white&style=flat-square" alt="SQL">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-Pandas-150458?logo=pandas&logoColor=white&style=flat-square" alt="Pandas">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-Matplotlib-FE7F2D?logo=matplotlib&logoColor=white&style=flat-square" alt="Matplotlib">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-Scikit--learn-F7931E?logo=scikit-learn&logoColor=white&style=flat-square" alt="Scikit-learn">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-Streamlit-FF4B4B?logo=streamlit&logoColor=white&style=flat-square" alt="Streamlit">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-Selenium-43B02A?logo=selenium&logoColor=white&style=flat-square" alt="Selenium">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-Bash-4EAA25?logo=bash&logoColor=white&style=flat-square" alt="Bash">
+          </div>
+        </div>
 
-      <h4 class="text-xl font-bold mt-4 mb-2">Security & Systems</h4>
-      <ul class="list-disc pl-6 space-y-1">
-        <li>Fedora, Debian, Arch (daily-driver Linux admin)</li>
-        <li>Snort, Suricata, OSSEC, Wireshark, tcpdump</li>
-        <li>Firewall configs, VPN setup, Bash scripting</li>
-      </ul>
+        <div>
+          <h4 class="text-xl font-bold mb-3">🛡️ Security & Malware Analysis</h4>
+          <div class="flex flex-wrap items-center badges-row">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-Linux-000000?logo=linux&logoColor=white&style=flat-square" alt="Linux">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-SOC-0A0A0A?style=flat-square" alt="SOC">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-Ghidra-2B2B2B?style=flat-square" alt="Ghidra">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-radare2-0A6F6F?style=flat-square" alt="radare2">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-YARA-FFB703?style=flat-square" alt="YARA">
+          </div>
+        </div>
 
-      <h4 class="text-xl font-bold mt-4 mb-2">Cryptography & CTFs</h4>
-      <ul class="list-disc pl-6 space-y-1">
-        <li>Hashing (SHA-2/3, bcrypt, HMAC), RSA, AES</li>
-        <li>CTF crypto puzzles, steganography, key exchange protocols</li>
-        <li>Basic implementation of encryption/decryption routines</li>
-      </ul>
+        <div>
+          <h4 class="text-xl font-bold mb-3">🔐 Cryptography & Protocols</h4>
+          <div class="flex flex-wrap items-center badges-row">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-Cryptography-0F52BA?style=flat-square" alt="Cryptography">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-AES-2E86AB?style=flat-square" alt="AES">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-RSA-117A65?style=flat-square" alt="RSA">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-SHA--HMAC-6C5CE7?style=flat-square" alt="SHA/HMAC">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-TLS-1F8A70?style=flat-square" alt="TLS">
+          </div>
+        </div>
 
-      <h4 class="text-xl font-bold mt-4 mb-2">Legacy Skills</h4>
-      <ul class="list-disc pl-6 space-y-1">
-        <li>NumPy, Pandas, scikit-learn, XGBoost, Prophet, ARIMA</li>
-        <li>Agent-based modeling, time-series forecasting, Selenium scraping</li>
-      </ul>
-    </section>
+        <div>
+          <h4 class="text-xl font-bold mb-3">🌐 Systems & Network</h4>
+          <div class="flex flex-wrap items-center badges-row">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-VPN-0B6623?logo=openvpn&logoColor=white&style=flat-square" alt="VPN">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-Firewall-C0392B?style=flat-square" alt="Firewall">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-Wireshark-1B75BC?logo=wireshark&logoColor=white&style=flat-square" alt="Wireshark">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-Network-2C3E50?style=flat-square" alt="Network">
+          </div>
+        </div>
 
-    <section class="mb-10">
-      <h3 class="text-2xl font-semibold mb-4">Projects</h3>
-      <ul class="list-disc pl-6 space-y-2">
-        <li><strong>SQLite Login Lab</strong>: Vulnerable login system to test SQLi and auth logic flaws</li>
-        <li><strong>FastAPI Auth Demo</strong>: Modular JWT system with bcrypt + token expiry</li>
-        <li><strong>SQL Injection Scanner (WIP)</strong>: Python CLI to test and fuzz endpoints</li>
-        <li><strong>CryptoPuzzle CTF Lab</strong>: Collection of weekend crypto/logic challenges</li>
-      </ul>
-    </section>
+        <div>
+          <h4 class="text-xl font-bold mb-3">🛠️ Engineering & Tooling</h4>
+          <div class="flex flex-wrap items-center badges-row">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-CLI--Tools-3776AB?style=flat-square" alt="CLI Tools">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-C--Tools-555555?style=flat-square" alt="C tools">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-FastAPI-009688?logo=fastapi&logoColor=white&style=flat-square" alt="FastAPI">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-SQLite-003B57?logo=sqlite&logoColor=white&style=flat-square" alt="SQLite">
+          </div>
+        </div>
 
-    <section class="mb-10">
-      <h3 class="text-2xl font-semibold mb-4">Professional Background</h3>
+        <div>
+          <h4 class="text-xl font-bold mb-3">📊 Data & Analysis (applied to security)</h4>
+          <div class="flex flex-wrap items-center badges-row">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-Log--Analysis-9B59B6?style=flat-square" alt="Log Analysis">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-ML-F7931E?style=flat-square" alt="ML">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-TimeSeries-FF7F50?style=flat-square" alt="TimeSeries">
+          </div>
+        </div>
 
-      <div class="mb-4">
-        <h4 class="text-lg font-bold">Network Admin | National Post of Iran</h4>
-        <p>Routing automation and monitoring — reduced outage downtime</p>
+        <div>
+          <h4 class="text-xl font-bold mb-3">⚙️ Algorithms & Theory</h4>
+          <div class="flex flex-wrap items-center badges-row">
+            <img class="badge-img mr-2 mb-2" src="https://img.shields.io/badge/-Algorithms-2D3436?style=flat-square" alt="Algorithms">
+          </div>
+        </div>
+
       </div>
+    </section>
 
-      <div>
-        <h4 class="text-lg font-bold">SOC & Linux Admin | Maritime Org of Iran</h4>
-        <p>OS hardening, intrusion detection, and log triage scripting</p>
-      </div>
+    <section class="mb-10">
+      <h3 class="text-2xl font-semibold mb-4">Experience (short)</h3>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>SOC & Linux Administrator</strong> — Ports & Maritime Organization of Iran</li>
+        <li><strong>Network Administrator</strong> — National Post of Iran (Central Data Center)</li>
+      </ul>
     </section>
 
     <section class="mb-10">
       <h3 class="text-2xl font-semibold mb-4">Education</h3>
-      <p><strong>B.Sc. Computer Engineering</strong>, Islamic Azad University of Karaj</p>
-      <p>Focus: Algorithms, Security Systems, OS Internals</p>
+      <p><strong>B.Sc. Computer Engineering</strong> — Islamic Azad University of Karaj</p>
     </section>
 
     <section class="mb-10">
       <h3 class="text-2xl font-semibold mb-4">Contact</h3>
       <ul class="list-none space-y-2">
-        <li>📧 <a href="mailto:erfannahidi20@gmail.com" class="text-blue-600 hover:underline">erfannahidi20@gmail.com</a></li>
-        <li>💻 <a href="https://github.com/ErfanNahidi" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        <li>🔗 <a href="https://linkedin.com/in/ErfanNahidi" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-        <li>📨 <a href="https://t.me/cro0w" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Telegram</a></li>
+        <li>
+          📧 <a href="mailto:erfannahidi20@gmail.com" class="text-blue-600 hover:underline">erfannahidi20@gmail.com</a>
+        </li>
+        <li class="flex items-center space-x-2">
+          <a href="https://github.com/ErfanNahidi" target="_blank" rel="noopener noreferrer" class="flex items-center text-blue-600 hover:underline">
+            <!-- GitHub SVG -->
+            <svg class="social-icon mr-2" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 .297a12 12 0 00-3.793 23.394c.6.111.82-.261.82-.58 0-.287-.01-1.047-.016-2.055-3.338.724-4.042-1.614-4.042-1.614-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.774.418-1.305.76-1.605-2.665-.303-5.467-1.333-5.467-5.933 0-1.31.468-2.381 1.236-3.221-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.51 11.51 0 016.003 0c2.292-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.807 5.625-5.479 5.921.43.37.813 1.102.813 2.222 0 1.606-.015 2.901-.015 3.293 0 .322.216.697.825.578A12.005 12.005 0 0012 .297z"/>
+            </svg>
+            GitHub
+          </a>
+          <a href="https://linkedin.com/in/ErfanNahidi" target="_blank" rel="noopener noreferrer" class="flex items-center text-blue-600 hover:underline">
+            <!-- LinkedIn SVG -->
+            <svg class="social-icon mr-2" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.025-3.036-1.852-3.036-1.853 0-2.136 1.445-2.136 2.939v5.666h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.602 0 4.268 2.37 4.268 5.455v6.288zM5.337 7.433a2.062 2.062 0 11.001-4.124 2.062 2.062 0 01-.001 4.124zM7.113 20.452H3.562V9h3.551v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.728v20.543C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.728C24 .774 23.2 0 22.225 0z"/>
+            </svg>
+            LinkedIn
+          </a>
+          <a href="https://t.me/cro0w" target="_blank" rel="noopener noreferrer" class="flex items-center text-blue-600 hover:underline">
+            <!-- Telegram SVG -->
+            <svg class="social-icon mr-2" viewBox="0 0 240 240" fill="currentColor" aria-hidden="true">
+              <path d="M120 0C53.73 0 0 53.73 0 120s53.73 120 120 120 120-53.73 120-120S186.27 0 120 0zm55.3 78.2l-17.9 84.5c-1.4 6.2-5.1 7.7-10.3 4.8l-28.5-21-13.7 13.2c-1.5 1.5-2.8 2.8-5.7 2.8l2.1-30.1 54.7-49.4c2.4-2.1-.5-3.3-3.7-1.2L70.9 116.9l-29.8-9.3c-6.5-2-6.6-6.5 1.4-9.6L169.3 68.5c5.9-2.2 10.9 1.3 6 9.7z"/>
+            </svg>
+            Telegram
+          </a>
+        </li>
       </ul>
     </section>
 
     <blockquote class="italic text-gray-600 border-l-4 border-blue-400 pl-4">
-      “No exaggeration—just logic, code, and tools that survive attack.”
+      “No fluff. Pure technical focus on security, low-level programming, and system reliability.”
     </blockquote>
   </main>
 
@@ -111,3 +174,4 @@
   </footer>
 </body>
 </html>
+
