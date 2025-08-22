@@ -65,6 +65,6 @@
 - 📧 erfannahidi20@gmail.com  
 - 🔗 github.com/ErfanNahidi  
 - 💬 t.me/cro0w
-
+- 💬 https://linkedin.com/in/ErfanNahidi
 ---
 
