@@ -8,10 +8,12 @@
 ## 🛠️ Skills (badges)
 
 ### 💻 Programming & Low-Level
-- ![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white&style=flat-square) **Python**
 - ![C](https://img.shields.io/badge/-C-555555?logo=c&logoColor=white&style=flat-square) **C**
 - ![Assembly](https://img.shields.io/badge/-Assembly-6f42c1?style=flat-square) **Assembly (x86-64)**
+
+- ![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white&style=flat-square) **Python**
 - ![SQL](https://img.shields.io/badge/-SQL-003B57?logo=mysql&logoColor=white&style=flat-square) **SQL**
+
 - ![Pandas](https://img.shields.io/badge/-Pandas-150458?logo=pandas&logoColor=white&style=flat-square) **Pandas**
 - ![Matplotlib](https://img.shields.io/badge/-Matplotlib-FE7F2D?logo=matplotlib&logoColor=white&style=flat-square) **Matplotlib**
 - ![Scikit-learn](https://img.shields.io/badge/-Scikit--learn-F7931E?logo=scikit-learn&logoColor=white&style=flat-square) **Scikit-learn**
@@ -22,12 +24,6 @@
 ### 🛡️ Security & Malware Analysis
 - ![Linux](https://img.shields.io/badge/-Linux-000000?logo=linux&logoColor=white&style=flat-square) **Linux hardening**
 - ![SOC](https://img.shields.io/badge/-SOC-0A0A0A?style=flat-square) **SOC automation & triage**
-- ![Malware](https://img.shields.io/badge/-Malware--Analysis-D62828?style=flat-square) **Malware analysis (static & dynamic)**
-- ![Ghidra](https://img.shields.io/badge/-Ghidra-2B2B2B?style=flat-square) **Ghidra**
-- ![radare2](https://img.shields.io/badge/-radare2-0A6F6F?style=flat-square) **radare2 / r2**
-- ![objdump](https://img.shields.io/badge/-objdump-7B8FA1?style=flat-square) **objdump / binutils**
-- ![YARA](https://img.shields.io/badge/-YARA-FFB703?style=flat-square) **YARA & IOC rules**
-- ![Shellcode](https://img.shields.io/badge/-Shellcode-8E44AD?style=flat-square) **Shellcode analysis & unpacking**
 
 ### 🔐 Cryptography & Protocols
 - ![Cryptography](https://img.shields.io/badge/-Cryptography-0F52BA?style=flat-square) **Applied cryptography**
@@ -41,7 +37,6 @@
 - ![Firewall](https://img.shields.io/badge/-Firewall-C0392B?style=flat-square) **Firewall / iptables**
 - ![Wireshark](https://img.shields.io/badge/-Wireshark-1B75BC?logo=wireshark&logoColor=white&style=flat-square) **Wireshark / tcpdump**
 - ![Network](https://img.shields.io/badge/-Network-2C3E50?style=flat-square) **Network forensics & monitoring**
-- ![DB Security](https://img.shields.io/badge/-DB--Security-34495E?style=flat-square) **Database security / SQLi awareness**
 
 ### 🛠️ Engineering & Tooling
 - ![Python CLI](https://img.shields.io/badge/-CLI--Tools-3776AB?style=flat-square) **Python CLI & automation**
