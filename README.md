@@ -1,69 +1,50 @@
 # Erfan Nahidi
 
-### 🛡️ Software Security • 🔬 Malware Analysis • 🧩 Reverse Engineering  
-> I break things to understand them—then write code that survives real attacks.
+### 🛡️ Software Security • 🔬 Malware Analysis • ⚙️ Systems & Network  
+> Focused on building secure systems, analyzing threats, and writing reliable low-level code.
 
 ---
 
 ## 🧠 About Me
-- Ex‑Data Scientist (ML pipelines, time‑series, NLP), now fully pivoted to security  
-- Passionate about algorithms, encryption challenges, CTFs & puzzles—weekends spent solving them with friends  
+- Former Data Scientist; now fully dedicated to security and low-level programming  
+- Strong foundation in algorithms, C, assembly (x86-64), and system internals  
 
 ---
 
-## 🔧 Core Skills
+## 🛠️ Skills
 
-### 🛡️ Security & Systems
-- **Linux & Bash**: hardening (systemd, journald, ufw/iptables), automation scripts for SOC triage  
-- **SOC toolchain**: OSSEC, Snort, Suricata; log parsing with Python  
-- **Network forensics**: Wireshark, tcpdump; Network+ & CCNA & CEH certified insights  
-- **VPN & firewall configs**: OpenVPN setups, iptables rulesets, proxy chaining  
+# Erfan Nahidi
 
-### 🔐 Encryption & Cryptography
-- **Symmetric & Asymmetric**: AES, RSA basics, elliptic curves overview  
-- **Hash functions**: SHA‑2/3, HMAC constructions  
-- **Practical challenges**: designed & solved CTF crypto puzzles (weekend labs)  
-- **Secure protocols**: TLS handshake analysis, custom key‑exchange scripting  
-
-### 💣 Malware & Reverse Engineering
-- **Static & dynamic analysis**: Ghidra, radare2, objdump, strace  
-- **IOC & YARA**: rule writing, sandbox tracing of Linux malware samples  
-- **Shellcode unpacking**: simple packer reversal, string de‑obfuscation  
-- **Custom tooling**: Python scripts for callback/C2 detection  
-
-### 🔍 Vulnerability Research (WIP)
-- **Web**: manual SQL injection, XSS, CSRF testing  
-- **Deserialization**: insecure Python/Java patterns  
-- **Memory exploits**: buffer overflow basics, format‑string probes  
-- **Recon & OSINT**: automated metadata harvesting, custom scrapers  
-
-### 🛠️ Engineering & Tool Development
-- **Python**: CLI scanners, fuzzers, FastAPI Auth System (JWT + bcrypt)  
-- **C/C++**: memory interrogation tools, basic exploit POCs  
-- **SQLite**: secure schema design; built “SQLite Login Lab” for injection practice  
-- **Data Science**: Pandas, Scikit‑learn, ARIMA, Prophet—applied to security analytics  
+### 🛡️ Software Security • 🔬 Malware Analysis • ⚙️ Systems & Network  
+> Focused on building secure systems, analyzing threats, and writing reliable low-level code.
 
 ---
 
-## 📁 Featured Projects
+## 🛠️ Skills
 
-- **SQLite Login Lab**  
-  Vulnerable auth demo: practice SQL injection and patch logic flaws.
+### 💻 Programming & Low-Level
+- <img src="https://raw.githubusercontent.com/github/explore/main/topics/c/c.png" width="20"/> **C**  
+- <img src="https://raw.githubusercontent.com/github/explore/main/topics/assembly/assembly.png" width="20"/> **Assembly (x86-64)**  
+- <img src="https://raw.githubusercontent.com/github/explore/main/topics/python/python.png" width="20"/> **Python**  
+- <img src="https://raw.githubusercontent.com/github/explore/main/topics/sql/sql.png" width="20"/> **SQL**  
+- <img src="https://raw.githubusercontent.com/github/explore/main/topics/pandas/pandas.png" width="20"/> **Pandas & Matplotlib**  
+- <img src="https://raw.githubusercontent.com/github/explore/main/topics/scikit-learn/scikit-learn.png" width="20"/> **Scikit-learn**  
+- <img src="https://raw.githubusercontent.com/github/explore/main/topics/streamlit/streamlit.png" width="20"/> **Streamlit & Bash scripting**  
 
-- **TokenAuth API**  
-  FastAPI + JWT + bcrypt: modular auth with token revocation strategies.
+### 🛡️ Security & Malware Analysis
+- <img src="https://img.icons8.com/ios-filled/20/000000/linux.png"/> **Linux Hardening & SOC Automation**  
+- <img src="https://img.icons8.com/ios-filled/20/000000/bug.png"/> **Malware Analysis (Static & Dynamic)**  
+- <img src="https://img.icons8.com/ios-filled/20/000000/lock-2.png"/> **Cryptography (AES, RSA, SHA, HMAC, TLS Analysis)**  
+- <img src="https://img.icons8.com/ios-filled/20/000000/code.png"/> **IOC Detection & Shellcode Analysis**  
 
-- **SQL Injection Scanner (WIP)**  
-  Python CLI for endpoint fuzzing (GET/POST/JSON payloads).
+### 🌐 Systems & Network
+- <img src="https://img.icons8.com/ios-filled/20/000000/vpn.png"/> **VPN Setup & Firewall Configuration**  
+- <img src="https://img.icons8.com/ios-filled/20/000000/network.png"/> **Network Monitoring (tcpdump, Wireshark)**  
+- <img src="https://img.icons8.com/ios-filled/20/000000/log.png"/> **SOC Log Parsing & Alerting**  
+- <img src="https://img.icons8.com/ios-filled/20/000000/database.png"/> **Database Security & SQL Injection Awareness**  
 
-- **SysWatcher Script (WIP)**  
-  Bash-based FS & process monitor using inotify, log‑pattern matching.
-
-- **CryptoPuzzle CTF**  
-  Weekend CTF challenges: custom encryption puzzles, collaborative solve sessions.
-
-- **Energy Market Forecasting (WIP)**  
-  Time‑series anomaly detection—leveraging ML for malicious‑pattern insights.
+### 📊 Algorithm & Theory
+- <img src="https://img.icons8.com/ios-filled/20/000000/coding.png"/> **Core Algorithms & Optimization Techniques**  
 
 ---
 
@@ -71,11 +52,11 @@
 
 **SOC & Linux Administrator**  
 *Ports & Maritime Organization of Iran*  
-- Hardened Linux servers; wrote Python/Bash scripts for real‑time log triage.
+- Hardened Linux servers; automated log triage using Python/Bash
 
 **Network Administrator**  
 *National Post of Iran – Central Data Center*  
-- Automated alerting and routing checks; supported secure network operations.
+- Maintained secure network operations; automated alerting and monitoring  
 
 ---
 
@@ -83,18 +64,17 @@
 
 **B.Sc. Computer Engineering**  
 *Islamic Azad University of Karaj*  
-- Core: Algorithms, OS Internals, Network Protocols, Compiler Design
+- Focus: Algorithms, OS Internals, Network Protocols, Compiler Design  
 
 ---
 
 ## 📬 Contact
 
 - 📧 erfannahidi20@gmail.com  
-- 🔗 github.com/ErfanNahidi  
-- 💼 linkedin.com/in/ErfanNahidi  
-- 💬 t.me/cro0w  
+- 🔗 [GitHub](https://github.com/ErfanNahidi)  
+- 💼 [LinkedIn](https://linkedin.com/in/ErfanNahidi)  
+- 💬 Telegram: @cro0w  
 
 ---
 
-> No exaggerations. No slogans. Just system‑level logic, cryptography, and hands‑on code that endures real assault.  
-
+> No fluff. Pure technical focus on security, low-level programming, and system reliability.
