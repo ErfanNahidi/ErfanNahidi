@@ -1,80 +1,75 @@
 # Erfan Nahidi
 
 ### 🛡️ Software Security • 🔬 Malware Analysis • ⚙️ Systems & Network  
-> Focused on building secure systems, analyzing threats, and writing reliable low-level code.
+> Focused on secure systems, threat analysis, and reliable low-level code.
 
 ---
 
-## 🧠 About Me
-- Former Data Scientist; now fully dedicated to security and low-level programming  
-- Strong foundation in algorithms, C, assembly (x86-64), and system internals  
-
----
-
-## 🛠️ Skills
-
-# Erfan Nahidi
-
-### 🛡️ Software Security • 🔬 Malware Analysis • ⚙️ Systems & Network  
-> Focused on building secure systems, analyzing threats, and writing reliable low-level code.
-
----
-
-## 🛠️ Skills
+## 🛠️ Skills (badges)
 
 ### 💻 Programming & Low-Level
-- <img src="https://raw.githubusercontent.com/github/explore/main/topics/c/c.png" width="20"/> **C**  
-- <img src="https://raw.githubusercontent.com/github/explore/main/topics/assembly/assembly.png" width="20"/> **Assembly (x86-64)**  
-- <img src="https://raw.githubusercontent.com/github/explore/main/topics/python/python.png" width="20"/> **Python**  
-- <img src="https://raw.githubusercontent.com/github/explore/main/topics/sql/sql.png" width="20"/> **SQL**  
-- <img src="https://raw.githubusercontent.com/github/explore/main/topics/pandas/pandas.png" width="20"/> **Pandas & Matplotlib**  
-- <img src="https://raw.githubusercontent.com/github/explore/main/topics/scikit-learn/scikit-learn.png" width="20"/> **Scikit-learn**  
-- <img src="https://raw.githubusercontent.com/github/explore/main/topics/streamlit/streamlit.png" width="20"/> **Streamlit & Bash scripting**  
+- ![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white&style=flat-square) **Python**
+- ![C](https://img.shields.io/badge/-C-555555?logo=c&logoColor=white&style=flat-square) **C**
+- ![Assembly](https://img.shields.io/badge/-Assembly-6f42c1?style=flat-square) **Assembly (x86-64)**
+- ![SQL](https://img.shields.io/badge/-SQL-003B57?logo=mysql&logoColor=white&style=flat-square) **SQL**
+- ![Pandas](https://img.shields.io/badge/-Pandas-150458?logo=pandas&logoColor=white&style=flat-square) **Pandas**
+- ![Matplotlib](https://img.shields.io/badge/-Matplotlib-FE7F2D?logo=matplotlib&logoColor=white&style=flat-square) **Matplotlib**
+- ![Scikit-learn](https://img.shields.io/badge/-Scikit--learn-F7931E?logo=scikit-learn&logoColor=white&style=flat-square) **Scikit-learn**
+- ![Streamlit](https://img.shields.io/badge/-Streamlit-FF4B4B?logo=streamlit&logoColor=white&style=flat-square) **Streamlit**
+- ![Selenium](https://img.shields.io/badge/-Selenium-43B02A?logo=selenium&logoColor=white&style=flat-square) **Selenium**
+- ![Bash](https://img.shields.io/badge/-Bash-4EAA25?logo=bash&logoColor=white&style=flat-square) **Bash scripting**
 
 ### 🛡️ Security & Malware Analysis
-- <img src="https://img.icons8.com/ios-filled/20/000000/linux.png"/> **Linux Hardening & SOC Automation**  
-- <img src="https://img.icons8.com/ios-filled/20/000000/bug.png"/> **Malware Analysis (Static & Dynamic)**  
-- <img src="https://img.icons8.com/ios-filled/20/000000/lock-2.png"/> **Cryptography (AES, RSA, SHA, HMAC, TLS Analysis)**  
-- <img src="https://img.icons8.com/ios-filled/20/000000/code.png"/> **IOC Detection & Shellcode Analysis**  
+- ![Linux](https://img.shields.io/badge/-Linux-000000?logo=linux&logoColor=white&style=flat-square) **Linux hardening**
+- ![SOC](https://img.shields.io/badge/-SOC-0A0A0A?style=flat-square) **SOC automation & triage**
+- ![Malware](https://img.shields.io/badge/-Malware--Analysis-D62828?style=flat-square) **Malware analysis (static & dynamic)**
+- ![Ghidra](https://img.shields.io/badge/-Ghidra-2B2B2B?style=flat-square) **Ghidra**
+- ![radare2](https://img.shields.io/badge/-radare2-0A6F6F?style=flat-square) **radare2 / r2**
+- ![objdump](https://img.shields.io/badge/-objdump-7B8FA1?style=flat-square) **objdump / binutils**
+- ![YARA](https://img.shields.io/badge/-YARA-FFB703?style=flat-square) **YARA & IOC rules**
+- ![Shellcode](https://img.shields.io/badge/-Shellcode-8E44AD?style=flat-square) **Shellcode analysis & unpacking**
+
+### 🔐 Cryptography & Protocols
+- ![Cryptography](https://img.shields.io/badge/-Cryptography-0F52BA?style=flat-square) **Applied cryptography**
+- ![AES](https://img.shields.io/badge/-AES-2E86AB?style=flat-square) **AES (practical)**
+- ![RSA](https://img.shields.io/badge/-RSA-117A65?style=flat-square) **RSA**
+- ![Hashes](https://img.shields.io/badge/-SHA--HMAC-6C5CE7?style=flat-square) **SHA / HMAC**
+- ![TLS](https://img.shields.io/badge/-TLS-1F8A70?style=flat-square) **TLS analysis**
 
 ### 🌐 Systems & Network
-- <img src="https://img.icons8.com/ios-filled/20/000000/vpn.png"/> **VPN Setup & Firewall Configuration**  
-- <img src="https://img.icons8.com/ios-filled/20/000000/network.png"/> **Network Monitoring (tcpdump, Wireshark)**  
-- <img src="https://img.icons8.com/ios-filled/20/000000/log.png"/> **SOC Log Parsing & Alerting**  
-- <img src="https://img.icons8.com/ios-filled/20/000000/database.png"/> **Database Security & SQL Injection Awareness**  
+- ![VPN](https://img.shields.io/badge/-VPN-0B6623?logo=openvpn&logoColor=white&style=flat-square) **VPN setup & proxy chaining**
+- ![Firewall](https://img.shields.io/badge/-Firewall-C0392B?style=flat-square) **Firewall / iptables**
+- ![Wireshark](https://img.shields.io/badge/-Wireshark-1B75BC?logo=wireshark&logoColor=white&style=flat-square) **Wireshark / tcpdump**
+- ![Network](https://img.shields.io/badge/-Network-2C3E50?style=flat-square) **Network forensics & monitoring**
+- ![DB Security](https://img.shields.io/badge/-DB--Security-34495E?style=flat-square) **Database security / SQLi awareness**
 
-### 📊 Algorithm & Theory
-- <img src="https://img.icons8.com/ios-filled/20/000000/coding.png"/> **Core Algorithms & Optimization Techniques**  
+### 🛠️ Engineering & Tooling
+- ![Python CLI](https://img.shields.io/badge/-CLI--Tools-3776AB?style=flat-square) **Python CLI & automation**
+- ![C tools](https://img.shields.io/badge/-C--Tools-555555?style=flat-square) **C: low-level utilities & POCs**
+- ![FastAPI](https://img.shields.io/badge/-FastAPI-009688?logo=fastapi&logoColor=white&style=flat-square) **FastAPI (auth systems)**
+- ![SQLite](https://img.shields.io/badge/-SQLite-003B57?logo=sqlite&logoColor=white&style=flat-square) **SQLite secure schema**
+
+### 📊 Data & Analysis (applied to security)
+- ![Logs](https://img.shields.io/badge/-Log--Analysis-9B59B6?style=flat-square) **Log parsing & anomaly detection**
+- ![ML](https://img.shields.io/badge/-ML-F7931E?style=flat-square) **Scikit-learn for security analytics**
+- ![Stats](https://img.shields.io/badge/-TimeSeries-FF7F50?style=flat-square) **Time-series / anomaly models**
+
+### ⚙️ Algorithms & Theory
+- ![Algorithms](https://img.shields.io/badge/-Algorithms-2D3436?style=flat-square) **Core algorithms, data structures, optimization**
 
 ---
 
-## 💼 Professional Experience
-
-**SOC & Linux Administrator**  
-*Ports & Maritime Organization of Iran*  
-- Hardened Linux servers; automated log triage using Python/Bash
-
-**Network Administrator**  
-*National Post of Iran – Central Data Center*  
-- Maintained secure network operations; automated alerting and monitoring  
-
----
+## 💼 Experience (short)
+- **SOC & Linux Administrator** — Ports & Maritime Organization of Iran  
+- **Network Administrator** — National Post of Iran (Central Data Center)
 
 ## 🎓 Education
-
-**B.Sc. Computer Engineering**  
-*Islamic Azad University of Karaj*  
-- Focus: Algorithms, OS Internals, Network Protocols, Compiler Design  
-
----
+- **B.Sc. Computer Engineering** — Islamic Azad University of Karaj
 
 ## 📬 Contact
-
-- 📧 erfannahidi20@gmail.com  
-- 🔗 [GitHub](https://github.com/ErfanNahidi)  
-- 💼 [LinkedIn](https://linkedin.com/in/ErfanNahidi)  
-- 💬 Telegram: @cro0w  
+- 📧 erfannahidi20@gmail.com  
+- 🔗 github.com/ErfanNahidi  
+- 💬 t.me/cro0w
 
 ---
 
-> No fluff. Pure technical focus on security, low-level programming, and system reliability.
