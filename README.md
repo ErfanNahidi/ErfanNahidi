@@ -1,6 +1,6 @@
 # Erfan Nahidi
 
-### 🛡️ Software Security • 🔬 Malware Analysis • ⚙️ Systems & Network  
+### 🛡️ Security Developer & Embedded Systems 
 > Focused on secure systems, threat analysis, and reliable low-level code.
 
 ---
