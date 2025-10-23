@@ -9,7 +9,7 @@
 
 ### 💻 Programming & Low-Level
 - ![C](https://img.shields.io/badge/-C-555555?logo=c&logoColor=white&style=flat-square) **C**
-- ![Assembly](https://img.shields.io/badge/-Assembly-6f42c1?style=flat-square) **Assembly (x86-64)**
+- ![Assembly](https://img.shields.io/badge/-Assembly-6f42c1?style=flat-square) **Assembly (x86-64 and ARM(cortex A))**
 
 - ![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white&style=flat-square) **Python**
 - ![SQL](https://img.shields.io/badge/-SQL-003B57?logo=mysql&logoColor=white&style=flat-square) **SQL**
