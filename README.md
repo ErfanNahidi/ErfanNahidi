@@ -1,6 +1,6 @@
 # Erfan Nahidi
 
-### 🛡️ Embedded Systems & Security Developer  
+### 🛡️ Linux Embedded Systems & Security Developer  
 > Focused on secure systems, threat analysis, and reliable low-level code.
 
 ---
