@@ -8,18 +8,11 @@
 ## 🛠️ Skills (badges)
 
 ### 💻 Programming & Low-Level
-- ![C](https://img.shields.io/badge/-C-555555?logo=c&logoColor=white&style=flat-square) **C**
-- ![Assembly](https://img.shields.io/badge/-Assembly-6f42c1?style=flat-square) **Assembly (x86-64 and ARM(cortex A))**
-
 - ![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white&style=flat-square) **Python**
-- ![SQL](https://img.shields.io/badge/-SQL-003B57?logo=mysql&logoColor=white&style=flat-square) **SQL**
-
-- ![Pandas](https://img.shields.io/badge/-Pandas-150458?logo=pandas&logoColor=white&style=flat-square) **Pandas**
-- ![Matplotlib](https://img.shields.io/badge/-Matplotlib-FE7F2D?logo=matplotlib&logoColor=white&style=flat-square) **Matplotlib**
-- ![Scikit-learn](https://img.shields.io/badge/-Scikit--learn-F7931E?logo=scikit-learn&logoColor=white&style=flat-square) **Scikit-learn**
-- ![Streamlit](https://img.shields.io/badge/-Streamlit-FF4B4B?logo=streamlit&logoColor=white&style=flat-square) **Streamlit**
-- ![Selenium](https://img.shields.io/badge/-Selenium-43B02A?logo=selenium&logoColor=white&style=flat-square) **Selenium**
+- ![C](https://img.shields.io/badge/-C-555555?logo=c&logoColor=white&style=flat-square) **C**
 - ![Bash](https://img.shields.io/badge/-Bash-4EAA25?logo=bash&logoColor=white&style=flat-square) **Bash scripting**
+- ![Assembly](https://img.shields.io/badge/-Assembly-6f42c1?style=flat-square) **Assembly (x86-64 and ARM(cortex A))**
+- ![SQL](https://img.shields.io/badge/-SQL-003B57?logo=mysql&logoColor=white&style=flat-square) **SQL**
 
 ### 🛡️ Security & Malware Analysis
 - ![Linux](https://img.shields.io/badge/-Linux-000000?logo=linux&logoColor=white&style=flat-square) **Linux hardening**
