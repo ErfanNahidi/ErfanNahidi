@@ -60,3 +60,4 @@
 - 💬 t.me/cro0w
 - 💬 https://linkedin.com/in/ErfanNahidi
 ---
+![Erfan GitHub stats](https://github-readme-stats.vercel.app/api?username=ErfanNahidi&show_icons=true&theme=radical)
