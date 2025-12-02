@@ -1,0 +1,24 @@
+name: Update GitHub Stats
+
+on:
+  schedule:
+    - cron: '0 * * * *' # هر ساعت اجرا میشه
+  workflow_dispatch: # اجازه اجرا دستی
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Generate GitHub Stats
+        uses: marlonbraun/github-readme-stats-action@v1
+        with:
+          username: ErfanNahidi
+          output: github-readme-stats.svg
+      - name: Commit updated stats
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add github-readme-stats.svg
+          git commit -m "Update stats" || echo "No changes"
+          git push
