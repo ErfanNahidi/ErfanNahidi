@@ -62,4 +62,4 @@
 ---
 
 
-https://github-readme-stats.vercel.app/api/top-langs/?username=ErfanNahidi&layout=compact&langs_count=10&theme=radical
+![Stats](https://github-readme-stats-j1x1gko1x-erfans-projects-86056cc6.vercel.app/api?username=ErfanNahidi&show_icons=true&theme=radical)
