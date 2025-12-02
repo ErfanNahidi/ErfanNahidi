@@ -1,6 +1,5 @@
 name: Update GitHub Stats
 
-# اجرا هر ساعت و امکان اجرای دستی
 on:
   schedule:
     - cron: '0 * * * *' # هر ساعت اجرا میشه
@@ -11,17 +10,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # کلون کردن ریپو
+      # کلون ریپو
       - uses: actions/checkout@v3
 
-      # ساخت SVG با GitHub Stats
-      - name: Generate GitHub Stats SVG
-        uses: marlonbraun/github-readme-stats-action@v1
+      # نصب Node.js برای اجرای Action
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          username: ErfanNahidi
-          output: github-readme-stats.svg
+          node-version: '18'
 
-      # آپدیت README
+      # ساخت SVG با fallback حتی اگر داده کم باشه
+      - name: Generate GitHub Stats SVG
+        run: |
+          npx @marlonbraun/github-readme-stats-action@v1 \
+            --username ErfanNahidi \
+            --output github-readme-stats.svg \
+            --force-fallback
+
+      # Commit و push فایل SVG
       - name: Commit and push updated SVG
         run: |
           git config --global user.name "github-actions"
