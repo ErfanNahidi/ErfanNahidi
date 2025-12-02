@@ -60,3 +60,4 @@
 - 💬 t.me/cro0w
 - 💬 https://linkedin.com/in/ErfanNahidi
 ---
+![GitHub Stats](./github-readme-stats.svg)
