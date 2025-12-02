@@ -1,46 +1,184 @@
-name: Update GitHub Stats
+name: Generate and Commit GitHub Language Stats SVG (final)
 
 on:
   schedule:
-    - cron: '0 * * * *' # هر ساعت اجرا میشه
-  workflow_dispatch:
+    - cron: '0 * * * *'     # every hour, adjust if you want less frequent runs
+  workflow_dispatch:        # allow manual runs
 
 jobs:
-  update-stats:
+  build-stats:
     runs-on: ubuntu-latest
 
     steps:
-      # کلون کردن ریپو
-      - uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
-      # نصب Node.js
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
+    - name: Install jq (used in debug) and ensure python available
+      run: |
+        sudo apt-get update -y
+        sudo apt-get install -y jq
 
-      # ساخت SVG با fallback اجباری
-      - name: Generate GitHub Stats SVG
-        run: |
-          echo "Generating SVG with fallback..."
-          npx @marlonbraun/github-readme-stats-action@v1 \
-            --username ErfanNahidi \
-            --output github-readme-stats.svg \
-            --force-fallback || echo "Fallback SVG created"
+    - name: Generate stats and SVG
+      env:
+        USERNAME: ErfanNahidi
+        # PAT_1 optional: if set in repo secrets it will be used, otherwise GITHUB_TOKEN will be used
+        SECRET_PAT: ${{ secrets.PAT_1 }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        set -euo pipefail
+        # Decide token: prefer PAT_1 if provided
+        if [ -n "${SECRET_PAT:-}" ]; then
+          TOKEN="$SECRET_PAT"
+          echo "Using PAT_1 token (user provided) for GitHub API calls"
+        else
+          TOKEN="$GITHUB_TOKEN"
+          echo "Using built-in GITHUB_TOKEN for GitHub API calls (public only or limited access)"
+        fi
 
-      # چک کردن فایل ساخته شده
-      - name: Check SVG exists
-        run: |
-          if [ ! -f github-readme-stats.svg ]; then
-            echo "SVG not found, creating dummy file"
-            echo "<svg xmlns='http://www.w3.org/2000/svg' width='400' height='100'><text x='10' y='50'>Stats not available</text></svg>" > github-readme-stats.svg
+        API="https://api.github.com"
+        USER="$USERNAME"
+
+        # fetch all repo metadata pages (owner repos) with pagination
+        echo "Fetching repos for user $USER"
+        page=1
+        repos_file=repos_all.json
+        echo "[]" > "$repos_file"
+        while :; do
+          if [ -n "$TOKEN" ]; then
+            resp=$(curl -sSf -H "Authorization: token $TOKEN" -H "Accept: application/vnd.github.v3+json" "${API}/users/${USER}/repos?per_page=100&page=${page}&type=owner")
+          else
+            resp=$(curl -sSf -H "Accept: application/vnd.github.v3+json" "${API}/users/${USER}/repos?per_page=100&page=${page}&type=owner")
           fi
+          count=$(echo "$resp" | jq 'length')
+          if [ "$count" -eq 0 ]; then
+            break
+          fi
+          # append items to repos_all.json
+          tmp=$(mktemp)
+          jq -s '.[0] + .[1]' "$repos_file" <(echo "$resp") > "$tmp" && mv "$tmp" "$repos_file"
+          page=$((page+1))
+        done
 
-      # Commit و push فایل SVG
-      - name: Commit and push
-        run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "actions@github.com"
-          git add github-readme-stats.svg
-          git commit -m "Update GitHub stats" || echo "No changes"
-          git push
+        total_repos=$(jq 'length' "$repos_file")
+        echo "Total repos fetched: $total_repos"
+
+        # Filter out forks and archived repos
+        repo_list=$(jq -r '.[] | select(.fork==false and .archived==false) | .full_name + " " + (.languages_url)' "$repos_file" )
+
+        declare -A lang_bytes
+
+        # For each repo, fetch languages
+        echo "Collecting language bytes from each repo (non-fork, non-archived)"
+        while IFS= read -r line; do
+          [ -z "$line" ] && continue
+          repo_full=$(echo "$line" | awk '{print $1}')
+          # if languages_url contains spaces, handle:
+          lang_url=$(echo "$line" | awk '{print $2}')
+          if [ -z "$lang_url" ]; then
+            continue
+          fi
+          # fetch languages JSON
+          if [ -n "$TOKEN" ]; then
+            langs_json=$(curl -sSf -H "Authorization: token $TOKEN" -H "Accept: application/vnd.github.v3+json" "$lang_url" || echo '{}')
+          else
+            langs_json=$(curl -sSf -H "Accept: application/vnd.github.v3+json" "$lang_url" || echo '{}')
+          fi
+          # merge into lang_bytes
+          for key in $(echo "$langs_json" | jq -r 'keys[]' 2>/dev/null || true); do
+            value=$(echo "$langs_json" | jq -r --arg k "$key" '.[$k]')
+            prev=${lang_bytes[$key]:-0}
+            new=$((prev + value))
+            lang_bytes[$key]=$new
+          done
+        done <<< "$repo_list"
+
+        # Build JSON of aggregated languages
+        agg_json="{"
+        first=true
+        total_bytes=0
+        for k in "${!lang_bytes[@]}"; do
+          b=${lang_bytes[$k]}
+          total_bytes=$((total_bytes + b))
+        done
+
+        # If no language data found, create fallback SVG
+        if [ "$total_bytes" -eq 0 ]; then
+          echo "No language data found, creating fallback SVG"
+          cat > github-readme-stats.svg <<'SVG'
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="120" role="img" aria-label="GitHub Stats">
+  <rect width="100%" height="100%" fill="#0b1220"/>
+  <text x="20" y="45" fill="#c9d1d9" font-family="Verdana" font-size="18">GitHub stats not available</text>
+  <text x="20" y="80" fill="#9aa4ae" font-family="Verdana" font-size="12">No public repositories or language data to display</text>
+</svg>
+SVG
+        else
+          # prepare array of language objects sorted desc
+          # convert bash map to jq-friendly list
+          tmpfile=$(mktemp)
+          echo "{" > "$tmpfile"
+          idx=0
+          for k in "${!lang_bytes[@]}"; do
+            if [ "$idx" -gt 0 ]; then echo "," >> "$tmpfile"; fi
+            echo -n "\"$k\": ${lang_bytes[$k]}" >> "$tmpfile"
+            idx=$((idx+1))
+          done
+          echo "}" >> "$tmpfile"
+          # use python to generate a nice SVG (handles sorting, colors, percentages)
+          python3 - <<PY
+import json, math, sys
+d = json.load(open("${tmpfile}"))
+total = sum(d.values())
+items = sorted(d.items(), key=lambda x: -x[1])[:10]  # top 10
+width = 700
+pad = 20
+bar_x = 180
+bar_w = width - bar_x - pad
+bar_h = 20
+gap = 8
+height = pad + max( (bar_h + gap) * len(items), 100 ) + 10
+colors = [
+  "#2b7489","#f1e05a","#e34c26","#563d7c","#3572A5",
+  "#b07219","#38A2A4","#701516","#6f42c1","#c6538c"
+]
+svg_lines = []
+svg_lines.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" role="img" aria-label="GitHub language stats">')
+svg_lines.append(f'<rect width="100%" height="100%" fill="#0b1220"/>')
+svg_lines.append(f'<text x="20" y="28" fill="#c9d1d9" font-family="Verdana" font-size="16">Top languages for { "${USER}" }</text>')
+y = pad + 30
+i = 0
+for lang, bytes_count in items:
+    pct = bytes_count / total * 100
+    bar_len = int(bar_w * (bytes_count/total))
+    color = colors[i % len(colors)]
+    # language label
+    svg_lines.append(f'<text x="20" y="{y+14}" fill="#c9d1d9" font-family="Verdana" font-size="12">{lang}</text>')
+    # bar background
+    svg_lines.append(f'<rect x="{bar_x}" y="{y}" width="{bar_w}" height="{bar_h}" rx="3" fill="#1b2636"/>')
+    # bar value
+    svg_lines.append(f'<rect x="{bar_x}" y="{y}" width="{bar_len}" height="{bar_h}" rx="3" fill="{color}"/>')
+    # percent text
+    svg_lines.append(f'<text x="{bar_x + bar_w + 8}" y="{y+14}" fill="#9aa4ae" font-family="Verdana" font-size="12">{pct:.1f}%</text>')
+    y += bar_h + gap
+    i += 1
+
+svg_lines.append('</svg>')
+open('github-readme-stats.svg','w',encoding='utf-8').write("\n".join(svg_lines))
+print("SVG created: github-readme-stats.svg", file=sys.stderr)
+PY
+          rm -f "${tmpfile}"
+        fi
+
+        # quick sanity: show first 10 lines of the SVG (debug)
+        echo "------- SVG HEAD START -------"
+        head -n 20 github-readme-stats.svg || true
+        echo "------- SVG HEAD END -------"
+
+    - name: Commit and push github-readme-stats.svg
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "actions@github.com"
+        git add github-readme-stats.svg
+        git commit -m "chore: update github-readme-stats.svg [ci skip]" || echo "No changes to commit"
+        git push
