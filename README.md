@@ -61,3 +61,5 @@
 - 💬 https://linkedin.com/in/ErfanNahidi
 ---
 
+
+https://github-readme-stats.vercel.app/api/top-langs/?username=ErfanNahidi&layout=compact&langs_count=10&theme=radical
