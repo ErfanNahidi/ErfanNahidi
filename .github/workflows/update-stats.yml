@@ -10,25 +10,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # کلون ریپو
+      # کلون کردن ریپو
       - uses: actions/checkout@v3
 
-      # نصب Node.js برای اجرای Action
+      # نصب Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      # ساخت SVG با fallback حتی اگر داده کم باشه
+      # ساخت SVG با fallback اجباری
       - name: Generate GitHub Stats SVG
         run: |
+          echo "Generating SVG with fallback..."
           npx @marlonbraun/github-readme-stats-action@v1 \
             --username ErfanNahidi \
             --output github-readme-stats.svg \
-            --force-fallback
+            --force-fallback || echo "Fallback SVG created"
+
+      # چک کردن فایل ساخته شده
+      - name: Check SVG exists
+        run: |
+          if [ ! -f github-readme-stats.svg ]; then
+            echo "SVG not found, creating dummy file"
+            echo "<svg xmlns='http://www.w3.org/2000/svg' width='400' height='100'><text x='10' y='50'>Stats not available</text></svg>" > github-readme-stats.svg
+          fi
 
       # Commit و push فایل SVG
-      - name: Commit and push updated SVG
+      - name: Commit and push
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
