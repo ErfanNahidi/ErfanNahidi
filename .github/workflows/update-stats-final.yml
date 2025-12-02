@@ -1,4 +1,4 @@
-name: Generate and Commit GitHub Language Stats SVG (final)
+name: Generate and Commit GitHub Language Stats SVG
 
 on:
   schedule:
@@ -8,17 +8,35 @@ on:
 jobs:
   build-stats:
     runs-on: ubuntu-latest
-
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          persist-credentials: false  # Important for proper auth
 
-      - name: Install jq
+      - name: Install dependencies
         run: |
           sudo apt-get update -y
-          sudo apt-get install -y jq
+          sudo apt-get install -y jq libxml2-utils curl
+          echo "Dependencies installed"
+
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d %H:%M UTC')" >> $GITHUB_OUTPUT
+
+      - name: Cache repositories data
+        uses: actions/cache@v3
+        id: cache-repos
+        with:
+          path: |
+            repos_all.json
+            langs_array.json
+            lang_summary.json
+          key: ${{ runner.os }}-repos-${{ github.sha }}-${{ steps.date.outputs.date }}
+          restore-keys: |
+            ${{ runner.os }}-repos-
 
       - name: Generate stats and SVG
         env:
@@ -27,138 +45,434 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
-
+          
           API="https://api.github.com"
           USER="$USERNAME"
-
-          # choose token: prefer PAT_1 if provided
+          
+          # Token validation
           if [ -n "${SECRET_PAT:-}" ]; then
             TOKEN="$SECRET_PAT"
             echo "Using PAT_1 token"
-          else
+          elif [ -n "${GITHUB_TOKEN:-}" ]; then
             TOKEN="$GITHUB_TOKEN"
-            echo "Using default GITHUB_TOKEN"
+            echo "Using GITHUB_TOKEN"
+          else
+            echo "Error: No GitHub token available"
+            exit 1
           fi
-
-          # fetch all repos (owner type) with pagination
-          repos_file="repos_all.json"
-          echo "[]" > "$repos_file"
-          page=1
-          while :; do
-            if [ -n "${TOKEN:-}" ]; then
-              resp=$(curl -sS -H "Authorization: token $TOKEN" -H "Accept: application/vnd.github.v3+json" "${API}/users/${USER}/repos?per_page=100&page=${page}&type=owner")
-            else
-              resp=$(curl -sS -H "Accept: application/vnd.github.v3+json" "${API}/users/${USER}/repos?per_page=100&page=${page}&type=owner")
-            fi
-            cnt=$(echo "$resp" | jq 'length')
-            if [ "$cnt" -eq 0 ]; then
-              break
-            fi
-            tmp=$(mktemp)
-            jq -s '.[0] + .[1]' "$repos_file" <(echo "$resp") > "$tmp" && mv "$tmp" "$repos_file"
-            page=$((page+1))
-          done
-
-          total_repos=$(jq 'length' "$repos_file" || echo 0)
-          echo "Fetched repos: $total_repos"
-
-          # build array of language JSONs
-          langs_array="langs_array.json"
-          echo "[" > "$langs_array"
-          first=1
-          jq -c '.[] | select(.fork==false and .archived==false) | {languages_url}' "$repos_file" | while read -r line; do
-            lang_url=$(echo "$line" | jq -r '.languages_url')
-            if [ -z "$lang_url" ] || [ "$lang_url" = "null" ]; then
-              continue
-            fi
-            if [ -n "${TOKEN:-}" ]; then
-              ljson=$(curl -sS -H "Authorization: token $TOKEN" -H "Accept: application/vnd.github.v3+json" "$lang_url" || echo "{}")
-            else
-              ljson=$(curl -sS -H "Accept: application/vnd.github.v3+json" "$lang_url" || echo "{}")
-            fi
-            # append with comma separation
-            if [ "$first" -eq 1 ]; then
-              echo "$ljson" >> "$langs_array"
-              first=0
-            else
-              echo ",$ljson" >> "$langs_array"
-            fi
-          done
-          echo "]" >> "$langs_array"
-
-          # generate SVG via python: aggregate language bytes and render top 10 bars
+          
+          # Check rate limits
+          echo "Checking rate limits..."
+          rate_limit=$(curl -sS -f --max-time 30 -H "Authorization: token $TOKEN" \
+            "${API}/rate_limit" | jq '.resources.core' || echo "{}")
+          remaining=$(echo "$rate_limit" | jq -r '.remaining // 0')
+          limit=$(echo "$rate_limit" | jq -r '.limit // 5000')
+          
+          if [ "$remaining" -lt 100 ]; then
+            echo "Warning: Low rate limit remaining: $remaining/$limit"
+            echo "Reset at: $(echo "$rate_limit" | jq -r '.reset // 0 | todate')"
+          else
+            echo "Rate limit OK: $remaining/$limit requests remaining"
+          fi
+          
+          # Only fetch repos if not cached
+          if [ ! -f "repos_all.json" ] || [ "$(jq 'length' repos_all.json 2>/dev/null || echo '0')" -eq 0 ]; then
+            echo "Fetching repositories from GitHub API..."
+            
+            repos_file="repos_all.json"
+            echo "[]" > "$repos_file"
+            page=1
+            total_fetched=0
+            
+            while :; do
+              echo "Fetching page $page..."
+              resp=$(curl -sS -f --max-time 30 \
+                -H "Authorization: token $TOKEN" \
+                -H "Accept: application/vnd.github.v3+json" \
+                "${API}/users/${USER}/repos?per_page=100&page=${page}&type=owner&sort=updated" || echo "[]")
+              
+              # Check if response is valid JSON
+              if ! echo "$resp" | jq -e . >/dev/null 2>&1; then
+                echo "Invalid JSON response, stopping pagination"
+                break
+              fi
+              
+              cnt=$(echo "$resp" | jq 'length')
+              if [ "$cnt" -eq 0 ]; then
+                echo "No more repositories to fetch"
+                break
+              fi
+              
+              tmp=$(mktemp)
+              jq -s '.[0] + .[1]' "$repos_file" <(echo "$resp") > "$tmp" && mv "$tmp" "$repos_file"
+              
+              total_fetched=$((total_fetched + cnt))
+              echo "Fetched $cnt repositories (total: $total_fetched)"
+              
+              # Check if we got less than requested (end of pages)
+              if [ "$cnt" -lt 100 ]; then
+                break
+              fi
+              
+              page=$((page + 1))
+              
+              # Small delay to be nice to the API
+              sleep 0.5
+            done
+          else
+            echo "Using cached repositories data"
+          fi
+          
+          total_repos=$(jq 'length' repos_all.json 2>/dev/null || echo 0)
+          echo "Total repositories: $total_repos"
+          
+          # Filter out forks and archived repos
+          filtered_repos=$(mktemp)
+          jq '[.[] | select(.fork==false and .archived==false)]' repos_all.json > "$filtered_repos"
+          mv "$filtered_repos" repos_all.json
+          
+          active_repos=$(jq 'length' repos_all.json)
+          echo "Active repositories (non-fork, non-archived): $active_repos"
+          
+          # Build array of language JSONs
+          if [ ! -f "langs_array.json" ] || [ "$(jq 'length' langs_array.json 2>/dev/null || echo '0')" -eq 0 ]; then
+            echo "Fetching language data for repositories..."
+            
+            langs_array="langs_array.json"
+            echo "[" > "$langs_array"
+            first=1
+            
+            # Get language URLs
+            jq -c '.[] | {languages_url, name}' repos_all.json | while read -r line; do
+              lang_url=$(echo "$line" | jq -r '.languages_url')
+              repo_name=$(echo "$line" | jq -r '.name')
+              
+              if [ -z "$lang_url" ] || [ "$lang_url" = "null" ] || [ "$lang_url" = "" ]; then
+                echo "Skipping $repo_name: no languages_url"
+                continue
+              fi
+              
+              echo "Fetching languages for: $repo_name"
+              
+              # Retry logic for failed requests
+              max_retries=3
+              retry_count=0
+              ljson="{}"
+              
+              while [ $retry_count -lt $max_retries ]; do
+                ljson=$(curl -sS -f --max-time 30 \
+                  -H "Authorization: token $TOKEN" \
+                  -H "Accept: application/vnd.github.v3+json" \
+                  "$lang_url" 2>/dev/null || echo "{}")
+                
+                # Check if we got valid JSON
+                if echo "$ljson" | jq -e . >/dev/null 2>&1; then
+                  break
+                else
+                  retry_count=$((retry_count + 1))
+                  echo "Retry $retry_count/$max_retries for $repo_name"
+                  sleep 1
+                fi
+              done
+              
+              # If all retries failed, use empty object
+              if ! echo "$ljson" | jq -e . >/dev/null 2>&1; then
+                ljson="{}"
+              fi
+              
+              # Append with comma separation
+              if [ "$first" -eq 1 ]; then
+                echo "$ljson" >> "$langs_array"
+                first=0
+              else
+                echo ",$ljson" >> "$langs_array"
+              fi
+              
+              # Small delay between requests
+              sleep 0.1
+            done
+            
+            echo "]" >> "$langs_array"
+            echo "Language data fetched and saved"
+          else
+            echo "Using cached language data"
+          fi
+          
+          # Generate SVG via python
+          echo "Generating SVG visualization..."
+          
           python3 - <<'PY'
 import json, sys, os
+from datetime import datetime
+
+def safe_int(value):
+    try:
+        return int(value)
+    except:
+        return 0
+
+# Load language data
 langs_file = "langs_array.json"
 data = []
 try:
-    data = json.load(open(langs_file))
-except Exception:
+    with open(langs_file, 'r') as f:
+        data = json.load(f)
+except Exception as e:
+    print(f"Error loading language data: {e}")
     data = []
+
+# Aggregate language bytes
 agg = {}
+total_bytes = 0
 for entry in data:
     if not isinstance(entry, dict):
         continue
-    for k, v in entry.items():
-        try:
-            agg[k] = agg.get(k, 0) + int(v)
-        except Exception:
-            pass
+    for lang, bytes_count in entry.items():
+        bytes_int = safe_int(bytes_count)
+        if bytes_int > 0:
+            agg[lang] = agg.get(lang, 0) + bytes_int
+            total_bytes += bytes_int
 
-total = sum(agg.values())
-if total == 0:
-    # fallback svg
-    svg = """<svg xmlns="http://www.w3.org/2000/svg" width="640" height="120" role="img" aria-label="GitHub Stats">
+# If no data, generate fallback
+if total_bytes == 0 or not agg:
+    print("No language data available, generating fallback SVG")
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="640" height="120" role="img" aria-label="GitHub Stats">
+  <title>GitHub Language Statistics for {os.environ.get("USERNAME", "")}</title>
+  <desc>No language data available for display</desc>
   <rect width="100%" height="100%" fill="#0b1220"/>
-  <text x="20" y="45" fill="#c9d1d9" font-family="Verdana" font-size="18">GitHub stats not available</text>
-  <text x="20" y="80" fill="#9aa4ae" font-family="Verdana" font-size="12">No public repositories or language data to display</text>
-</svg>"""
-    open("github-readme-stats.svg", "w", encoding="utf-8").write(svg)
-    print("WROTE fallback SVG")
+  <text x="320" y="45" text-anchor="middle" fill="#c9d1d9" font-family="Verdana, sans-serif" font-size="18">GitHub Language Stats</text>
+  <text x="320" y="75" text-anchor="middle" fill="#9aa4ae" font-family="Verdana, sans-serif" font-size="12">No language data available</text>
+  <text x="320" y="100" text-anchor="middle" fill="#6e7681" font-family="Verdana, sans-serif" font-size="10">Generated at {datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")}</text>
+</svg>'''
+    with open("github-readme-stats.svg", "w", encoding="utf-8") as f:
+        f.write(svg)
     sys.exit(0)
 
-items = sorted(agg.items(), key=lambda x: -x[1])[:10]
+# Get top languages (max 10)
+sorted_langs = sorted(agg.items(), key=lambda x: -x[1])
+top_langs = sorted_langs[:10]
+other_bytes = sum(bytes_count for _, bytes_count in sorted_langs[10:])
+
+if other_bytes > 0:
+    top_langs.append(("Other", other_bytes))
+
+# Calculate percentages
+total = sum(bytes_count for _, bytes_count in top_langs)
+langs_with_pct = [(lang, bytes_count, (bytes_count / total * 100) if total > 0 else 0) 
+                  for lang, bytes_count in top_langs]
+
+# SVG dimensions
 width = 700
-pad = 20
+padding = 20
 bar_x = 180
-bar_w = width - bar_x - pad
-bar_h = 20
+bar_width = width - bar_x - padding - 80  # 80px for percentage text
+bar_height = 20
 gap = 8
-height = pad + max((bar_h + gap) * len(items), 100) + 10
-colors = [
-  "#2b7489","#f1e05a","#e34c26","#563d7c","#3572A5",
-  "#b07219","#38A2A4","#701516","#6f42c1","#c6538c"
+title_height = 40
+footer_height = 30
+height = title_height + (bar_height + gap) * len(langs_with_pct) + footer_height
+
+# Color palette for languages
+color_palette = {
+    "JavaScript": "#f1e05a",
+    "TypeScript": "#3178c6",
+    "Python": "#3572A5",
+    "Java": "#b07219",
+    "C++": "#f34b7d",
+    "C#": "#178600",
+    "Go": "#00ADD8",
+    "Rust": "#dea584",
+    "Shell": "#89e051",
+    "HTML": "#e34c26",
+    "CSS": "#563d7c",
+    "Vue": "#41b883",
+    "React": "#61dafb",
+    "PHP": "#4F5D95",
+    "Ruby": "#701516",
+    "Swift": "#ffac45",
+    "Kotlin": "#F18E33",
+    "Dart": "#00B4AB",
+    "Scala": "#c22d40",
+    "R": "#198CE7"
+}
+
+# Fallback colors if language not in palette
+fallback_colors = [
+    "#2b7489", "#f1e05a", "#e34c26", "#563d7c", "#3572A5",
+    "#b07219", "#38A2A4", "#701516", "#6f42c1", "#c6538c",
+    "#00ADD8", "#178600", "#f34b7d", "#3178c6", "#89e051"
 ]
+
+# Generate SVG
 lines = []
-lines.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" role="img" aria-label="GitHub language stats">')
+lines.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" role="img" aria-label="GitHub language statistics">')
+lines.append('<title>GitHub Language Statistics for ' + os.environ.get("USERNAME", "") + '</title>')
+lines.append('<desc>Bar chart showing the top programming languages used across all public repositories</desc>')
+
+# Background
 lines.append(f'<rect width="100%" height="100%" fill="#0b1220"/>')
-lines.append(f'<text x="20" y="28" fill="#c9d1d9" font-family="Verdana" font-size="16">Top languages for {os.environ.get("USERNAME","")}</text>')
-y = pad + 30
-i = 0
-for lang, bytes_count in items:
-    pct = bytes_count / total * 100
-    bar_len = int(bar_w * (bytes_count/total))
-    color = colors[i % len(colors)]
-    lines.append(f'<text x="20" y="{y+14}" fill="#c9d1d9" font-family="Verdana" font-size="12">{lang}</text>')
-    lines.append(f'<rect x="{bar_x}" y="{y}" width="{bar_w}" height="{bar_h}" rx="3" fill="#1b2636"/>')
-    lines.append(f'<rect x="{bar_x}" y="{y}" width="{bar_len}" height="{bar_h}" rx="3" fill="{color}"/>')
-    lines.append(f'<text x="{bar_x + bar_w + 8}" y="{y+14}" fill="#9aa4ae" font-family="Verdana" font-size="12">{pct:.1f}%</text>')
-    y += bar_h + gap
-    i += 1
+
+# Title
+lines.append(f'<text x="20" y="30" fill="#c9d1d9" font-family="Verdana, sans-serif" font-size="16" font-weight="bold">Top Languages for {os.environ.get("USERNAME", "")}</text>')
+lines.append(f'<text x="20" y="50" fill="#9aa4ae" font-family="Verdana, sans-serif" font-size="10">Based on {total_bytes:,} bytes across {os.environ.get("active_repos", "?")} repos</text>')
+
+# Language bars
+y_offset = title_height + 10
+for i, (lang, bytes_count, pct) in enumerate(langs_with_pct):
+    # Choose color
+    if lang in color_palette:
+        color = color_palette[lang]
+    else:
+        color = fallback_colors[i % len(fallback_colors)]
+    
+    # Bar length
+    bar_length = int(bar_width * (pct / 100))
+    
+    # Language label
+    lines.append(f'<text x="20" y="{y_offset + 15}" fill="#c9d1d9" font-family="Verdana, sans-serif" font-size="12">{lang}</text>')
+    
+    # Background bar
+    lines.append(f'<rect x="{bar_x}" y="{y_offset}" width="{bar_width}" height="{bar_height}" rx="3" fill="#1b2636"/>')
+    
+    # Foreground bar
+    lines.append(f'<rect x="{bar_x}" y="{y_offset}" width="{bar_length}" height="{bar_height}" rx="3" fill="{color}"/>')
+    
+    # Percentage text
+    lines.append(f'<text x="{bar_x + bar_width + 10}" y="{y_offset + 15}" fill="#9aa4ae" font-family="Verdana, sans-serif" font-size="11">{pct:.1f}%</text>')
+    
+    # Byte count (hover info)
+    lines.append(f'<title>{lang}: {bytes_count:,} bytes ({pct:.1f}%)</title>')
+    
+    y_offset += bar_height + gap
+
+# Footer with timestamp
+lines.append(f'<text x="{width - 10}" y="{height - 10}" text-anchor="end" fill="#6e7681" font-family="Verdana, sans-serif" font-size="9">Updated: {datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")}</text>')
 lines.append('</svg>')
-open('github-readme-stats.svg','w',encoding='utf-8').write("\n".join(lines))
-print("WROTE github-readme-stats.svg")
+
+# Write SVG file
+with open('github-readme-stats.svg', 'w', encoding='utf-8') as f:
+    f.write('\n'.join(lines))
+
+print(f"Generated SVG with {len(langs_with_pct)} languages")
+
+# Also create a summary JSON for debugging
+summary = {
+    "generated_at": datetime.utcnow().isoformat() + "Z",
+    "username": os.environ.get("USERNAME", ""),
+    "total_repositories": int(os.environ.get("total_repos", 0)),
+    "active_repositories": int(os.environ.get("active_repos", 0)),
+    "total_bytes": total_bytes,
+    "languages": [
+        {
+            "name": lang,
+            "bytes": bytes_count,
+            "percentage": round(pct, 2)
+        }
+        for lang, bytes_count, pct in langs_with_pct
+    ]
+}
+
+with open('lang_summary.json', 'w', encoding='utf-8') as f:
+    json.dump(summary, f, indent=2)
+
+print("Created summary JSON file")
 PY
 
-          # show head of file for logs
+          # Validate SVG
+          echo "Validating SVG structure..."
+          if command -v xmllint >/dev/null 2>&1; then
+            if xmllint --noout github-readme-stats.svg 2>/dev/null; then
+              echo "SVG is valid XML"
+            else
+              echo "Warning: SVG validation failed, but continuing anyway"
+            fi
+          else
+            echo "xmllint not available, skipping SVG validation"
+          fi
+          
+          # Create summary markdown
+          echo "Creating summary markdown..."
+          cat > SUMMARY.md << EOF
+# GitHub Language Statistics
+
+**Generated:** ${{ steps.date.outputs.date }}
+
+## Overview
+- **Username:** $USERNAME
+- **Total Repositories:** $total_repos
+- **Active Repositories:** $active_repos
+- **Last Updated:** $(date -u +"%Y-%m-%d %H:%M:%S UTC")
+
+## Language Distribution
+EOF
+          
+          # Add language summary from JSON
+          if [ -f "lang_summary.json" ]; then
+            echo "" >> SUMMARY.md
+            echo "| Language | Percentage | Bytes |" >> SUMMARY.md
+            echo "|----------|------------|-------|" >> SUMMARY.md
+            jq -r '.languages[] | "| \(.name) | \(.percentage)% | \(.bytes | tonumber | floor) |"' lang_summary.json >> SUMMARY.md
+          fi
+          
+          echo "" >> SUMMARY.md
+          echo "## Workflow Information" >> SUMMARY.md
+          echo "- **Workflow:** \`${{ github.workflow }}\`" >> SUMMARY.md
+          echo "- **Run ID:** \`${{ github.run_id }}\`" >> SUMMARY.md
+          echo "- **Commit:** \`${{ github.sha }}\`" >> SUMMARY.md
+          
           echo "------ SVG PREVIEW ------"
-          head -n 20 github-readme-stats.svg || true
+          head -n 15 github-readme-stats.svg || true
           echo "------ END PREVIEW ------"
 
-      - name: Commit and push github-readme-stats.svg
+      - name: Validate SVG dimensions
+        run: |
+          echo "Checking SVG dimensions..."
+          if [ -f "github-readme-stats.svg" ]; then
+            width=$(grep -o 'width="[^"]*"' github-readme-stats.svg | head -1 | cut -d'"' -f2 || echo "unknown")
+            height=$(grep -o 'height="[^"]*"' github-readme-stats.svg | head -1 | cut -d'"' -f2 || echo "unknown")
+            echo "SVG Dimensions: ${width}x${height}"
+            
+            # Check if SVG contains expected elements
+            if grep -q "<rect" github-readme-stats.svg && grep -q "<text" github-readme-stats.svg; then
+              echo "SVG contains required elements"
+            else
+              echo "Warning: SVG might be missing required elements"
+            fi
+          else
+            echo "Error: SVG file not found!"
+            exit 1
+          fi
+
+      - name: Commit and push changes
+        env:
+          COMMIT_MSG: "docs: update language stats ${{ steps.date.outputs.date }} [skip ci]"
         run: |
           git config --global user.name "github-actions[bot]"
-          git config --global user.email "actions@github.com"
-          git add github-readme-stats.svg
-          git commit -m "chore: update github-readme-stats.svg [ci skip]" || echo "No changes to commit"
-          git push
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # Check if there are changes
+          git add github-readme-stats.svg || echo "No SVG to add"
+          git add SUMMARY.md 2>/dev/null || echo "No SUMMARY.md to add"
+          git add lang_summary.json 2>/dev/null || echo "No lang_summary.json to add"
+          
+          # Check for changes
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            echo "Committing changes..."
+            git commit -m "$COMMIT_MSG"
+            
+            # Push changes
+            echo "Pushing to repository..."
+            git push
+            echo "Changes pushed successfully"
+          fi
+
+      - name: Notify on failure (optional)
+        if: failure()
+        run: |
+          echo "Workflow failed! Check the logs for details."
+          echo "Workflow: ${{ github.workflow }}"
+          echo "Run ID: ${{ github.run_id }}"
+          echo "Commit: ${{ github.sha }}"
+        # You could add actual notifications here (Slack, Discord, etc.)
