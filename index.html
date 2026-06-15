@@ -1,135 +1,301 @@
-<header class="mb-10 text-center">
-  <h1 class="text-4xl font-extrabold">Erfan Nahidi</h1>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Erfan Nahidi – Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: rgba(255, 255, 255, 0.08);
+      --card-border: rgba(255, 255, 255, 0.12);
+    }
 
-<h2 class="text-xl mt-2 text-gray-600">
-  Network & Infrastructure Administrator | Telecom & Embedded Enthusiast
-</h2>
+    body {
+      background:
+        radial-gradient(circle at top left, rgba(59,130,246,.25), transparent 28%),
+        radial-gradient(circle at top right, rgba(168,85,247,.20), transparent 24%),
+        radial-gradient(circle at bottom left, rgba(16,185,129,.16), transparent 26%),
+        linear-gradient(180deg, #0b1020 0%, #0f172a 45%, #111827 100%);
+      color: #e5e7eb;
+    }
 
-  <p class="mt-5 text-gray-600 max-w-2xl mx-auto">
-    Network and Infrastructure Administrator with a strong interest in
-    low-level computing, embedded systems, IoT, telecommunications,
-    and hardware-oriented technologies. Experienced in Linux
-    administration, network operations, security monitoring, and
-    infrastructure automation.
-  </p>
-</header>
+    .glass {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    }
 
-<section class="mb-10">
-  <h3 class="text-2xl font-semibold mb-6">🛠️ Core Skills</h3>
+    .section-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+    }
 
-  <h4 class="text-xl font-bold mb-3">🌐 Networking & Infrastructure</h4>
-  <div class="badges-row mb-6">
-    <img class="badge-img" src="https://img.shields.io/badge/-Cisco%20CCNA-1BA0D7?style=flat-square" alt="CCNA">
-    <img class="badge-img" src="https://img.shields.io/badge/-Routing%20%26%20Switching-2C3E50?style=flat-square" alt="Routing">
-    <img class="badge-img" src="https://img.shields.io/badge/-TCP%2FIP-2980B9?style=flat-square" alt="TCP/IP">
-    <img class="badge-img" src="https://img.shields.io/badge/-DNS-8E44AD?style=flat-square" alt="DNS">
-    <img class="badge-img" src="https://img.shields.io/badge/-VPN-16A085?style=flat-square" alt="VPN">
-    <img class="badge-img" src="https://img.shields.io/badge/-Firewall-E74C3C?style=flat-square" alt="Firewall">
-    <img class="badge-img" src="https://img.shields.io/badge/-Wireshark-1679A7?logo=wireshark&logoColor=white&style=flat-square" alt="Wireshark">
-    <img class="badge-img" src="https://img.shields.io/badge/-MikroTik-293239?style=flat-square" alt="MikroTik">
-  </div>
+    .badge-img {
+      height: 30px;
+      width: auto;
+      object-fit: contain;
+      border-radius: 6px;
+      transition: transform .18s ease, filter .18s ease, opacity .18s ease;
+      opacity: .96;
+    }
 
-  <h4 class="text-xl font-bold mb-3">🐧 Linux & Infrastructure</h4>
-  <div class="badges-row mb-6">
-    <img class="badge-img" src="https://img.shields.io/badge/-Linux-FCC624?logo=linux&logoColor=black&style=flat-square" alt="Linux">
-    <img class="badge-img" src="https://img.shields.io/badge/-LPIC--2-00599C?style=flat-square" alt="LPIC-2">
-    <img class="badge-img" src="https://img.shields.io/badge/-Docker-2496ED?logo=docker&logoColor=white&style=flat-square" alt="Docker">
-    <img class="badge-img" src="https://img.shields.io/badge/-Nginx-009639?logo=nginx&logoColor=white&style=flat-square" alt="Nginx">
-    <img class="badge-img" src="https://img.shields.io/badge/-Automation-4CAF50?style=flat-square" alt="Automation">
-  </div>
+    .badge-img:hover {
+      transform: translateY(-1px) scale(1.03);
+      filter: brightness(1.08);
+      opacity: 1;
+    }
 
-  <h4 class="text-xl font-bold mb-3">🛡️ Security Operations</h4>
-  <div class="badges-row mb-6">
-    <img class="badge-img" src="https://img.shields.io/badge/-SOC-111111?style=flat-square" alt="SOC">
-    <img class="badge-img" src="https://img.shields.io/badge/-CEH-8B0000?style=flat-square" alt="CEH">
-    <img class="badge-img" src="https://img.shields.io/badge/-Traffic%20Analysis-34495E?style=flat-square" alt="Traffic Analysis">
-    <img class="badge-img" src="https://img.shields.io/badge/-Linux%20Hardening-2D3436?style=flat-square" alt="Hardening">
-  </div>
+    .soft-line {
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);
+      height: 1px;
+    }
 
-  <h4 class="text-xl font-bold mb-3">📡 Telecommunications & Embedded</h4>
-  <div class="badges-row mb-6">
-    <img class="badge-img" src="https://img.shields.io/badge/-Telecommunications-0066CC?style=flat-square" alt="Telecommunications">
-    <img class="badge-img" src="https://img.shields.io/badge/-Communication%20Protocols-0E7490?style=flat-square" alt="Protocols">
-    <img class="badge-img" src="https://img.shields.io/badge/-STM32-03234B?style=flat-square" alt="STM32">
-    <img class="badge-img" src="https://img.shields.io/badge/-IoT-FF6B00?style=flat-square" alt="IoT">
-    <img class="badge-img" src="https://img.shields.io/badge/-x86--64%20Assembly-6F42C1?style=flat-square" alt="Assembly">
-  </div>
+    .chip {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.10);
+      transition: all .18s ease;
+    }
 
-  <h4 class="text-xl font-bold mb-3">💻 Development & Automation</h4>
-  <div class="badges-row mb-6">
-    <img class="badge-img" src="https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white&style=flat-square" alt="Python">
-    <img class="badge-img" src="https://img.shields.io/badge/-C-A8B9CC?logo=c&logoColor=black&style=flat-square" alt="C">
-    <img class="badge-img" src="https://img.shields.io/badge/-FastAPI-009688?logo=fastapi&logoColor=white&style=flat-square" alt="FastAPI">
-    <img class="badge-img" src="https://img.shields.io/badge/-SQL-4479A1?logo=mysql&logoColor=white&style=flat-square" alt="SQL">
-    <img class="badge-img" src="https://img.shields.io/badge/-Git-F05032?logo=git&logoColor=white&style=flat-square" alt="Git">
-    <img class="badge-img" src="https://img.shields.io/badge/-Bash-4EAA25?logo=gnu-bash&logoColor=white&style=flat-square" alt="Bash">
-  </div>
-</section>
+    .chip:hover {
+      background: rgba(255,255,255,.12);
+      transform: translateY(-1px);
+    }
 
-<section class="mb-10">
-  <h3 class="text-2xl font-semibold mb-4">💼 Professional Experience</h3>
-  <ul class="list-disc pl-6 space-y-4">
-    <li>
-      <strong>SOC & Linux Administrator</strong><br>
-      AmnGostar Payam Pardaz Engineering<br>
-      <span class="text-gray-600">
-        Linux administration, security monitoring, SOC operations,
-        infrastructure support and system hardening.
-      </span>
-    </li>
+    a.linkish {
+      transition: color .18s ease, opacity .18s ease;
+    }
 
-    <li>
-      <strong>Network Administrator</strong><br>
-      Raham Data Gostaresh Co. (Iran National Post Data Center)<br>
-      <span class="text-gray-600">
-        Enterprise network administration, monitoring,
-        troubleshooting and infrastructure maintenance.
-      </span>
-    </li>
-  </ul>
-</section>
+    a.linkish:hover {
+      opacity: 1;
+    }
+  </style>
+</head>
 
-<section class="mb-10">
-  <h3 class="text-2xl font-semibold mb-4">🎓 Education</h3>
-  <p>
-    <strong>B.Sc. Computer Engineering</strong><br>
-    Islamic Azad University of Karaj
-  </p>
-</section>
+<body class="font-sans antialiased leading-relaxed">
+  <main class="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <section class="glass rounded-3xl p-8 sm:p-10 md:p-12 relative overflow-hidden">
+      <div class="absolute -top-24 -right-24 h-56 w-56 rounded-full bg-blue-500/20 blur-3xl"></div>
+      <div class="absolute -bottom-24 -left-24 h-56 w-56 rounded-full bg-violet-500/20 blur-3xl"></div>
 
-<section class="mb-10">
-  <h3 class="text-2xl font-semibold mb-4">📜 Certifications</h3>
-  <ul class="list-disc pl-6 space-y-2">
-    <li>Cisco CCNA 200-301</li>
-    <li>LPIC-1 & LPIC-2</li>
-    <li>CEH</li>
-    <li>Telecommunications</li>
-    <li>Network+</li>
-  </ul>
-</section>
+      <div class="relative">
+        <header class="text-center">
+          <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full border border-white/10 bg-white/5 text-sm text-slate-300">
+            <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+            Network • Infrastructure • Telecom • Low-Level
+          </div>
 
-<section class="mb-10">
-  <h3 class="text-2xl font-semibold mb-4">🚀 Interests</h3>
-  <div class="flex flex-wrap gap-2">
-    <span class="bg-gray-200 px-3 py-1 rounded">Low-Level Computing</span>
-    <span class="bg-gray-200 px-3 py-1 rounded">Embedded Systems</span>
-    <span class="bg-gray-200 px-3 py-1 rounded">IoT</span>
-    <span class="bg-gray-200 px-3 py-1 rounded">Telecommunications</span>
-    <span class="bg-gray-200 px-3 py-1 rounded">Network Engineering</span>
-    <span class="bg-gray-200 px-3 py-1 rounded">Linux Systems</span>
-    <span class="bg-gray-200 px-3 py-1 rounded">Infrastructure Design</span>
-    <span class="bg-gray-200 px-3 py-1 rounded">Cryptography</span>
-    <span class="bg-gray-200 px-3 py-1 rounded">Computer Architecture</span>
-    <span class="bg-gray-200 px-3 py-1 rounded">Firmware & Hardware</span>
-  </div>
-</section>
+          <h1 class="mt-6 text-4xl sm:text-5xl font-black tracking-tight text-white">
+            Erfan Nahidi
+          </h1>
 
-<section class="mb-10">
-  <h3 class="text-2xl font-semibold mb-4">📬 Contact</h3>
-  <ul class="list-none space-y-2">
-    <li>📧 <a href="mailto:erfannahidi20@gmail.com" class="text-blue-600 hover:underline">erfannahidi20@gmail.com</a></li>
-    <li>🔗 <a href="https://github.com/ErfanNahidi" class="text-blue-600 hover:underline">github.com/ErfanNahidi</a></li>
-    <li>💼 <a href="https://linkedin.com/in/ErfanNahidi" class="text-blue-600 hover:underline">linkedin.com/in/ErfanNahidi</a></li>
-    <li>💬 <a href="https://t.me/cro0w" class="text-blue-600 hover:underline">t.me/cro0w</a></li>
-  </ul>
-</section>
+          <h2 class="mt-4 text-lg sm:text-xl font-semibold text-slate-300">
+            Network & Infrastructure Administrator <span class="text-slate-500">|</span> Telecom & Embedded Enthusiast
+          </h2>
+
+          <p class="mt-5 max-w-3xl mx-auto text-slate-300 text-base sm:text-lg">
+            Network and Infrastructure Administrator with a strong interest in low-level computing,
+            embedded systems, IoT, telecommunications, and hardware-oriented technologies.
+            Experienced in Linux administration, network operations, security monitoring,
+            and infrastructure automation.
+          </p>
+        </header>
+
+        <div class="mt-8 soft-line"></div>
+
+        <div class="mt-8 grid gap-5 md:grid-cols-3">
+          <div class="section-card rounded-2xl p-5">
+            <p class="text-xs uppercase tracking-[0.22em] text-slate-400">Focus</p>
+            <p class="mt-2 text-lg font-semibold text-white">Network Engineering</p>
+            <p class="mt-2 text-sm text-slate-300">Infrastructure, routing, switching, DNS, VPN, firewalling.</p>
+          </div>
+
+          <div class="section-card rounded-2xl p-5">
+            <p class="text-xs uppercase tracking-[0.22em] text-slate-400">Strength</p>
+            <p class="mt-2 text-lg font-semibold text-white">Linux & Automation</p>
+            <p class="mt-2 text-sm text-slate-300">System hardening, monitoring, scripting, and ops tooling.</p>
+          </div>
+
+          <div class="section-card rounded-2xl p-5">
+            <p class="text-xs uppercase tracking-[0.22em] text-slate-400">Interest</p>
+            <p class="mt-2 text-lg font-semibold text-white">Low-Level & IoT</p>
+            <p class="mt-2 text-sm text-slate-300">Embedded systems, firmware, computer architecture, telecom.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-8 section-card rounded-3xl p-7 sm:p-8">
+      <div class="flex items-center justify-between gap-4 flex-wrap">
+        <div>
+          <h3 class="text-2xl font-bold text-white">🛠️ Core Skills</h3>
+          <p class="mt-1 text-sm text-slate-400">A cleaner snapshot of what I actually work with.</p>
+        </div>
+      </div>
+
+      <div class="mt-6 grid gap-7">
+        <div>
+          <h4 class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400 mb-3">🌐 Networking & Infrastructure</h4>
+          <div class="flex flex-wrap gap-2.5">
+            <img class="badge-img" src="https://img.shields.io/badge/-Cisco%20CCNA-1BA0D7?style=flat-square" alt="CCNA">
+            <img class="badge-img" src="https://img.shields.io/badge/-Routing%20%26%20Switching-2C3E50?style=flat-square" alt="Routing">
+            <img class="badge-img" src="https://img.shields.io/badge/-TCP%2FIP-2980B9?style=flat-square" alt="TCP/IP">
+            <img class="badge-img" src="https://img.shields.io/badge/-DNS-8E44AD?style=flat-square" alt="DNS">
+            <img class="badge-img" src="https://img.shields.io/badge/-VPN-16A085?style=flat-square" alt="VPN">
+            <img class="badge-img" src="https://img.shields.io/badge/-Firewall-E74C3C?style=flat-square" alt="Firewall">
+            <img class="badge-img" src="https://img.shields.io/badge/-Wireshark-1679A7?logo=wireshark&logoColor=white&style=flat-square" alt="Wireshark">
+            <img class="badge-img" src="https://img.shields.io/badge/-MikroTik-293239?style=flat-square" alt="MikroTik">
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400 mb-3">🐧 Linux & Infrastructure</h4>
+          <div class="flex flex-wrap gap-2.5">
+            <img class="badge-img" src="https://img.shields.io/badge/-Linux-FCC624?logo=linux&logoColor=black&style=flat-square" alt="Linux">
+            <img class="badge-img" src="https://img.shields.io/badge/-LPIC--2-00599C?style=flat-square" alt="LPIC-2">
+            <img class="badge-img" src="https://img.shields.io/badge/-Docker-2496ED?logo=docker&logoColor=white&style=flat-square" alt="Docker">
+            <img class="badge-img" src="https://img.shields.io/badge/-Nginx-009639?logo=nginx&logoColor=white&style=flat-square" alt="Nginx">
+            <img class="badge-img" src="https://img.shields.io/badge/-Automation-4CAF50?style=flat-square" alt="Automation">
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400 mb-3">🛡️ Security Operations</h4>
+          <div class="flex flex-wrap gap-2.5">
+            <img class="badge-img" src="https://img.shields.io/badge/-SOC-111111?style=flat-square" alt="SOC">
+            <img class="badge-img" src="https://img.shields.io/badge/-CEH-8B0000?style=flat-square" alt="CEH">
+            <img class="badge-img" src="https://img.shields.io/badge/-Traffic%20Analysis-34495E?style=flat-square" alt="Traffic Analysis">
+            <img class="badge-img" src="https://img.shields.io/badge/-Linux%20Hardening-2D3436?style=flat-square" alt="Hardening">
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400 mb-3">📡 Telecommunications & Embedded</h4>
+          <div class="flex flex-wrap gap-2.5">
+            <img class="badge-img" src="https://img.shields.io/badge/-Telecommunications-0066CC?style=flat-square" alt="Telecommunications">
+            <img class="badge-img" src="https://img.shields.io/badge/-Communication%20Protocols-0E7490?style=flat-square" alt="Protocols">
+            <img class="badge-img" src="https://img.shields.io/badge/-STM32-03234B?style=flat-square" alt="STM32">
+            <img class="badge-img" src="https://img.shields.io/badge/-IoT-FF6B00?style=flat-square" alt="IoT">
+            <img class="badge-img" src="https://img.shields.io/badge/-x86--64%20Assembly-6F42C1?style=flat-square" alt="Assembly">
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400 mb-3">💻 Development & Automation</h4>
+          <div class="flex flex-wrap gap-2.5">
+            <img class="badge-img" src="https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white&style=flat-square" alt="Python">
+            <img class="badge-img" src="https://img.shields.io/badge/-C-A8B9CC?logo=c&logoColor=black&style=flat-square" alt="C">
+            <img class="badge-img" src="https://img.shields.io/badge/-FastAPI-009688?logo=fastapi&logoColor=white&style=flat-square" alt="FastAPI">
+            <img class="badge-img" src="https://img.shields.io/badge/-SQL-4479A1?logo=mysql&logoColor=white&style=flat-square" alt="SQL">
+            <img class="badge-img" src="https://img.shields.io/badge/-Git-F05032?logo=git&logoColor=white&style=flat-square" alt="Git">
+            <img class="badge-img" src="https://img.shields.io/badge/-Bash-4EAA25?logo=gnu-bash&logoColor=white&style=flat-square" alt="Bash">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-8 grid gap-8 lg:grid-cols-2">
+      <article class="section-card rounded-3xl p-7 sm:p-8">
+        <h3 class="text-2xl font-bold text-white">💼 Professional Experience</h3>
+        <div class="mt-6 space-y-5">
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-5">
+            <div class="flex items-start justify-between gap-4 flex-wrap">
+              <div>
+                <h4 class="text-lg font-semibold text-white">SOC & Linux Administrator</h4>
+                <p class="text-slate-400 text-sm">AmnGostar Payam Pardaz Engineering</p>
+              </div>
+            </div>
+            <p class="mt-3 text-slate-300 text-sm">
+              Linux administration, security monitoring, SOC operations,
+              infrastructure support, and system hardening.
+            </p>
+          </div>
+
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-5">
+            <div class="flex items-start justify-between gap-4 flex-wrap">
+              <div>
+                <h4 class="text-lg font-semibold text-white">Network Administrator</h4>
+                <p class="text-slate-400 text-sm">Raham Data Gostaresh Co. (Iran National Post Data Center)</p>
+              </div>
+            </div>
+            <p class="mt-3 text-slate-300 text-sm">
+              Enterprise network administration, monitoring, troubleshooting,
+              and infrastructure maintenance.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="section-card rounded-3xl p-7 sm:p-8">
+        <h3 class="text-2xl font-bold text-white">🎓 Education & Certifications</h3>
+
+        <div class="mt-6 rounded-2xl bg-white/5 border border-white/10 p-5">
+          <h4 class="text-lg font-semibold text-white">B.Sc. Computer Engineering</h4>
+          <p class="text-slate-400 text-sm">Islamic Azad University of Karaj</p>
+        </div>
+
+        <div class="mt-5">
+          <h4 class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400 mb-3">📜 Certifications</h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Cisco CCNA 200-301</span>
+            <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">LPIC-1 & LPIC-2</span>
+            <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">CEH</span>
+            <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Telecommunications</span>
+            <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Network+</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="mt-8 section-card rounded-3xl p-7 sm:p-8">
+      <h3 class="text-2xl font-bold text-white">🚀 Interests</h3>
+      <div class="mt-5 flex flex-wrap gap-2.5">
+        <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Low-Level Computing</span>
+        <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Embedded Systems</span>
+        <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">IoT</span>
+        <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Telecommunications</span>
+        <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Network Engineering</span>
+        <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Linux Systems</span>
+        <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Infrastructure Design</span>
+        <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Cryptography</span>
+        <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Computer Architecture</span>
+        <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Firmware & Hardware</span>
+      </div>
+    </section>
+
+    <section class="mt-8 section-card rounded-3xl p-7 sm:p-8">
+      <h3 class="text-2xl font-bold text-white">📬 Contact</h3>
+
+      <div class="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <a href="mailto:erfannahidi20@gmail.com" class="linkish rounded-2xl bg-white/5 border border-white/10 p-4 hover:bg-white/8">
+          <p class="text-xs uppercase tracking-[0.18em] text-slate-400">Email</p>
+          <p class="mt-2 text-sm text-white break-all">erfannahidi20@gmail.com</p>
+        </a>
+
+        <a href="https://github.com/ErfanNahidi" class="linkish rounded-2xl bg-white/5 border border-white/10 p-4 hover:bg-white/8">
+          <p class="text-xs uppercase tracking-[0.18em] text-slate-400">GitHub</p>
+          <p class="mt-2 text-sm text-white">github.com/ErfanNahidi</p>
+        </a>
+
+        <a href="https://linkedin.com/in/ErfanNahidi" class="linkish rounded-2xl bg-white/5 border border-white/10 p-4 hover:bg-white/8">
+          <p class="text-xs uppercase tracking-[0.18em] text-slate-400">LinkedIn</p>
+          <p class="mt-2 text-sm text-white">linkedin.com/in/ErfanNahidi</p>
+        </a>
+
+        <a href="https://t.me/cro0w" class="linkish rounded-2xl bg-white/5 border border-white/10 p-4 hover:bg-white/8">
+          <p class="text-xs uppercase tracking-[0.18em] text-slate-400">Telegram</p>
+          <p class="mt-2 text-sm text-white">t.me/cro0w</p>
+        </a>
+      </div>
+    </section>
+
+    <footer class="mt-8 text-center text-sm text-slate-500">
+      © 2025 Erfan Nahidi
+    </footer>
+  </main>
+</body>
+</html>
