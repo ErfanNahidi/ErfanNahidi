@@ -1,301 +1,894 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Erfan Nahidi – Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    :root {
-      --bg: #0b1020;
-      --card: rgba(255, 255, 255, 0.08);
-      --card-border: rgba(255, 255, 255, 0.12);
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Erfan Nahidi – Network & Infrastructure Engineer specializing in Linux systems, telecommunications, embedded technologies, and network operations." />
+    <title>Erfan Nahidi – Network & Infrastructure Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet"
+    />
+    <style>
+        /* ── RESET ── */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-    body {
-      background:
-        radial-gradient(circle at top left, rgba(59,130,246,.25), transparent 28%),
-        radial-gradient(circle at top right, rgba(168,85,247,.20), transparent 24%),
-        radial-gradient(circle at bottom left, rgba(16,185,129,.16), transparent 26%),
-        linear-gradient(180deg, #0b1020 0%, #0f172a 45%, #111827 100%);
-      color: #e5e7eb;
-    }
+        /* ── TOKENS ── */
+        :root {
+            --bg: #060912;
+            --card: rgba(13, 17, 23, 0.8);
+            --border: rgba(255, 255, 255, 0.08);
+            --borderH: rgba(56, 189, 248, 0.28);
+            --text: #cbd5e1;
+            --muted: #475569;
+            --bright: #e2e8f0;
+            --sky: #38bdf8;
+            --violet: #818cf8;
+            --emerald: #34d399;
+            --mono: "JetBrains Mono", "Courier New", monospace;
+            --radius-lg: 18px;
+            --radius-md: 16px;
+            --radius-sm: 10px;
+            --transition-fast: 0.18s ease;
+        }
 
-    .glass {
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-    }
+        /* ── BASE ── */
+        html {
+            background: var(--bg);
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
 
-    .section-card {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.10);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
-    }
+        body {
+            font-family: "Space Grotesk", system-ui, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            background: radial-gradient(ellipse 70% 35% at 50% 0%,
+                        rgba(56, 189, 248, 0.1) 0%,
+                        transparent 65%),
+                    radial-gradient(ellipse 45% 28% at 95% 25%,
+                        rgba(129, 140, 248, 0.08) 0%,
+                        transparent 60%),
+                    radial-gradient(ellipse 38% 22% at 5% 75%,
+                        rgba(52, 211, 153, 0.06) 0%,
+                        transparent 60%),
+                    var(--bg);
+        }
 
-    .badge-img {
-      height: 30px;
-      width: auto;
-      object-fit: contain;
-      border-radius: 6px;
-      transition: transform .18s ease, filter .18s ease, opacity .18s ease;
-      opacity: .96;
-    }
+        /* ── LAYOUT ── */
+        .page {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 20px 20px 64px;
+        }
 
-    .badge-img:hover {
-      transform: translateY(-1px) scale(1.03);
-      filter: brightness(1.08);
-      opacity: 1;
-    }
+        .gap {
+            height: 16px;
+        }
 
-    .soft-line {
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);
-      height: 1px;
-    }
+        /* ── HERO ── */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            background: linear-gradient(145deg,
+                    rgba(13, 17, 23, 0.97) 0%,
+                    rgba(15, 23, 42, 0.94) 100%);
+            padding: 36px 32px 32px;
+            text-align: center;
+            animation: fadeSlideIn 0.7s ease both;
+        }
 
-    .chip {
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.10);
-      transition: all .18s ease;
-    }
+        @keyframes fadeSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    .chip:hover {
-      background: rgba(255,255,255,.12);
-      transform: translateY(-1px);
-    }
+        /* top glow line */
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 55%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--sky), transparent);
+        }
 
-    a.linkish {
-      transition: color .18s ease, opacity .18s ease;
-    }
+        /* ambient orbs */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(72px);
+            pointer-events: none;
+            z-index: 0;
+            animation: orbFloat 10s ease-in-out infinite;
+        }
+        .orb-a {
+            width: 280px;
+            height: 280px;
+            top: -100px;
+            left: -60px;
+            background: rgba(56, 189, 248, 0.09);
+            animation-delay: 0s;
+        }
+        .orb-b {
+            width: 240px;
+            height: 240px;
+            top: -80px;
+            right: -60px;
+            background: rgba(129, 140, 248, 0.08);
+            animation-delay: -5s;
+        }
 
-    a.linkish:hover {
-      opacity: 1;
-    }
-  </style>
+        @keyframes orbFloat {
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+            25% {
+                transform: translate(15px, -10px) scale(1.06);
+            }
+            50% {
+                transform: translate(-5px, 8px) scale(0.95);
+            }
+            75% {
+                transform: translate(-12px, -4px) scale(1.04);
+            }
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* status pill */
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 4px 13px;
+            border-radius: 100px;
+            border: 1px solid rgba(52, 211, 153, 0.28);
+            background: rgba(52, 211, 153, 0.07);
+            font-family: var(--mono);
+            font-size: 11px;
+            color: var(--emerald);
+            letter-spacing: 0.04em;
+        }
+        .pill-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--emerald);
+            box-shadow: 0 0 6px var(--emerald);
+            animation: blink 2.4s ease-in-out infinite;
+        }
+        @keyframes blink {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        /* name */
+        .hero h1 {
+            margin-top: 16px;
+            font-size: clamp(2.2rem, 5.5vw, 3.4rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: var(--bright);
+            line-height: 1.1;
+        }
+        .hero h1 em {
+            font-style: normal;
+            background: linear-gradient(130deg, var(--sky) 0%, var(--violet) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* tagline */
+        .tagline {
+            margin-top: 8px;
+            font-family: var(--mono);
+            font-size: 12px;
+            color: var(--muted);
+            letter-spacing: 0.05em;
+        }
+        .tagline .sep {
+            margin: 0 7px;
+            color: rgba(56, 189, 248, 0.35);
+        }
+        .cur {
+            display: inline-block;
+            width: 2px;
+            height: 1em;
+            background: var(--sky);
+            margin-left: 2px;
+            vertical-align: middle;
+            animation: cur 1s step-end infinite;
+        }
+        @keyframes cur {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* bio */
+        .bio {
+            margin: 14px auto 0;
+            max-width: 540px;
+            font-size: 14px;
+            color: #94a3b8;
+            line-height: 1.75;
+        }
+
+        /* stat bar */
+        .statbar {
+            margin-top: 24px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: var(--border);
+            gap: 1px;
+        }
+        .stat {
+            padding: 14px 12px;
+            background: rgba(10, 14, 24, 0.92);
+            text-align: center;
+            transition: background var(--transition-fast);
+        }
+        .stat:hover {
+            background: rgba(56, 189, 248, 0.06);
+        }
+        .stat-lbl {
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+        .stat-val {
+            margin-top: 4px;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--bright);
+        }
+
+        /* ── CARD ── */
+        .card {
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            background: var(--card);
+            padding: 28px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ── SECTION HEADER ── */
+        .sec-eyebrow {
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--sky);
+            margin-bottom: 4px;
+        }
+        .sec-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--bright);
+        }
+
+        /* ── DIVIDER ── */
+        .div {
+            height: 1px;
+            background: var(--border);
+            margin: 20px 0;
+        }
+
+        /* ── SKILL GROUPS ── */
+        .sg {
+            margin-top: 20px;
+        }
+        .sg-title {
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 9px;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+        }
+        .sg-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--border), transparent);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .tag {
+            font-family: var(--mono);
+            font-size: 11px;
+            padding: 4px 11px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.03);
+            color: #94a3b8;
+            transition: border-color var(--transition-fast),
+                background var(--transition-fast), color var(--transition-fast),
+                transform var(--transition-fast);
+            cursor: default;
+        }
+        .tag:hover {
+            border-color: rgba(56, 189, 248, 0.3);
+            background: rgba(56, 189, 248, 0.06);
+            color: var(--sky);
+            transform: translateY(-1px);
+        }
+        .tag.s {
+            border-color: rgba(56, 189, 248, 0.2);
+            color: var(--sky);
+        }
+        .tag.v {
+            border-color: rgba(129, 140, 248, 0.2);
+            color: var(--violet);
+        }
+        .tag.g {
+            border-color: rgba(52, 211, 153, 0.2);
+            color: var(--emerald);
+        }
+
+        /* ── TWO-COL GRID ── */
+        .grid2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        @media (max-width: 600px) {
+            .grid2 {
+                grid-template-columns: 1fr;
+            }
+            .statbar {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .stat-val {
+                font-size: 12px;
+            }
+            .stat {
+                padding: 12px 8px;
+            }
+            .hero {
+                padding: 28px 18px 24px;
+            }
+            .page {
+                padding: 12px 14px 48px;
+            }
+            .card {
+                padding: 20px 16px;
+            }
+        }
+        @media (max-width: 400px) {
+            .statbar {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .stat {
+                padding: 10px 4px;
+            }
+            .stat-lbl {
+                font-size: 8px;
+                letter-spacing: 0.1em;
+            }
+            .stat-val {
+                font-size: 11px;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .tagline {
+                font-size: 10px;
+            }
+            .bio {
+                font-size: 13px;
+            }
+        }
+
+        /* ── JOB CARDS ── */
+        .job {
+            padding: 16px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.02);
+            transition: border-color var(--transition-fast),
+                background var(--transition-fast);
+        }
+        .job+.job {
+            margin-top: 10px;
+        }
+        .job:hover {
+            border-color: var(--borderH);
+            background: rgba(56, 189, 248, 0.04);
+        }
+        .job-role {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--bright);
+        }
+        .job-org {
+            font-family: var(--mono);
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 2px;
+        }
+        .job-desc {
+            font-size: 13px;
+            color: #94a3b8;
+            margin-top: 8px;
+            line-height: 1.6;
+        }
+
+        /* ── CERTS ── */
+        .certs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-top: 14px;
+        }
+        .cert {
+            font-family: var(--mono);
+            font-size: 11px;
+            padding: 5px 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(129, 140, 248, 0.22);
+            background: rgba(129, 140, 248, 0.05);
+            color: var(--violet);
+            transition: background var(--transition-fast),
+                border-color var(--transition-fast);
+        }
+        .cert:hover {
+            background: rgba(129, 140, 248, 0.1);
+            border-color: rgba(129, 140, 248, 0.35);
+        }
+
+        /* ── INTERESTS ── */
+        .interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-top: 16px;
+        }
+        .int {
+            font-size: 12px;
+            padding: 5px 13px;
+            border-radius: 100px;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            background: rgba(255, 255, 255, 0.03);
+            color: #94a3b8;
+            transition: background 0.16s, color 0.16s, border-color 0.16s;
+            cursor: default;
+        }
+        .int:hover {
+            background: rgba(255, 255, 255, 0.07);
+            color: var(--bright);
+            border-color: rgba(255, 255, 255, 0.14);
+        }
+
+        /* ── CONTACT GRID ── */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 18px;
+        }
+        @media (max-width: 640px) {
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 400px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .clink {
+            display: block;
+            padding: 14px 16px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.02);
+            transition: border-color var(--transition-fast),
+                background var(--transition-fast), transform var(--transition-fast),
+                box-shadow var(--transition-fast);
+        }
+        .clink:hover {
+            border-color: var(--borderH);
+            background: rgba(56, 189, 248, 0.05);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(56, 189, 248, 0.06);
+        }
+        .clink:focus-visible {
+            outline: 2px solid var(--sky);
+            outline-offset: 2px;
+            border-radius: 12px;
+        }
+        .clink-type {
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+        .clink-val {
+            margin-top: 6px;
+            font-size: 12px;
+            color: var(--bright);
+            word-break: break-word;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-family: var(--mono);
+            font-size: 11px;
+            color: var(--muted);
+        }
+        footer a {
+            color: var(--muted);
+            transition: color 0.15s;
+        }
+        footer a:hover {
+            color: var(--sky);
+        }
+
+        /* ── PRINT STYLES ── */
+        @media print {
+            html {
+                background: #fff;
+            }
+            body {
+                background: #fff;
+                color: #1a1a1a;
+            }
+            .page {
+                max-width: 100%;
+                padding: 0;
+            }
+            .hero,
+            .card {
+                border: 1px solid #ccc;
+                background: #fff;
+                box-shadow: none;
+                break-inside: avoid;
+            }
+            .orb,
+            .hero::before,
+            .cur {
+                display: none;
+            }
+            .hero h1 em {
+                -webkit-text-fill-color: #1a1a1a;
+                background: none;
+            }
+            .tag,
+            .cert,
+            .int {
+                border: 1px solid #ccc;
+                background: #f5f5f5;
+                color: #1a1a1a;
+            }
+            .tag.s,
+            .tag.v,
+            .tag.g {
+                color: #1a1a1a;
+                border-color: #999;
+            }
+            .clink {
+                border: 1px solid #ccc;
+                background: #fafafa;
+            }
+            .clink-val {
+                color: #1a1a1a;
+            }
+            .sec-eyebrow {
+                color: #555;
+            }
+            .stat-val,
+            .sec-title,
+            .job-role {
+                color: #1a1a1a;
+            }
+            footer {
+                color: #777;
+            }
+        }
+    </style>
 </head>
-
-<body class="font-sans antialiased leading-relaxed">
-  <main class="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 py-10 sm:py-14">
-    <section class="glass rounded-3xl p-8 sm:p-10 md:p-12 relative overflow-hidden">
-      <div class="absolute -top-24 -right-24 h-56 w-56 rounded-full bg-blue-500/20 blur-3xl"></div>
-      <div class="absolute -bottom-24 -left-24 h-56 w-56 rounded-full bg-violet-500/20 blur-3xl"></div>
-
-      <div class="relative">
-        <header class="text-center">
-          <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full border border-white/10 bg-white/5 text-sm text-slate-300">
-            <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
-            Network • Infrastructure • Telecom • Low-Level
-          </div>
-
-          <h1 class="mt-6 text-4xl sm:text-5xl font-black tracking-tight text-white">
-            Erfan Nahidi
-          </h1>
-
-          <h2 class="mt-4 text-lg sm:text-xl font-semibold text-slate-300">
-            Network & Infrastructure Administrator <span class="text-slate-500">|</span> Telecom & Embedded Enthusiast
-          </h2>
-
-          <p class="mt-5 max-w-3xl mx-auto text-slate-300 text-base sm:text-lg">
-            Network and Infrastructure Administrator with a strong interest in low-level computing,
-            embedded systems, IoT, telecommunications, and hardware-oriented technologies.
-            Experienced in Linux administration, network operations, security monitoring,
-            and infrastructure automation.
-          </p>
-        </header>
-
-        <div class="mt-8 soft-line"></div>
-
-        <div class="mt-8 grid gap-5 md:grid-cols-3">
-          <div class="section-card rounded-2xl p-5">
-            <p class="text-xs uppercase tracking-[0.22em] text-slate-400">Focus</p>
-            <p class="mt-2 text-lg font-semibold text-white">Network Engineering</p>
-            <p class="mt-2 text-sm text-slate-300">Infrastructure, routing, switching, DNS, VPN, firewalling.</p>
-          </div>
-
-          <div class="section-card rounded-2xl p-5">
-            <p class="text-xs uppercase tracking-[0.22em] text-slate-400">Strength</p>
-            <p class="mt-2 text-lg font-semibold text-white">Linux & Automation</p>
-            <p class="mt-2 text-sm text-slate-300">System hardening, monitoring, scripting, and ops tooling.</p>
-          </div>
-
-          <div class="section-card rounded-2xl p-5">
-            <p class="text-xs uppercase tracking-[0.22em] text-slate-400">Interest</p>
-            <p class="mt-2 text-lg font-semibold text-white">Low-Level & IoT</p>
-            <p class="mt-2 text-sm text-slate-300">Embedded systems, firmware, computer architecture, telecom.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="mt-8 section-card rounded-3xl p-7 sm:p-8">
-      <div class="flex items-center justify-between gap-4 flex-wrap">
-        <div>
-          <h3 class="text-2xl font-bold text-white">🛠️ Core Skills</h3>
-          <p class="mt-1 text-sm text-slate-400">A cleaner snapshot of what I actually work with.</p>
-        </div>
-      </div>
-
-      <div class="mt-6 grid gap-7">
-        <div>
-          <h4 class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400 mb-3">🌐 Networking & Infrastructure</h4>
-          <div class="flex flex-wrap gap-2.5">
-            <img class="badge-img" src="https://img.shields.io/badge/-Cisco%20CCNA-1BA0D7?style=flat-square" alt="CCNA">
-            <img class="badge-img" src="https://img.shields.io/badge/-Routing%20%26%20Switching-2C3E50?style=flat-square" alt="Routing">
-            <img class="badge-img" src="https://img.shields.io/badge/-TCP%2FIP-2980B9?style=flat-square" alt="TCP/IP">
-            <img class="badge-img" src="https://img.shields.io/badge/-DNS-8E44AD?style=flat-square" alt="DNS">
-            <img class="badge-img" src="https://img.shields.io/badge/-VPN-16A085?style=flat-square" alt="VPN">
-            <img class="badge-img" src="https://img.shields.io/badge/-Firewall-E74C3C?style=flat-square" alt="Firewall">
-            <img class="badge-img" src="https://img.shields.io/badge/-Wireshark-1679A7?logo=wireshark&logoColor=white&style=flat-square" alt="Wireshark">
-            <img class="badge-img" src="https://img.shields.io/badge/-MikroTik-293239?style=flat-square" alt="MikroTik">
-          </div>
-        </div>
-
-        <div>
-          <h4 class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400 mb-3">🐧 Linux & Infrastructure</h4>
-          <div class="flex flex-wrap gap-2.5">
-            <img class="badge-img" src="https://img.shields.io/badge/-Linux-FCC624?logo=linux&logoColor=black&style=flat-square" alt="Linux">
-            <img class="badge-img" src="https://img.shields.io/badge/-LPIC--2-00599C?style=flat-square" alt="LPIC-2">
-            <img class="badge-img" src="https://img.shields.io/badge/-Docker-2496ED?logo=docker&logoColor=white&style=flat-square" alt="Docker">
-            <img class="badge-img" src="https://img.shields.io/badge/-Nginx-009639?logo=nginx&logoColor=white&style=flat-square" alt="Nginx">
-            <img class="badge-img" src="https://img.shields.io/badge/-Automation-4CAF50?style=flat-square" alt="Automation">
-          </div>
-        </div>
-
-        <div>
-          <h4 class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400 mb-3">🛡️ Security Operations</h4>
-          <div class="flex flex-wrap gap-2.5">
-            <img class="badge-img" src="https://img.shields.io/badge/-SOC-111111?style=flat-square" alt="SOC">
-            <img class="badge-img" src="https://img.shields.io/badge/-CEH-8B0000?style=flat-square" alt="CEH">
-            <img class="badge-img" src="https://img.shields.io/badge/-Traffic%20Analysis-34495E?style=flat-square" alt="Traffic Analysis">
-            <img class="badge-img" src="https://img.shields.io/badge/-Linux%20Hardening-2D3436?style=flat-square" alt="Hardening">
-          </div>
-        </div>
-
-        <div>
-          <h4 class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400 mb-3">📡 Telecommunications & Embedded</h4>
-          <div class="flex flex-wrap gap-2.5">
-            <img class="badge-img" src="https://img.shields.io/badge/-Telecommunications-0066CC?style=flat-square" alt="Telecommunications">
-            <img class="badge-img" src="https://img.shields.io/badge/-Communication%20Protocols-0E7490?style=flat-square" alt="Protocols">
-            <img class="badge-img" src="https://img.shields.io/badge/-STM32-03234B?style=flat-square" alt="STM32">
-            <img class="badge-img" src="https://img.shields.io/badge/-IoT-FF6B00?style=flat-square" alt="IoT">
-            <img class="badge-img" src="https://img.shields.io/badge/-x86--64%20Assembly-6F42C1?style=flat-square" alt="Assembly">
-          </div>
-        </div>
-
-        <div>
-          <h4 class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400 mb-3">💻 Development & Automation</h4>
-          <div class="flex flex-wrap gap-2.5">
-            <img class="badge-img" src="https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white&style=flat-square" alt="Python">
-            <img class="badge-img" src="https://img.shields.io/badge/-C-A8B9CC?logo=c&logoColor=black&style=flat-square" alt="C">
-            <img class="badge-img" src="https://img.shields.io/badge/-FastAPI-009688?logo=fastapi&logoColor=white&style=flat-square" alt="FastAPI">
-            <img class="badge-img" src="https://img.shields.io/badge/-SQL-4479A1?logo=mysql&logoColor=white&style=flat-square" alt="SQL">
-            <img class="badge-img" src="https://img.shields.io/badge/-Git-F05032?logo=git&logoColor=white&style=flat-square" alt="Git">
-            <img class="badge-img" src="https://img.shields.io/badge/-Bash-4EAA25?logo=gnu-bash&logoColor=white&style=flat-square" alt="Bash">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="mt-8 grid gap-8 lg:grid-cols-2">
-      <article class="section-card rounded-3xl p-7 sm:p-8">
-        <h3 class="text-2xl font-bold text-white">💼 Professional Experience</h3>
-        <div class="mt-6 space-y-5">
-          <div class="rounded-2xl bg-white/5 border border-white/10 p-5">
-            <div class="flex items-start justify-between gap-4 flex-wrap">
-              <div>
-                <h4 class="text-lg font-semibold text-white">SOC & Linux Administrator</h4>
-                <p class="text-slate-400 text-sm">AmnGostar Payam Pardaz Engineering</p>
-              </div>
+<body>
+    <div class="page">
+        <!-- HERO -->
+        <div class="hero">
+            <div class="orb orb-a"></div>
+            <div class="orb orb-b"></div>
+            <div class="hero-inner">
+                <div class="pill">
+                    <span class="pill-dot"></span>Available for opportunities
+                </div>
+                <h1>Erfan <em>Nahidi</em></h1>
+                <p class="tagline">
+                    Network &amp; Infrastructure
+                    <span class="sep">/</span>
+                    Telecom &amp; Embedded
+                    <span class="sep">/</span>
+                    Linux Systems<span class="cur"></span>
+                </p>
+                <p class="bio">
+                    Network and Infrastructure Administrator with a deep interest in
+                    low-level computing, embedded systems, telecommunications, and
+                    hardware-oriented technologies. Experienced in Linux administration,
+                    network operations, security monitoring, and infrastructure
+                    automation.
+                </p>
+                <div class="statbar">
+                    <div class="stat">
+                        <div class="stat-lbl">Focus</div>
+                        <div class="stat-val">Network Eng.</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-lbl">Platform</div>
+                        <div class="stat-val">Linux / BSD</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-lbl">Certs</div>
+                        <div class="stat-val">CCNA · LPIC-2</div>
+                    </div>
+                </div>
             </div>
-            <p class="mt-3 text-slate-300 text-sm">
-              Linux administration, security monitoring, SOC operations,
-              infrastructure support, and system hardening.
-            </p>
-          </div>
+        </div>
 
-          <div class="rounded-2xl bg-white/5 border border-white/10 p-5">
-            <div class="flex items-start justify-between gap-4 flex-wrap">
-              <div>
-                <h4 class="text-lg font-semibold text-white">Network Administrator</h4>
-                <p class="text-slate-400 text-sm">Raham Data Gostaresh Co. (Iran National Post Data Center)</p>
-              </div>
+        <div class="gap"></div>
+
+        <!-- SKILLS -->
+        <div class="card">
+            <div class="sec-eyebrow">// skills</div>
+            <div class="sec-title">Core Technical Skills</div>
+
+            <div class="sg">
+                <div class="sg-title">Networking &amp; Infrastructure</div>
+                <div class="tags">
+                    <span class="tag s">Cisco CCNA</span>
+                    <span class="tag">Routing &amp; Switching</span>
+                    <span class="tag">TCP/IP</span>
+                    <span class="tag">DNS</span>
+                    <span class="tag">VPN</span>
+                    <span class="tag">Firewall</span>
+                    <span class="tag">Wireshark</span>
+                    <span class="tag">MikroTik</span>
+                    <span class="tag">BGP / OSPF</span>
+                </div>
             </div>
-            <p class="mt-3 text-slate-300 text-sm">
-              Enterprise network administration, monitoring, troubleshooting,
-              and infrastructure maintenance.
-            </p>
-          </div>
+
+            <div class="sg">
+                <div class="sg-title">Linux &amp; Infrastructure</div>
+                <div class="tags">
+                    <span class="tag g">Linux</span>
+                    <span class="tag g">LPIC-2</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">Nginx</span>
+                    <span class="tag">System Hardening</span>
+                    <span class="tag">Automation</span>
+                    <span class="tag">Monitoring</span>
+                </div>
+            </div>
+
+            <div class="sg">
+                <div class="sg-title">Security Operations</div>
+                <div class="tags">
+                    <span class="tag">SOC Operations</span>
+                    <span class="tag s">CEH</span>
+                    <span class="tag">Traffic Analysis</span>
+                    <span class="tag">Incident Response</span>
+                    <span class="tag">Linux Hardening</span>
+                </div>
+            </div>
+
+            <div class="sg">
+                <div class="sg-title">Telecom &amp; Embedded</div>
+                <div class="tags">
+                    <span class="tag v">Telecommunications</span>
+                    <span class="tag v">STM32</span>
+                    <span class="tag v">IoT</span>
+                    <span class="tag v">x86-64 Assembly</span>
+                    <span class="tag">Communication Protocols</span>
+                </div>
+            </div>
+
+            <div class="sg">
+                <div class="sg-title">Development &amp; Scripting</div>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">C</span>
+                    <span class="tag">Bash</span>
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">Git</span>
+                </div>
+            </div>
         </div>
-      </article>
 
-      <article class="section-card rounded-3xl p-7 sm:p-8">
-        <h3 class="text-2xl font-bold text-white">🎓 Education & Certifications</h3>
+        <div class="gap"></div>
 
-        <div class="mt-6 rounded-2xl bg-white/5 border border-white/10 p-5">
-          <h4 class="text-lg font-semibold text-white">B.Sc. Computer Engineering</h4>
-          <p class="text-slate-400 text-sm">Islamic Azad University of Karaj</p>
+        <!-- EXPERIENCE + EDUCATION (two-col) -->
+        <div class="grid2">
+            <div class="card">
+                <div class="sec-eyebrow">// experience</div>
+                <div class="sec-title">Professional</div>
+                <div class="div"></div>
+
+                <div class="job">
+                    <div class="job-role">SOC &amp; Linux Administrator</div>
+                    <div class="job-org">
+                        AmnGostar Payam Pardaz Engineering
+                    </div>
+                    <div class="job-desc">
+                        Linux administration, security monitoring, SOC operations,
+                        infrastructure support, and system hardening across enterprise
+                        environments.
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-role">Network Administrator</div>
+                    <div class="job-org">
+                        Raham Data Gostaresh Co. — Iran National Post
+                    </div>
+                    <div class="job-desc">
+                        Enterprise network admin, monitoring, troubleshooting, and
+                        infrastructure maintenance at a national-scale data center.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="sec-eyebrow">// education</div>
+                <div class="sec-title">Academic</div>
+                <div class="div"></div>
+
+                <div class="job">
+                    <div class="job-role">B.Sc. Computer Engineering</div>
+                    <div class="job-org">Islamic Azad University of Karaj</div>
+                    <div class="job-desc">
+                        Computer architecture, networking, embedded systems, and software
+                        engineering foundations.
+                    </div>
+                </div>
+
+                <div class="sg-title" style="
+                margin-top: 18px;
+                font-family: var(--mono);
+                font-size: 9px;
+                letter-spacing: 0.16em;
+                text-transform: uppercase;
+                color: var(--muted);
+                display: flex;
+                align-items: center;
+                gap: 9px;
+            ">
+            Certifications
+            <span style="
+                flex: 1;
+                height: 1px;
+                background: linear-gradient(90deg, var(--border), transparent);
+            "></span>
         </div>
-
-        <div class="mt-5">
-          <h4 class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400 mb-3">📜 Certifications</h4>
-          <div class="flex flex-wrap gap-2">
-            <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Cisco CCNA 200-301</span>
-            <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">LPIC-1 & LPIC-2</span>
-            <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">CEH</span>
-            <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Telecommunications</span>
-            <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Network+</span>
-          </div>
+        <div class="certs">
+            <span class="cert">CCNA 200-301</span>
+            <span class="cert">LPIC-1</span>
+            <span class="cert">LPIC-2</span>
+            <span class="cert">CEH</span>
+            <span class="cert">Network+</span>
+            <span class="cert">Telecom</span>
         </div>
-      </article>
-    </section>
+    </div>
+</div>
 
-    <section class="mt-8 section-card rounded-3xl p-7 sm:p-8">
-      <h3 class="text-2xl font-bold text-white">🚀 Interests</h3>
-      <div class="mt-5 flex flex-wrap gap-2.5">
-        <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Low-Level Computing</span>
-        <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Embedded Systems</span>
-        <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">IoT</span>
-        <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Telecommunications</span>
-        <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Network Engineering</span>
-        <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Linux Systems</span>
-        <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Infrastructure Design</span>
-        <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Cryptography</span>
-        <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Computer Architecture</span>
-        <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Firmware & Hardware</span>
-      </div>
-    </section>
+<div class="gap"></div>
 
-    <section class="mt-8 section-card rounded-3xl p-7 sm:p-8">
-      <h3 class="text-2xl font-bold text-white">📬 Contact</h3>
+<!-- INTERESTS -->
+<div class="card">
+    <div class="sec-eyebrow">// interests</div>
+    <div class="sec-title">What I'm Drawn To</div>
+    <div class="interests">
+        <span class="int">Low-Level Computing</span>
+        <span class="int">Embedded Systems</span>
+        <span class="int">IoT</span>
+        <span class="int">Telecommunications</span>
+        <span class="int">Network Engineering</span>
+        <span class="int">Linux Systems</span>
+        <span class="int">Infrastructure Design</span>
+        <span class="int">Cryptography</span>
+        <span class="int">Computer Architecture</span>
+        <span class="int">Firmware &amp; Hardware</span>
+        <span class="int">Protocol Design</span>
+        <span class="int">RF &amp; Signal Processing</span>
+    </div>
+</div>
 
-      <div class="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        <a href="mailto:erfannahidi20@gmail.com" class="linkish rounded-2xl bg-white/5 border border-white/10 p-4 hover:bg-white/8">
-          <p class="text-xs uppercase tracking-[0.18em] text-slate-400">Email</p>
-          <p class="mt-2 text-sm text-white break-all">erfannahidi20@gmail.com</p>
+<div class="gap"></div>
+
+<!-- CONTACT -->
+<div class="card">
+    <div class="sec-eyebrow">// contact</div>
+    <div class="sec-title">Get in Touch</div>
+    <div class="contact-grid">
+        <a href="mailto:erfannahidi20@gmail.com" class="clink" title="Send an email to Erfan">
+            <div class="clink-type">Email</div>
+            <div class="clink-val">erfannahidi20@gmail.com</div>
         </a>
-
-        <a href="https://github.com/ErfanNahidi" class="linkish rounded-2xl bg-white/5 border border-white/10 p-4 hover:bg-white/8">
-          <p class="text-xs uppercase tracking-[0.18em] text-slate-400">GitHub</p>
-          <p class="mt-2 text-sm text-white">github.com/ErfanNahidi</p>
+        <a href="https://github.com/ErfanNahidi" class="clink" target="_blank" rel="noopener noreferrer" title="View GitHub profile">
+            <div class="clink-type">GitHub</div>
+            <div class="clink-val">ErfanNahidi</div>
         </a>
-
-        <a href="https://linkedin.com/in/ErfanNahidi" class="linkish rounded-2xl bg-white/5 border border-white/10 p-4 hover:bg-white/8">
-          <p class="text-xs uppercase tracking-[0.18em] text-slate-400">LinkedIn</p>
-          <p class="mt-2 text-sm text-white">linkedin.com/in/ErfanNahidi</p>
+        <a href="https://linkedin.com/in/ErfanNahidi" class="clink" target="_blank" rel="noopener noreferrer" title="View LinkedIn profile">
+            <div class="clink-type">LinkedIn</div>
+            <div class="clink-val">ErfanNahidi</div>
         </a>
-
-        <a href="https://t.me/cro0w" class="linkish rounded-2xl bg-white/5 border border-white/10 p-4 hover:bg-white/8">
-          <p class="text-xs uppercase tracking-[0.18em] text-slate-400">Telegram</p>
-          <p class="mt-2 text-sm text-white">t.me/cro0w</p>
+        <a href="https://t.me/cro0w" class="clink" target="_blank" rel="noopener noreferrer" title="Message on Telegram">
+            <div class="clink-type">Telegram</div>
+            <div class="clink-val">@cro0w</div>
         </a>
-      </div>
-    </section>
+    </div>
+</div>
 
-    <footer class="mt-8 text-center text-sm text-slate-500">
-      © 2025 Erfan Nahidi
-    </footer>
-  </main>
+<footer>
+    <span>© 2025 Erfan Nahidi</span>&ensp;·&ensp;<a
+    href="https://github.com/ErfanNahidi"
+    target="_blank"
+    rel="noopener noreferrer"
+    >github.com/ErfanNahidi</a
+    >
+</footer>
+</div>
 </body>
 </html>
