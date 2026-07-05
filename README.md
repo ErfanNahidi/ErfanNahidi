@@ -1,8 +1,8 @@
 # Erfan Nahidi
 
-### Network & Infrastructure Administrator | Systems Developer
+### virtualization & Infrastructure Administrator | Systems Developer
 
-> Network and Infrastructure Administrator with a strong interest in low-level computing, embedded systems, IoT, telecommunications, and hardware-oriented technologies. Experienced in Linux administration, network operations, security monitoring, and infrastructure automation.
+> virtualization and Infrastructure Administrator with a strong interest in low-level computing, embedded systems, IoT, telecommunications, and hardware-oriented technologies. Experienced in Linux administration, network operations, security monitoring, infrastructure automation.
 
 ---
 
@@ -10,6 +10,10 @@
 
 ### 🌐 Networking & Infrastructure
 - ![Cisco](https://img.shields.io/badge/-Cisco%20CCNA-1BA0D7?style=flat-square) **Cisco Networking**
+- ![VMware](https://img.shields.io/badge/-VMware%20vSphere-607078?style=flat-square) **VMware vSphere**
+- ![VCP](https://img.shields.io/badge/-VMware%20VCP-607078?style=flat-square) **VMware Certified Professional (VCP)**
+- ![NSX](https://img.shields.io/badge/-VMware%20NSX-0091DA?style=flat-square) **VMware NSX**
+- ![vSAN](https://img.shields.io/badge/-VMware%20vSAN-4CAF50?style=flat-square) **VMware vSAN**
 - ![Routing](https://img.shields.io/badge/-Routing%20&%20Switching-2C3E50?style=flat-square) **Routing & Switching**
 - ![Network](https://img.shields.io/badge/-Network%20Administration-34495E?style=flat-square) **Enterprise Network Administration**
 - ![TCP/IP](https://img.shields.io/badge/-TCP%2FIP-2980B9?style=flat-square) **TCP/IP & Network Protocols**
@@ -80,6 +84,9 @@ Islamic Azad University, Karaj
 ## 📜 Certifications
 
 - Cisco CCNA 200-301
+- VMware Certified Professional (VCP)
+- VMware NSX
+- VMware vSAN
 - LPIC-1 / LPIC-2
 - CEH
 - Telecommunications
@@ -107,5 +114,3 @@ Islamic Azad University, Karaj
 🔗 https://github.com/ErfanNahidi
 
 💼 https://linkedin.com/in/ErfanNahidi
-
-💬 https://t.me/cro0w
