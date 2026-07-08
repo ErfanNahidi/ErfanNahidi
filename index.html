@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Erfan Nahidi – Virtualization & Infrastructure Administrator specializing in VMware, Linux, enterprise networking, automation, and systems development." />
     <title>Erfan Nahidi – Virtualization & Infrastructure Administrator</title>
-    <script src="https://cdn.tailwindcss.com">
-    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
             --bg: #0b1020;
@@ -64,24 +63,15 @@
             animation: fadeSlideIn 0.7s ease both;
         }
 
-        /* staggered entrance for section cards */
         section:nth-child(2) .section-card,
-        section:nth-child(2).section-card {
-            animation-delay: 0.08s;
-        }
+        section:nth-child(2).section-card { animation-delay: 0.08s; }
         section:nth-child(3) .section-card,
         section:nth-child(3).section-card,
-        section:nth-child(3) article {
-            animation-delay: 0.14s;
-        }
+        section:nth-child(3) article { animation-delay: 0.14s; }
         section:nth-child(4) .section-card,
-        section:nth-child(4).section-card {
-            animation-delay: 0.20s;
-        }
+        section:nth-child(4).section-card { animation-delay: 0.20s; }
         section:nth-child(5) .section-card,
-        section:nth-child(5).section-card {
-            animation-delay: 0.26s;
-        }
+        section:nth-child(5).section-card { animation-delay: 0.26s; }
 
         .badge-tag {
             display: inline-flex;
@@ -106,18 +96,9 @@
             transform: translateY(-1px);
             color: #e2e8f0;
         }
-        .badge-tag.sky {
-            border-color: rgba(56, 189, 248, 0.28);
-            color: var(--sky);
-        }
-        .badge-tag.violet {
-            border-color: rgba(129, 140, 248, 0.28);
-            color: var(--violet);
-        }
-        .badge-tag.emerald {
-            border-color: rgba(52, 211, 153, 0.28);
-            color: var(--emerald);
-        }
+        .badge-tag.sky { border-color: rgba(56, 189, 248, 0.28); color: var(--sky); }
+        .badge-tag.violet { border-color: rgba(129, 140, 248, 0.28); color: var(--violet); }
+        .badge-tag.emerald { border-color: rgba(52, 211, 153, 0.28); color: var(--emerald); }
 
         .soft-line {
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .18), transparent);
@@ -152,89 +133,36 @@
         }
 
         @keyframes pulseDot {
-            0%,
-            100% {
-                opacity: 1;
-                box-shadow: 0 0 6px var(--emerald);
-            }
-            50% {
-                opacity: 0.35;
-                box-shadow: 0 0 2px var(--emerald);
-            }
+            0%, 100% { opacity: 1; box-shadow: 0 0 6px var(--emerald); }
+            50% { opacity: 0.35; box-shadow: 0 0 2px var(--emerald); }
         }
-        .pulse-dot {
-            animation: pulseDot 2.4s ease-in-out infinite;
-        }
+        .pulse-dot { animation: pulseDot 2.4s ease-in-out infinite; }
 
-        /* ── PRINT STYLES ── */
         @media print {
-            html {
-                background: #fff;
-            }
+            html { background: #fff; }
             body {
-                background: #fff;
-                color: #1a1a1a;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
+                background: #fff; color: #1a1a1a;
+                -webkit-print-color-adjust: exact; print-color-adjust: exact;
             }
-            .glass,
-            .section-card {
-                background: #fff !important;
-                border: 1px solid #ccc !important;
-                box-shadow: none !important;
-                backdrop-filter: none !important;
-                -webkit-backdrop-filter: none !important;
-                break-inside: avoid;
-                animation: none !important;
+            .glass, .section-card {
+                background: #fff !important; border: 1px solid #ccc !important;
+                box-shadow: none !important; backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important; break-inside: avoid; animation: none !important;
             }
-            .badge-tag,
-            .chip {
-                border: 1px solid #bbb !important;
-                background: #f5f5f5 !important;
-                color: #1a1a1a !important;
-            }
-            .badge-tag.sky,
-            .badge-tag.violet,
-            .badge-tag.emerald {
-                color: #1a1a1a !important;
-                border-color: #999 !important;
-            }
-            a.linkish {
-                border: 1px solid #ccc !important;
-                background: #fafafa !important;
-                color: #1a1a1a !important;
-            }
-            .soft-line {
-                background: #ddd !important;
-            }
-            .pulse-dot {
-                animation: none !important;
-                opacity: 1 !important;
-            }
-            footer {
-                color: #666 !important;
-            }
+            .badge-tag, .chip { border: 1px solid #bbb !important; background: #f5f5f5 !important; color: #1a1a1a !important; }
+            .badge-tag.sky, .badge-tag.violet, .badge-tag.emerald { color: #1a1a1a !important; border-color: #999 !important; }
+            a.linkish { border: 1px solid #ccc !important; background: #fafafa !important; color: #1a1a1a !important; }
+            .soft-line { background: #ddd !important; }
+            .pulse-dot { animation: none !important; opacity: 1 !important; }
+            footer { color: #666 !important; }
         }
 
         @media (max-width: 640px) {
-            .glass {
-                padding: 24px 16px !important;
-                border-radius: 20px !important;
-            }
-            .section-card {
-                padding: 20px 16px !important;
-                border-radius: 20px !important;
-            }
-            h1 {
-                font-size: 2rem !important;
-            }
-            h2 {
-                font-size: 1rem !important;
-            }
-            .badge-tag {
-                font-size: 10px;
-                padding: 3px 9px;
-            }
+            .glass { padding: 24px 16px !important; border-radius: 20px !important; }
+            .section-card { padding: 20px 16px !important; border-radius: 20px !important; }
+            h1 { font-size: 2rem !important; }
+            h2 { font-size: 1rem !important; }
+            .badge-tag { font-size: 10px; padding: 3px 9px; }
         }
     </style>
 </head>
@@ -304,7 +232,6 @@
             </div>
 
             <div class="mt-6 grid gap-7">
-                <!-- Virtualization & Networking -->
                 <div>
                     <h4 class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400 mb-3">🌐 Virtualization & Networking</h4>
                     <div class="flex flex-wrap gap-2.5">
@@ -322,8 +249,6 @@
                         <span class="badge-tag">BGP / OSPF</span>
                     </div>
                 </div>
-
-                <!-- Linux & Infrastructure -->
                 <div>
                     <h4 class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400 mb-3">🐧 Linux & Infrastructure</h4>
                     <div class="flex flex-wrap gap-2.5">
@@ -336,8 +261,6 @@
                         <span class="badge-tag">Monitoring</span>
                     </div>
                 </div>
-
-                <!-- Security Operations -->
                 <div>
                     <h4 class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400 mb-3">🛡️ Security Operations</h4>
                     <div class="flex flex-wrap gap-2.5">
@@ -348,8 +271,6 @@
                         <span class="badge-tag">Linux Hardening</span>
                     </div>
                 </div>
-
-                <!-- Systems & Telecom -->
                 <div>
                     <h4 class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400 mb-3">📡 Systems Development & Telecom</h4>
                     <div class="flex flex-wrap gap-2.5">
@@ -360,8 +281,6 @@
                         <span class="badge-tag">Communication Protocols</span>
                     </div>
                 </div>
-
-                <!-- Dev & Automation -->
                 <div>
                     <h4 class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400 mb-3">💻 Development & Automation</h4>
                     <div class="flex flex-wrap gap-2.5">
@@ -378,7 +297,6 @@
 
         <!-- ═══════════ EXPERIENCE + EDUCATION ═══════════ -->
         <div class="mt-8 grid gap-8 lg:grid-cols-2">
-            <!-- Experience -->
             <article class="section-card rounded-3xl p-7 sm:p-8" aria-labelledby="experience-heading">
                 <h3 id="experience-heading" class="text-2xl font-bold text-white">💼 Professional Experience</h3>
                 <div class="mt-6 space-y-5">
@@ -399,7 +317,6 @@
                 </div>
             </article>
 
-            <!-- Education + Certs -->
             <article class="section-card rounded-3xl p-7 sm:p-8" aria-labelledby="education-heading">
                 <h3 id="education-heading" class="text-2xl font-bold text-white">🎓 Education & Certifications</h3>
 
@@ -431,66 +348,15 @@
             <h3 id="interests-heading" class="text-2xl font-bold text-white">🚀 Interests</h3>
             <div class="mt-5 flex flex-wrap gap-2.5">
                 <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Virtualization & Cloud</span>
-                <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Datacenter Design</span>
-                <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Low-Level Computing</span>
-                <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Embedded Systems</span>
-                <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">IoT</span>
-                <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Telecommunications</span>
-                <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Network Engineering</span>
                 <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Linux Systems</span>
-                <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Infrastructure Automation</span>
-                <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Cryptography</span>
-                <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Computer Architecture</span>
-                <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Firmware & Hardware</span>
-                <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Protocol Design</span>
-                <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">RF & Signal Processing</span>
+                <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Network Engineering</span>
+                <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Cybersecurity</span>
+                <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Embedded Development</span>
+                <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">IoT & Telecom</span>
+                <span class="chip px-3 py-1.5 rounded-full text-sm text-slate-200">Open Source</span>
             </div>
         </section>
 
-        <!-- ═══════════ CONTACT ═══════════ -->
-        <section class="mt-8 section-card rounded-3xl p-7 sm:p-8" aria-labelledby="contact-heading">
-            <h3 id="contact-heading" class="text-2xl font-bold text-white">📬 Contact</h3>
-
-            <div class="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                <a href="mailto:erfannahidi20@gmail.com"
-                class="linkish rounded-2xl bg-white/5 border border-white/10 p-4 block"
-                aria-label="Send email to Erfan Nahidi">
-                <p class="text-xs uppercase tracking-[0.18em] text-slate-400">Email</p>
-                <p class="mt-2 text-sm text-white break-all">erfannahidi20@gmail.com</p>
-            </a>
-
-            <a href="https://github.com/ErfanNahidi"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="linkish rounded-2xl bg-white/5 border border-white/10 p-4 block"
-            aria-label="Visit Erfan Nahidi's GitHub profile">
-            <p class="text-xs uppercase tracking-[0.18em] text-slate-400">GitHub</p>
-            <p class="mt-2 text-sm text-white">github.com/ErfanNahidi</p>
-        </a>
-
-        <a href="https://linkedin.com/in/ErfanNahidi"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="linkish rounded-2xl bg-white/5 border border-white/10 p-4 block"
-        aria-label="Visit Erfan Nahidi's LinkedIn profile">
-        <p class="text-xs uppercase tracking-[0.18em] text-slate-400">LinkedIn</p>
-        <p class="mt-2 text-sm text-white">linkedin.com/in/ErfanNahidi</p>
-    </a>
-
-</div>
-</section>
-
-<!-- ═══════════ FOOTER ═══════════ -->
-<footer class="mt-8 text-center text-sm text-slate-500">
-    <span>© 2025 Erfan Nahidi</span>
-    <span class="mx-2">·</span>
-    <a href="https://github.com/ErfanNahidi"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="hover:text-sky-400 transition-colors duration-200">
-    github.com/ErfanNahidi
-</a>
-</footer>
-</main>
+    </main>
 </body>
 </html>
