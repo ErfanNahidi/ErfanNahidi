@@ -55,7 +55,7 @@
 
 ### SOC & Linux Administrator
 **AmnGostar Payam Pardaz Engineering**  
-* 2023 – 2024 *
+* 2023 – 2024 
 
 - Linux server administration
 - Security monitoring and SOC operations
@@ -64,7 +64,7 @@
 
 ### Network Administrator
 **Raham Data Gostaresh Co.**  
-* 2022 –  2023 *
+* 2022 –  2023 
 
 - Network administration for the Iran National Post Data Center
 - Monitoring and maintenance of enterprise infrastructure
