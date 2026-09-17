@@ -55,7 +55,7 @@
 
 ### SOC & Linux Administrator
 **AmnGostar Payam Pardaz Engineering**  
-*Aug 2023 – Feb 2024*
+* 2023 – 2024*
 
 - Linux server administration
 - Security monitoring and SOC operations
@@ -64,7 +64,7 @@
 
 ### Network Administrator
 **Raham Data Gostaresh Co.**  
-*Nov 2022 – Feb 2023*
+* 2022 –  2023*
 
 - Network administration for the Iran National Post Data Center
 - Monitoring and maintenance of enterprise infrastructure
@@ -80,18 +80,6 @@ Islamic Azad University, Karaj
 
 ---
 
-## 📜 Certifications
-
-- Cisco CCNA 200-301
-- VMware Certified Professional (VCP)
-- VMware NSX
-- VMware vSAN
-- LPIC-1 / LPIC-2
-- CEH
-- Telecommunications
-- Network+
-
----
 
 ## 🚀 Interests
 
