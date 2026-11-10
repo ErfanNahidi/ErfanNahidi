@@ -1,103 +1,45 @@
 # Erfan Nahidi
 
-### Virtualization & Infrastructure Engineer
+**Virtualization & Infrastructure Engineer | Systems Developer**
 
-> Virtualization & Infrastructure Engineer with a strong interest in low-level computing, embedded systems, IoT, telecommunications, and hardware-oriented technologies. Experienced in Linux administration, network operations, security monitoring, infrastructure automation.
+Infrastructure and Linux administrator with experience in enterprise networking, security monitoring, and automation. Interested in systems programming, embedded computing, and telecommunications.
 
----
+[Email](mailto:erfannahidi20@gmail.com) · [GitHub](https://github.com/ErfanNahidi) · [LinkedIn](https://www.linkedin.com/in/ErfanNahidi)
 
-## 🛠️ Core Skills
+## Areas of Expertise
 
-### 🌐 Networking & Infrastructure
-- ![Cisco](https://img.shields.io/badge/-Cisco%20CCNA-1BA0D7?style=flat-square) **Cisco Networking**
-- ![VMware](https://img.shields.io/badge/-VMware%20vSphere-607078?style=flat-square) **VMware vSphere**
-- ![VCP](https://img.shields.io/badge/-VMware%20VCP-607078?style=flat-square) **VMware Certified Professional (VCP)**
-- ![vSAN](https://img.shields.io/badge/-VMware%20vSAN-4CAF50?style=flat-square) **VMware vSAN**
-- ![Routing](https://img.shields.io/badge/-Routing%20&%20Switching-2C3E50?style=flat-square) **Routing & Switching**
-- ![Network](https://img.shields.io/badge/-Network%20Administration-34495E?style=flat-square) **Enterprise Network Administration**
-- ![TCP/IP](https://img.shields.io/badge/-TCP%2FIP-2980B9?style=flat-square) **TCP/IP & Network Protocols**
-- ![DNS](https://img.shields.io/badge/-DNS-8E44AD?style=flat-square) **DNS Services**
-- ![VPN](https://img.shields.io/badge/-VPN-16A085?style=flat-square) **VPN Deployment & Management**
-- ![Firewall](https://img.shields.io/badge/-Firewall-E74C3C?style=flat-square) **Firewall Management**
-- ![MikroTik](https://img.shields.io/badge/-MikroTik-293239?style=flat-square) **MikroTik Administration**
+| Area | Technologies and practice |
+| --- | --- |
+| Virtualization & networking | VMware vSphere, VCP, NSX, vSAN; Cisco networking, CCNA, routing and switching, TCP/IP, DNS, VPN, firewalls, MikroTik, BGP, OSPF |
+| Linux & infrastructure | Linux administration, LPIC-1/2, Docker, Nginx, hardening, monitoring, infrastructure automation |
+| Security operations | SOC operations, security monitoring, traffic analysis, incident response, CEH concepts |
+| Systems & telecom | Telecommunications, communication protocols, STM32, IoT, x86-64 Assembly |
+| Development | Python, C, Bash, FastAPI, SQL, SQLite, Git |
 
-### 🐧 Linux & System Administration
-- ![Linux](https://img.shields.io/badge/-Linux-FCC624?logo=linux&logoColor=black&style=flat-square) **Linux Administration**
-- ![Nginx](https://img.shields.io/badge/-Nginx-009639?logo=nginx&logoColor=white&style=flat-square) **Nginx**
-- ![Docker](https://img.shields.io/badge/-Docker-2496ED?logo=docker&logoColor=white&style=flat-square) **Docker**
-- ![LPIC](https://img.shields.io/badge/-LPIC--2-00599C?style=flat-square) **LPIC-2**
-- ![Automation](https://img.shields.io/badge/-Automation-4CAF50?style=flat-square) **Infrastructure Automation**
+## Experience
 
-### 🛡️ Security Operations
-- ![SOC](https://img.shields.io/badge/-SOC-111111?style=flat-square) **SOC Operations**
-- ![CEH](https://img.shields.io/badge/-CEH-8B0000?style=flat-square) **Ethical Hacking Concepts**
-- ![Wireshark](https://img.shields.io/badge/-Wireshark-1679A7?logo=wireshark&logoColor=white&style=flat-square) **Traffic Analysis**
-- ![Monitoring](https://img.shields.io/badge/-Monitoring-34495E?style=flat-square) **Security Monitoring**
-- ![Hardening](https://img.shields.io/badge/-Hardening-2D3436?style=flat-square) **Linux Hardening**
+### SOC & Linux Administrator · AmnGostar Payam Pardaz Engineering
+**2023–2024**
 
-### 📡 Telecommunications
-- ![Telecom](https://img.shields.io/badge/-Telecommunications-0066CC?style=flat-square) **Telecommunication Systems**
-- ![Protocols](https://img.shields.io/badge/-Communication%20Protocols-0E7490?style=flat-square) **Communication Protocols**
-- ![STM32](https://img.shields.io/badge/-STM32-03234B?style=flat-square) **STM32 Microcontrollers**
-- ![Assembly](https://img.shields.io/badge/-x86--64%20Assembly-6F42C1?style=flat-square) **Low-Level Programming**
+- Administered Linux servers and supported security monitoring and SOC operations.
+- Supported infrastructure for the Ports & Maritime Organization project.
+- Contributed to system hardening and incident response support.
 
-### 💻 Development & Automation
-- ![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white&style=flat-square) **Python**
-- ![C](https://img.shields.io/badge/-C-A8B9CC?logo=c&logoColor=black&style=flat-square) **C**
-- ![FastAPI](https://img.shields.io/badge/-FastAPI-009688?logo=fastapi&logoColor=white&style=flat-square) **FastAPI**
-- ![Bash](https://img.shields.io/badge/-Bash-4EAA25?logo=gnu-bash&logoColor=white&style=flat-square) **Bash Scripting**
-- ![SQL](https://img.shields.io/badge/-SQL-4479A1?logo=mysql&logoColor=white&style=flat-square) **SQL & SQLite**
-- ![Git](https://img.shields.io/badge/-Git-F05032?logo=git&logoColor=white&style=flat-square) **Git**
+### Network Administrator · Raham Data Gostaresh Co.
+**2022–2023**
 
----
+- Administered and maintained enterprise network infrastructure for the Iran National Post Data Center.
+- Monitored network services and troubleshot connectivity issues.
 
-## 💼 Professional Experience
+## Education
 
-### SOC & Linux Administrator
-**AmnGostar Payam Pardaz Engineering**  
-* 2023 – 2024 
+**B.Sc. in Computer Engineering**  
+Islamic Azad University, Karaj · 2021–Present
 
-- Linux server administration
-- Security monitoring and SOC operations
-- Infrastructure support for the Ports & Maritime Organization project
-- System hardening and incident response support
+## Certifications & Training
 
-### Network Administrator
-**Raham Data Gostaresh Co.**  
-* 2022 –  2023 
+Cisco CCNA 200-301 · VMware VCP · VMware NSX · VMware vSAN · LPIC-1 · LPIC-2 · CEH · Network+ · Telecommunications
 
-- Network administration for the Iran National Post Data Center
-- Monitoring and maintenance of enterprise infrastructure
-- Troubleshooting network services and connectivity issues
+## Interests
 
----
-
-## 🎓 Education
-
-**B.Sc. Computer Engineering**  
-Islamic Azad University, Karaj  
-2021 – Present
-
----
-
-
-## 🚀 Interests
-
-- Network Engineering
-- Telecommunications
-- Infrastructure Design
-- Linux Systems
-- Network Security
-- Reverse Engineering
-- Cryptography
-- Embedded Systems
-
----
-
-## 📬 Contact
-
-📧 erfannahidi20@gmail.com
-
-🔗 https://github.com/ErfanNahidi
-
-💼 https://linkedin.com/in/ErfanNahidi
+Infrastructure design, Linux systems, network engineering and security, telecommunications, embedded systems, reverse engineering, and cryptography.
