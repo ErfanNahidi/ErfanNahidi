@@ -16,15 +16,6 @@ Infrastructure and Linux administrator with experience in enterprise networking,
 | Systems & telecom | Telecommunications, communication protocols, STM32, IoT, x86-64 Assembly |
 | Development | Python, C, Bash, FastAPI, SQL, SQLite, Git |
 
-## Selected Projects
-
-| Project | What it demonstrates |
-| --- | --- |
-| [Nemesis Scanner GUI](https://github.com/ErfanNahidi/Nemesis-Scanner-GUI) | Python GUI for the Nemesis network-scanning toolkit. |
-| [Project Nemesis](https://github.com/ErfanNahidi/Project-Nemesis) | Shell-based network reconnaissance and vulnerability assessment toolkit. |
-| [PDF Threat Scanner](https://github.com/ErfanNahidi/pdf_scanner) · **Fork** | Cross-platform PySide6 desktop tool for static PDF threat triage. |
-| [Divar Property Scraper](https://github.com/ErfanNahidi/Divar_Property_Scraper) | Python-based scraper for Divar property listings. |
-
 ## Experience
 
 ### SOC & Linux Administrator · AmnGostar Payam Pardaz Engineering
