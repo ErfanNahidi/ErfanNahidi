@@ -249,6 +249,28 @@
         #skills > .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 44px; margin-top: 30px; }
         #skills h4 { margin: 0 0 12px; color: #9ab8d2; font: 11px 'DM Mono', monospace; letter-spacing: .1em; }
         .badge-tag { border-radius: 4px; font-family: 'DM Mono', monospace; }
+        .project-section { margin-top: 58px; }
+        .project-kicker { margin-bottom: 8px; color: #78d2f3; font: 11px 'DM Mono', monospace; letter-spacing: .14em; text-transform: uppercase; }
+        .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 22px; }
+        .project-card {
+            display: flex;
+            min-height: 238px;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 21px;
+            border: 1px solid rgba(123, 177, 219, .15);
+            border-radius: 6px;
+            background: rgba(15, 42, 70, .62);
+            transition: border-color .2s ease, transform .2s ease, background .2s ease;
+        }
+        .project-card:hover { transform: translateY(-3px); border-color: rgba(120, 210, 243, .42); background: rgba(19, 51, 82, .78); }
+        .project-card:focus-within { outline: 2px solid #78d2f3; outline-offset: 3px; }
+        .project-index { color: #78d2f3; font: 10px 'DM Mono', monospace; letter-spacing: .1em; text-transform: uppercase; }
+        .project-card h4 { margin-top: 20px; color: #f0f5f8; font-size: 17px; font-weight: 600; }
+        .project-card > p:not(.project-index):not(.project-stack) { margin-top: 10px; color: #aebfd0; font-size: 13px; line-height: 1.65; }
+        .project-stack { margin-top: auto; padding-top: 18px; color: #8ca9c1; font: 10px 'DM Mono', monospace; text-transform: uppercase; }
+        .project-card a { display: inline-flex; gap: 7px; margin-top: 13px; color: #b6eaff; font-size: 12px; font-weight: 600; }
+        .project-card a:hover { color: #fff; }
         #experience { display: grid; grid-template-columns: 1fr 1fr; gap: 42px; margin-top: 60px !important; }
         #experience article, #education {
             padding: 26px 0 0 !important;
@@ -268,7 +290,7 @@
         }
         #experience article h4, #education h4 { margin: 0 0 4px; font-size: 16px; }
         #experience article p, #education p { color: #aebfb6; }
-        #experience article p.text-emerald-300, #education p.text-emerald-300 { color: #a3e635; }
+        #experience article p.text-emerald-300, #education p.text-emerald-300 { color: #78d2f3; }
         #education .mt-5 { margin-top: 26px; }
         #education .mt-5 h4 { margin-bottom: 12px; color: #9ab8d2; font: 11px 'DM Mono', monospace; }
         .chip { border-radius: 4px !important; color: #c8d5ce; }
@@ -290,11 +312,13 @@
 
         @media (max-width: 700px) {
             main.max-w-5xl { width: min(100% - 28px, 1080px); padding-top: 18px; }
-            .top-nav { justify-content: center; gap: 14px; font-size: 10px; }
+            .top-nav { justify-content: center; flex-wrap: wrap; gap: 8px 14px; font-size: 10px; }
             .glass header h1 { font-size: 42px !important; }
             .glass header h2 { font-size: 17px !important; }
             .glass > .relative > .grid { grid-template-columns: 1fr; }
             #skills > .grid, #experience { grid-template-columns: 1fr; gap: 24px; }
+            .project-grid { grid-template-columns: 1fr; }
+            .project-card { min-height: 0; }
             #experience { margin-top: 46px !important; }
             #contact > div:first-child { align-items: flex-start; flex-direction: column; }
             #contact { padding: 22px !important; }
@@ -314,6 +338,7 @@
         <!-- ═══════════ HERO ═══════════ -->
         <nav class="top-nav" aria-label="Main navigation">
             <a href="#skills">Expertise</a>
+            <a href="#projects">Projects</a>
             <a href="#experience">Experience</a>
             <a href="#education">Education</a>
             <a href="#contact">Contact</a>
@@ -440,6 +465,41 @@
                         <span class="badge-tag">Git</span>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="projects" class="project-section" aria-labelledby="projects-heading">
+            <p class="project-kicker">Selected work</p>
+            <h3 id="projects-heading">Built, documented, and shipped.</h3>
+            <div class="project-grid">
+                <article class="project-card">
+                    <p class="project-index">01 / Network security</p>
+                    <h4>Nemesis Scanner GUI</h4>
+                    <p>A Python graphical interface for the Nemesis network-scanning toolkit.</p>
+                    <p class="project-stack">Python · GUI · Network security</p>
+                    <a href="https://github.com/ErfanNahidi/Nemesis-Scanner-GUI" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">↗</span></a>
+                </article>
+                <article class="project-card">
+                    <p class="project-index">02 / Network security</p>
+                    <h4>Project Nemesis</h4>
+                    <p>A Shell-based toolkit for network reconnaissance and vulnerability assessment.</p>
+                    <p class="project-stack">Shell · Network security</p>
+                    <a href="https://github.com/ErfanNahidi/Project-Nemesis" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">↗</span></a>
+                </article>
+                <article class="project-card">
+                    <p class="project-index">03 / Defensive analysis · Fork</p>
+                    <h4>PDF Threat Scanner</h4>
+                    <p>A cross-platform desktop tool for static PDF threat triage and document analysis.</p>
+                    <p class="project-stack">Python · PySide6 · pdfid</p>
+                    <a href="https://github.com/ErfanNahidi/pdf_scanner" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">↗</span></a>
+                </article>
+                <article class="project-card">
+                    <p class="project-index">04 / Data collection</p>
+                    <h4>Divar Property Scraper</h4>
+                    <p>A Python-based scraper for Divar property listings.</p>
+                    <p class="project-stack">Python · Data collection</p>
+                    <a href="https://github.com/ErfanNahidi/Divar_Property_Scraper" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">↗</span></a>
+                </article>
             </div>
         </section>
 
