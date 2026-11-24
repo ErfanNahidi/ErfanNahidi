@@ -1,6 +1,6 @@
 # Erfan Nahidi
 
-**Virtualization & Infrastructure Engineer | Systems Developer**
+**Infrastructure Engineer & Security Developer**
 
 Infrastructure and Linux administrator with experience in enterprise networking, security monitoring, and automation. Interested in systems programming, embedded computing, and telecommunications.
 
