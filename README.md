@@ -2,7 +2,7 @@
 
 **Infrastructure Engineer & Security Developer**
 
-Infrastructure and Linux administrator with experience in enterprise networking, security monitoring, and automation. Interested in systems programming, embedded computing, and telecommunications.
+Infrastructure engineer and security developer working across Linux systems, VMware environments, enterprise networks, and SOC operations. I build practical tools for network reconnaissance and defensive analysis, and focus on making infrastructure secure, resilient, and easier to operate. My interests also include systems programming, embedded computing, and telecommunications.
 
 [Email](mailto:erfannahidi20@gmail.com) · [GitHub](https://github.com/ErfanNahidi) · [LinkedIn](https://www.linkedin.com/in/ErfanNahidi)
 
